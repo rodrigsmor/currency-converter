@@ -1,7 +1,23 @@
+import { CurrencyDto } from './dto';
 import { HttpService } from '@nestjs/axios';
-import { Currencies } from '../../utils/@types';
+import { CurrenciesEnum } from '../../utils/enums';
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { CurrencyValidationService } from '../../common/services';
+import { CountriesTranslations } from '../../utils/constants/countries';
+
+interface IExchangeRateResponse {
+  result: string;
+  documentation: string;
+  terms_of_use: string;
+  time_last_update_unix: number;
+  time_last_update_utc: Date;
+  time_next_update_unix: number;
+  time_next_update_utc: Date;
+  base_code: string;
+  conversion_rates: {
+    [key in CurrenciesEnum]?: number;
+  };
+}
 
 @Injectable()
 export class CurrencyService {
@@ -16,7 +32,7 @@ export class CurrencyService {
   async getAllCurrencies(
     lang: string,
     currency_code = 'USD',
-  ): Promise<Currencies> {
+  ): Promise<CurrencyDto[]> {
     const isCurrencyCodeValid =
       await this.currencyValidation.isCurrencyCodeValid(currency_code);
 
@@ -24,14 +40,24 @@ export class CurrencyService {
       throw new BadRequestException('Provide a valid currency code');
 
     try {
-      const response = this.httpService.get(
-        `${this.BASE_URL}/${this.ACCESS_KEY}/${currency_code}`,
+      const {
+        data: { conversion_rates },
+      } = await this.httpService.axiosRef.get<IExchangeRateResponse>(
+        `${this.BASE_URL}/${this.ACCESS_KEY}/latest/${currency_code}`,
       );
-      console.log(`${this.BASE_URL}/${this.ACCESS_KEY}/${currency_code}`);
+
+      const currenciesDto: CurrencyDto[] = Object.entries(conversion_rates).map(
+        ([currency_code, value]) => {
+          return new CurrencyDto(
+            value,
+            CountriesTranslations[lang][currency_code],
+          );
+        },
+      );
+
+      return currenciesDto;
     } catch (error) {
       console.log(error);
     }
-
-    return null;
   }
 }
