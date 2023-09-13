@@ -1,8 +1,9 @@
-import { CurrencyDto } from './dto';
 import { HttpService } from '@nestjs/axios';
+import { CountryDto, CurrencyDto } from './dto';
 import { CurrenciesEnum } from '../../utils/enums';
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { CurrencyValidationService } from '../../common/services';
+import { CurrencyType, IGroupedCountry } from '../../utils/@types';
 import { CountriesTranslations } from '../../utils/constants/countries';
 
 interface IExchangeRateResponse {
@@ -59,5 +60,52 @@ export class CurrencyService {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  async getAllCountries(
+    lang: string,
+    isGrouped: boolean,
+  ): Promise<CountryDto[] | IGroupedCountry[]> {
+    const currencies: CurrencyType[] = Object.values(
+      CountriesTranslations[lang],
+    );
+
+    if (isGrouped) {
+      const groupedCountries: Array<IGroupedCountry> = [];
+
+      const letters: string[] = currencies
+        .map(({ country_name }) => {
+          return this.normalizeChar(country_name.charAt(0));
+        })
+        .sort();
+
+      const groupLetters = [...new Set<string>(letters)];
+
+      groupLetters.forEach((letter) => {
+        const countries: CurrencyDto[] = currencies
+          .filter(
+            ({ country_name }) =>
+              this.normalizeChar(country_name.charAt(0)) === letter,
+          )
+          .map((currency) => new CurrencyDto(0, currency));
+
+        const groupedCountry: IGroupedCountry = {
+          group_name: letter,
+          countries,
+        };
+        groupedCountries.push(groupedCountry);
+      });
+
+      return groupedCountries;
+    } else {
+      return currencies.map((country) => new CountryDto(country));
+    }
+  }
+
+  private normalizeChar(value: string) {
+    return value
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toUpperCase();
   }
 }
