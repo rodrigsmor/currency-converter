@@ -1,5 +1,6 @@
-import { CurrencyDto } from './dto';
 import { HttpService } from '@nestjs/axios';
+import { Currencies } from '../../utils/@types';
+import { CountryDto, CurrencyDto } from './dto';
 import { CurrenciesEnum } from '../../utils/enums';
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { CurrencyValidationService } from '../../common/services';
@@ -59,5 +60,11 @@ export class CurrencyService {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  async getAllCountries(lang: string): Promise<CountryDto[]> {
+    return Object.values(CountriesTranslations[lang] as Currencies).map(
+      (country) => new CountryDto(country),
+    );
   }
 }
