@@ -10,6 +10,7 @@ import { CurrencyValidationService } from '../../common/services';
       useFactory: () => ({
         timeout: 5000,
         maxRedirects: 5,
+        baseURL: `${process.env.EXCHANGE_RATE_BASE_URL}/${process.env.EXCHANGE_RATE_ACCESS_KEY}`,
       }),
     }),
   ],
