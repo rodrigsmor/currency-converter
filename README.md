@@ -66,3 +66,9 @@ docker-compose up frontend-tests (not available yet)
 ````
 
 So that's it! It's running 🎉
+
+## 🌍  Support links and tutorials
+
+- 🔗 Nest.js documentation: https://docs.nestjs.com/
+- 🔗 Docker installation tutorial: https://docs.docker.com/get-docker/
+- 🔗 ExchangeRate API documentation: https://www.exchangerate-api.com/docs/overview
