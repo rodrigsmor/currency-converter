@@ -1,9 +1,23 @@
-# CURRENCY CONVERTER
+<h1 align="center"> CURRENCY CONVERTER </h1>
 
 ## 📖 Description
 
 This is a simple currency converter application that supports over 160 currencies. You can easily perform currency conversions based on your preferences and access exchange rates for various other options. The core of the application was built in TypeScript, with a backend in Nest.js and a frontend in Next.js, also implementing Docker for container management and environment manipulation.
 
+---
+
+## 📜 Table of contents
+
+- [📖 Description](#-description)
+- [📜 Table of contents](#-table-of-contents)
+- [🏃🏽‍♂️ How to run](#️-how-to-run)
+  - [⚙️ Preparing the environment](#️-preparing-the-environment)
+  - [🚀 Running the application](#-running-the-application)
+  - [✅ Run tests](#-run-tests)
+- [🌍  Support links and tutorials](#--support-links-and-tutorials)
+- [👨🏽‍🦱 Author](#-author)
+
+---
 
 ## 🏃🏽‍♂️ How to run
 
