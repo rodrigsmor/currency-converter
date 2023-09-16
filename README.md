@@ -38,6 +38,8 @@ With these simple settings, your application should already be close to working 
 
 ### ✅ Run tests
 
+Running the tests is actually quite easy. Given that the application is already built on your device, you'll need to run one of the following commands.
+
 ````
 ## to run backend tests
 docker-compose up backend-tests
@@ -45,3 +47,5 @@ docker-compose up backend-tests
 ## to run frontend tests
 docker-compose up frontend-tests (not available yet)
 ````
+
+So that's it! It's running 🎉
