@@ -7,3 +7,10 @@ services:
     environment:
       EXCHANGE_RATE_ACCESS_KEY: ${EXCHANGE_RATE_ACCESS_KEY}
       EXCHANGE_RATE_BASE_URL: ${EXCHANGE_RATE_BASE_URL}
+
+  backend-tests:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.tests
+    depends_on:
+      - backend
