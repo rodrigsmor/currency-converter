@@ -36,6 +36,23 @@ EXCHANGE_RATE_BASE_URL = "the base URL of the exchange rate api"
 
 With these simple settings, your application should already be close to working perfectly.
 
+### 🚀 Running the application
+
+Now that the settings have been made, it's time to run the application. Assuming you already have Docker and docker compose running on your device, simply run the following commands:
+
+````
+docker-compose build
+docker-compose up
+````
+
+If you prefer a shorter version, run the following in your terminal:
+
+````
+docker-compose up --build
+````
+
+That's it! Your application will be available to you at `http://localhost:3001`, you can test it in your preferred browser.
+
 ### ✅ Run tests
 
 Running the tests is actually quite easy. Given that the application is already built on your device, you'll need to run one of the following commands.
