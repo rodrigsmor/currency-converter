@@ -1,0 +1,16 @@
+version: '1'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - 3000:3000
+    environment:
+      EXCHANGE_RATE_ACCESS_KEY: ${EXCHANGE_RATE_ACCESS_KEY}
+      EXCHANGE_RATE_BASE_URL: ${EXCHANGE_RATE_BASE_URL}
+
+  backend-tests:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.tests
+    depends_on:
+      - backend
