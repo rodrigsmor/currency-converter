@@ -72,3 +72,29 @@ So that's it! It's running 🎉
 - 🔗 Nest.js documentation: https://docs.nestjs.com/
 - 🔗 Docker installation tutorial: https://docs.docker.com/get-docker/
 - 🔗 ExchangeRate API documentation: https://www.exchangerate-api.com/docs/overview
+
+
+## 👨🏽‍🦱 Author
+
+<img height="100px" src="https://avatars.githubusercontent.com/u/78985382?v=4" alt="Rodrigo profile picture">
+<p>Developed with love by <b size="48px">Rodrigo Moreira</b> 
+ 💜🚀</p>
+
+---
+
+<div>
+  <a href="mailto:rodrigsmor.pf@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="gmail">
+  </a>
+  <a href="https://www.linkedin.com/in/psrodrigomoreira/">
+    <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+  <a href="https://www.behance.net/rodrigsmor">
+    <img src="https://img.shields.io/badge/Behance-1769ff?style=for-the-badge&logo=behance&logoColor=white" alt="behance">
+  </a>
+  <a href="https://dev.to/psrodrigs">
+    <img src="https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=devdotto&logoColor=white" alt="dev.to">
+  </a>
+</div>
+
+[def]: #📒-introduction
