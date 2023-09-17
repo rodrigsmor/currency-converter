@@ -43,7 +43,7 @@ describe('CurrencyController', () => {
   });
 
   describe('getAllCurrencies', () => {
-    it('should return an array of currency DTOs with the conversion value of the currency provided', async () => {
+    it('should return an array of currency DTOs with the USD currency exchange rate', async () => {
       jest
         .spyOn(currencyService, 'getAllCurrencies')
         .mockResolvedValueOnce(curreciesDto);
