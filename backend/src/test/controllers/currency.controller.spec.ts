@@ -52,5 +52,32 @@ describe('CurrencyController', () => {
 
       expect(result).toStrictEqual(curreciesDto);
     });
+
+    it('should return an array the currencies with data translated to brazilian portuguese', async () => {
+      const curreciesPtBrDto: CurrencyDto[] = [
+        {
+          country_name: 'Brasil',
+          currency_code: 'BRL',
+          currency_name: 'Real brasileiro',
+          monetary_symbol: 'R$',
+          unit_value: 1400,
+        },
+        {
+          country_name: 'Estados Unidos da America',
+          currency_code: 'USD',
+          currency_name: 'Dólar americano',
+          monetary_symbol: '$',
+          unit_value: 3260,
+        },
+      ];
+
+      jest
+        .spyOn(currencyService, 'getAllCurrencies')
+        .mockResolvedValueOnce(curreciesPtBrDto);
+
+      const result = await currencyController.getAllCurrencies('pt-BR', 'USD');
+
+      expect(result).toStrictEqual(curreciesPtBrDto);
+    });
   });
 });
