@@ -1,7 +1,11 @@
+import {
+  Injectable,
+  BadRequestException,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { CountryDto, CurrencyDto } from './dto';
 import { CurrenciesEnum } from '../../utils/enums';
-import { BadRequestException, Injectable } from '@nestjs/common';
 import { CurrencyValidationService } from '../../common/services';
 import { CurrencyType, IGroupedCountry } from '../../utils/@types';
 import { CountriesTranslations } from '../../utils/constants/countries';
@@ -27,9 +31,6 @@ export class CurrencyService {
     private readonly currencyValidation: CurrencyValidationService,
   ) {}
 
-  private readonly BASE_URL = process.env.EXCHANGE_RATE_BASE_URL;
-  private readonly ACCESS_KEY = process.env.EXCHANGE_RATE_ACCESS_KEY;
-
   async getAllCurrencies(
     lang: string,
     currency_code = 'USD',
@@ -44,7 +45,7 @@ export class CurrencyService {
       const {
         data: { conversion_rates },
       } = await this.httpService.axiosRef.get<IExchangeRateResponse>(
-        `${this.BASE_URL}/${this.ACCESS_KEY}/latest/${currency_code}`,
+        `/latest/${currency_code}`,
       );
 
       const currenciesDto: CurrencyDto[] = Object.entries(conversion_rates).map(
@@ -58,7 +59,9 @@ export class CurrencyService {
 
       return currenciesDto;
     } catch (error) {
-      console.log(error);
+      throw new InternalServerErrorException(
+        error?.message || 'Something went wrong',
+      );
     }
   }
 
