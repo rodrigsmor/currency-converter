@@ -1,7 +1,11 @@
+import {
+  Injectable,
+  BadRequestException,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { CountryDto, CurrencyDto } from './dto';
 import { CurrenciesEnum } from '../../utils/enums';
-import { BadRequestException, Injectable } from '@nestjs/common';
 import { CurrencyValidationService } from '../../common/services';
 import { CurrencyType, IGroupedCountry } from '../../utils/@types';
 import { CountriesTranslations } from '../../utils/constants/countries';
@@ -55,7 +59,9 @@ export class CurrencyService {
 
       return currenciesDto;
     } catch (error) {
-      console.log(error);
+      throw new InternalServerErrorException(
+        error?.message || 'Something went wrong',
+      );
     }
   }
 
