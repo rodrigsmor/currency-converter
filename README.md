@@ -19,6 +19,10 @@ This is a simple currency converter application that supports over 160 currencie
 
 ---
 
+## 🖼️ Screenshots
+
+----
+
 ## 🏃🏽‍♂️ How to run
 
 > 💭 **Considerations:** The application has been developed using [exchangerate-api's](https://www.exchangerate-api.com/) services, meaning that if you want to run it locally you'll have to connect to the application and fill in the settings with your own credentials.
