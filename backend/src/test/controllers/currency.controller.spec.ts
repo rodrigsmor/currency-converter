@@ -4,6 +4,7 @@ import { CurrencyDto } from '../../api/currency/dto/currency.dto';
 import { CurrencyService } from '../../api/currency/currency.service';
 import { CurrencyController } from '../../api/currency/currency.controller';
 import { CurrencyValidationService } from '../../common/services/currency-validation.service';
+import { BadRequestException } from '@nestjs/common';
 
 describe('CurrencyController', () => {
   let currencyService: CurrencyService;
@@ -78,6 +79,21 @@ describe('CurrencyController', () => {
       const result = await currencyController.getAllCurrencies('pt-BR', 'USD');
 
       expect(result).toStrictEqual(curreciesPtBrDto);
+    });
+
+    it('should return BadRequestException if provide a wrong currency code', async () => {
+      jest
+        .spyOn(currencyService, 'getAllCurrencies')
+        .mockRejectedValueOnce(
+          new BadRequestException('Provide a valid currency code'),
+        );
+
+      try {
+        await currencyController.getAllCurrencies('pt-BR', 'WRONG-CODE');
+      } catch (error) {
+        expect(error?.message).toEqual('Provide a valid currency code');
+        expect(error).toBeInstanceOf(BadRequestException);
+      }
     });
   });
 });
