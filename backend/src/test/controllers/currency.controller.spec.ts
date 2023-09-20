@@ -1,10 +1,13 @@
+import {
+  BadRequestException,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { HttpModule } from '@nestjs/axios';
 import { CurrencyDto } from '../../api/currency/dto/currency.dto';
 import { CurrencyService } from '../../api/currency/currency.service';
 import { CurrencyController } from '../../api/currency/currency.controller';
 import { CurrencyValidationService } from '../../common/services/currency-validation.service';
-import { BadRequestException } from '@nestjs/common';
 
 describe('CurrencyController', () => {
   let currencyService: CurrencyService;
@@ -93,6 +96,21 @@ describe('CurrencyController', () => {
       } catch (error) {
         expect(error?.message).toEqual('Provide a valid currency code');
         expect(error).toBeInstanceOf(BadRequestException);
+      }
+    });
+
+    it('should return InternalServerException if an error occurs while fetching currencies', async () => {
+      jest
+        .spyOn(currencyService, 'getAllCurrencies')
+        .mockRejectedValueOnce(
+          new InternalServerErrorException('Something went wrong'),
+        );
+
+      try {
+        await currencyController.getAllCurrencies('pt-BR', 'WRONG-CODE');
+      } catch (error) {
+        expect(error?.message).toEqual('Something went wrong');
+        expect(error).toBeInstanceOf(InternalServerErrorException);
       }
     });
   });
