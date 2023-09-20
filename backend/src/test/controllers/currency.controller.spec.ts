@@ -8,6 +8,8 @@ import { CurrencyDto } from '../../api/currency/dto/currency.dto';
 import { CurrencyService } from '../../api/currency/currency.service';
 import { CurrencyController } from '../../api/currency/currency.controller';
 import { CurrencyValidationService } from '../../common/services/currency-validation.service';
+import { CountryDto } from '../../api/currency/dto/country.dto';
+import { IGroupedCountry } from '../../utils/@types/grouped-country';
 
 describe('CurrencyController', () => {
   let currencyService: CurrencyService;
@@ -24,7 +26,7 @@ describe('CurrencyController', () => {
     currencyController = moduleRef.get<CurrencyController>(CurrencyController);
   });
 
-  const curreciesDto: CurrencyDto[] = [
+  const mockCurrenciesDto: CurrencyDto[] = [
     {
       country_name: 'Brazil',
       currency_code: 'BRL',
@@ -50,11 +52,11 @@ describe('CurrencyController', () => {
     it('should return an array of currency DTOs with the USD currency exchange rate', async () => {
       jest
         .spyOn(currencyService, 'getAllCurrencies')
-        .mockResolvedValueOnce(curreciesDto);
+        .mockResolvedValueOnce(mockCurrenciesDto);
 
       const result = await currencyController.getAllCurrencies('en', 'USD');
 
-      expect(result).toStrictEqual(curreciesDto);
+      expect(result).toStrictEqual(mockCurrenciesDto);
     });
 
     it('should return an array the currencies with data translated to brazilian portuguese', async () => {
@@ -112,6 +114,44 @@ describe('CurrencyController', () => {
         expect(error?.message).toEqual('Something went wrong');
         expect(error).toBeInstanceOf(InternalServerErrorException);
       }
+    });
+  });
+
+  describe('getAllCountries', () => {
+    const mockGroupedCountries: IGroupedCountry[] = [
+      {
+        group_name: 'B',
+        countries: [mockCurrenciesDto[0]],
+      },
+      {
+        group_name: 'U',
+        countries: [mockCurrenciesDto[1]],
+      },
+    ];
+
+    const mockCountriesDto: CountryDto[] = [
+      new CountryDto(mockCurrenciesDto[0]),
+      new CountryDto(mockCurrenciesDto[1]),
+    ];
+
+    it('should return all countries', async () => {
+      jest
+        .spyOn(currencyService, 'getAllCountries')
+        .mockResolvedValueOnce(mockCountriesDto);
+
+      const result = await currencyController.getAllCountries('en', false);
+
+      expect(result).toStrictEqual(mockCountriesDto);
+    });
+
+    it('should return all countries grouped by first letter', async () => {
+      jest
+        .spyOn(currencyService, 'getAllCountries')
+        .mockResolvedValueOnce(mockGroupedCountries);
+
+      const result = await currencyController.getAllCountries('en', true);
+
+      expect(result).toStrictEqual(mockGroupedCountries);
     });
   });
 });
