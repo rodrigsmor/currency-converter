@@ -60,7 +60,7 @@ export class CurrencyService {
       return currenciesDto;
     } catch (error) {
       throw new InternalServerErrorException(
-        error?.message || 'Something went wrong',
+        error?.message || 'An error occurred while fetching data',
       );
     }
   }
