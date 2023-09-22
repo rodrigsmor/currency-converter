@@ -9,7 +9,7 @@ import {
 } from '../../utils/@types';
 import { AxiosResponse } from 'axios';
 import { Test } from '@nestjs/testing';
-import { CurrencyDto } from '../../api/currency/dto';
+import { CountryDto, CurrencyDto } from '../../api/currency/dto';
 import { HttpModule, HttpService } from '@nestjs/axios';
 import { CurrencyService } from '../../api/currency/currency.service';
 import { CountriesTranslations } from '../../utils/constants/countries';
@@ -166,6 +166,21 @@ describe('CurrencyService', () => {
       const result = await currencyService.getAllCountries('en', true);
 
       expect(result).toEqual(expect.arrayContaining(expectedGroupedCountries));
+      expect(currencyService.getAllCountries).toBeDefined();
+    });
+
+    it('should return all the countries as Dto', async () => {
+      const expectedCountries: CountryDto[] = [
+        {
+          country_name: expect.any(String),
+          currency_code: expect.any(String),
+          monetary_symbol: expect.any(String),
+        },
+      ];
+
+      const result = await currencyService.getAllCountries('en', false);
+
+      expect(result).toEqual(expect.arrayContaining(expectedCountries));
       expect(currencyService.getAllCountries).toBeDefined();
     });
   });
