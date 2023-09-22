@@ -85,6 +85,7 @@ export class CurrencyService {
           group_name: letter,
           countries,
         };
+
         groupedCountries.push(groupedCountry);
       });
 
