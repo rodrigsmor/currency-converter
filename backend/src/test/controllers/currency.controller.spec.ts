@@ -4,12 +4,11 @@ import {
 } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { HttpModule } from '@nestjs/axios';
-import { CurrencyDto } from '../../api/currency/dto/currency.dto';
+import { IGroupedCountry } from '../../utils/@types';
+import { CurrencyDto, CountryDto } from '../../api/currency/dto';
 import { CurrencyService } from '../../api/currency/currency.service';
 import { CurrencyController } from '../../api/currency/currency.controller';
 import { CurrencyValidationService } from '../../common/services/currency-validation.service';
-import { CountryDto } from '../../api/currency/dto/country.dto';
-import { IGroupedCountry } from '../../utils/@types/grouped-country';
 
 describe('CurrencyController', () => {
   let currencyService: CurrencyService;
