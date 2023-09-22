@@ -1,28 +1,17 @@
 import {
+  CurrencyType,
+  IExchangeRateResponse,
+  IGroupedCountry,
+} from '../../utils/@types';
+import {
   Injectable,
   BadRequestException,
   InternalServerErrorException,
 } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { CountryDto, CurrencyDto } from './dto';
-import { CurrenciesEnum } from '../../utils/enums';
 import { CurrencyValidationService } from '../../common/services';
-import { CurrencyType, IGroupedCountry } from '../../utils/@types';
 import { CountriesTranslations } from '../../utils/constants/countries';
-
-interface IExchangeRateResponse {
-  result: string;
-  documentation: string;
-  terms_of_use: string;
-  time_last_update_unix: number;
-  time_last_update_utc: Date;
-  time_next_update_unix: number;
-  time_next_update_utc: Date;
-  base_code: string;
-  conversion_rates: {
-    [key in CurrenciesEnum]?: number;
-  };
-}
 
 @Injectable()
 export class CurrencyService {
@@ -60,7 +49,7 @@ export class CurrencyService {
       return currenciesDto;
     } catch (error) {
       throw new InternalServerErrorException(
-        error?.message || 'Something went wrong',
+        error?.message || 'An error occurred while fetching data',
       );
     }
   }

@@ -1,7 +1,7 @@
+import { Currencies } from '../../@types';
 import { EnCountries } from './en-countries';
 import { TranslationEnum } from '../../enums';
 import { PtBrCountries } from './pt-BR-countries';
-import { Currencies } from '../../@types/currencies';
 
 type ICountriesTranslations = {
   [key in TranslationEnum]: Currencies;
