@@ -1,4 +1,4 @@
-import { CurrencyType } from '../../../utils/@types/currency';
+import { CurrencyType } from '../../../utils/@types';
 
 export class CurrencyDto implements CurrencyType {
   unit_value: number;

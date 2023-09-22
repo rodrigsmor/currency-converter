@@ -1,4 +1,4 @@
-import { Currencies } from '../../@types/currencies';
+import { Currencies } from '../../@types';
 
 export const PtBrCountries: Currencies = {
   EUR: {

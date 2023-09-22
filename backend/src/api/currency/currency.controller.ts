@@ -1,8 +1,8 @@
 import { CountryDto, CurrencyDto } from './dto';
 import { Language } from '../../utils/decorators';
 import { CurrencyService } from './currency.service';
+import { IGroupedCountry } from '../../utils/@types';
 import { Controller, Get, Query } from '@nestjs/common';
-import { IGroupedCountry } from '../../utils/@types/grouped-country';
 
 @Controller('/api/v1/currency')
 export class CurrencyController {
