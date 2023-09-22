@@ -4,7 +4,7 @@ import { TranslationEnum } from '../../enums';
 import { PtBrCountries } from './pt-BR-countries';
 
 type ICountriesTranslations = {
-  [key in TranslationEnum]: Currencies;
+  [key in TranslationEnum as string]: Currencies;
 };
 
 export const CountriesTranslations: ICountriesTranslations = {
