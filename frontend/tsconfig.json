@@ -21,6 +21,7 @@
     "paths": {
       "@i18n": ["./src/i18n/*"],
       "@utils": ["./src/utils/*"],
+      "@style": ["./src/style/*"],
       "@configs": ["./src/configs/*"],
       "@components": ["./src/components/*"]
     }
