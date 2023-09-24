@@ -9,8 +9,8 @@ import {
 } from '../../utils/@types';
 import { AxiosResponse } from 'axios';
 import { Test } from '@nestjs/testing';
-import { CountryDto, CurrencyDto } from '../../api/currency/dto';
 import { HttpModule, HttpService } from '@nestjs/axios';
+import { CountryDto, CurrencyDto } from '../../api/currency/dto';
 import { CurrencyService } from '../../api/currency/currency.service';
 import { CountriesTranslations } from '../../utils/constants/countries';
 import { CurrencyValidationService } from '../../common/services/currency-validation.service';
@@ -44,6 +44,12 @@ describe('CurrencyService', () => {
     currencyValidationService = moduleRef.get<CurrencyValidationService>(
       CurrencyValidationService,
     );
+  });
+
+  afterEach(() => {
+    jest.resetModules();
+    jest.restoreAllMocks();
+    mockHttpService.axiosRef.get.mockReset();
   });
 
   const lang = 'en';
@@ -182,6 +188,62 @@ describe('CurrencyService', () => {
 
       expect(result).toEqual(expect.arrayContaining(expectedCountries));
       expect(currencyService.getAllCountries).toBeDefined();
+    });
+  });
+
+  describe('convertCurrencies', () => {
+    const mock_value = 200;
+    const base_country = 'USD';
+    const target_country = 'BRL';
+
+    it('should throw BadRequestException if one of the provided codes is not valid', async () => {
+      jest
+        .spyOn(currencyValidationService, 'areCurrenciesCodesValids')
+        .mockResolvedValueOnce(false);
+      mockHttpService.axiosRef.get.mockResolvedValueOnce(null);
+
+      try {
+        await currencyService.convertCurrency(
+          'en',
+          base_country,
+          target_country,
+          mock_value,
+        );
+      } catch (error) {
+        expect(error).toBeInstanceOf(BadRequestException);
+        expect(error.message).toStrictEqual(
+          'The codes provided are not valids.',
+        );
+        expect(
+          currencyValidationService.areCurrenciesCodesValids,
+        ).toBeCalledWith([base_country, target_country]);
+        expect(mockHttpService.axiosRef.get).not.toBeCalled();
+      }
+    });
+
+    it('should throw BadRequestException if one of the codes provided are not valid', async () => {
+      jest
+        .spyOn(currencyValidationService, 'areCurrenciesCodesValids')
+        .mockResolvedValueOnce(false);
+      mockHttpService.axiosRef.get.mockResolvedValueOnce(null);
+
+      try {
+        await currencyService.convertCurrency(
+          'en',
+          base_country,
+          target_country,
+          mock_value,
+        );
+      } catch (error) {
+        expect(error).toBeInstanceOf(BadRequestException);
+        expect(error.message).toStrictEqual(
+          'The codes provided are not valids.',
+        );
+        expect(
+          currencyValidationService.areCurrenciesCodesValids,
+        ).toBeCalledWith([base_country, target_country]);
+        expect(mockHttpService.axiosRef.get).not.toBeCalled();
+      }
     });
   });
 });
