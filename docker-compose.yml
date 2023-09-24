@@ -3,7 +3,7 @@ services:
   backend:
     build: ./backend
     ports:
-      - 3000:3000
+      - 3001:3001
     environment:
       EXCHANGE_RATE_ACCESS_KEY: ${EXCHANGE_RATE_ACCESS_KEY}
       EXCHANGE_RATE_BASE_URL: ${EXCHANGE_RATE_BASE_URL}
@@ -14,3 +14,8 @@ services:
       dockerfile: Dockerfile.tests
     depends_on:
       - backend
+
+  frontend:
+    build: ./frontend
+    ports:
+      - 3000:3000
