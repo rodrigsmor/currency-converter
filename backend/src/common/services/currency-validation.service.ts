@@ -8,6 +8,12 @@ export class CurrencyValidationService {
   }
 
   async areCurrenciesCodesValids(currencies: string[]): Promise<boolean> {
-    return currencies.every((currency) => this.isCurrencyCodeValid(currency));
+    const validations = currencies.map(
+      async (currency) => await this.isCurrencyCodeValid(currency),
+    );
+
+    const results = await Promise.all(validations);
+
+    return results.every((isValid) => isValid);
   }
 }
