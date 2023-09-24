@@ -1,8 +1,8 @@
-import { CountryDto, CurrencyDto } from './dto';
 import { Language } from '../../utils/decorators';
 import { CurrencyService } from './currency.service';
 import { IGroupedCountry } from '../../utils/@types';
-import { Controller, Get, Query } from '@nestjs/common';
+import { ConversionDto, CountryDto, CurrencyDto } from './dto';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 
 @Controller('/api/v1/currency')
 export class CurrencyController {
@@ -22,5 +22,20 @@ export class CurrencyController {
     @Query('alphabeticalGrouping') isGrouped: boolean,
   ): Promise<CountryDto[] | IGroupedCountry[]> {
     return await this.currencyService.getAllCountries(lang, isGrouped);
+  }
+
+  @Get('/convert/:base_country/:target_country')
+  async convertCurrency(
+    @Language() lang: string,
+    @Param('base_country') base_country: string,
+    @Param('target_country') target_country: string,
+    @Query('value') value: number,
+  ): Promise<ConversionDto> {
+    return await this.currencyService.convertCurrency(
+      lang,
+      base_country,
+      target_country,
+      value,
+    );
   }
 }

@@ -9,7 +9,7 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
-import { CountryDto, CurrencyDto } from './dto';
+import { ConversionDto, CountryDto, CurrencyDto } from './dto';
 import { CurrencyValidationService } from '../../common/services';
 import { CountriesTranslations } from '../../utils/constants/countries';
 
@@ -92,6 +92,36 @@ export class CurrencyService {
       return groupedCountries;
     } else {
       return currencies.map((country) => new CountryDto(country));
+    }
+  }
+
+  async convertCurrency(
+    lang: string,
+    base_country: string,
+    target_country: string,
+    value: number,
+  ): Promise<ConversionDto> {
+    const areCodesValids =
+      await this.currencyValidation.areCurrenciesCodesValids([
+        base_country,
+        target_country,
+      ]);
+
+    if (!areCodesValids)
+      throw new BadRequestException('The codes provided are not valids.');
+
+    try {
+      const {
+        data: { conversion_rate, conversion_result },
+      } = await this.httpService.axiosRef.get<IExchangeRateResponse>(
+        `/pair/${base_country}/${target_country}/${value}`,
+      );
+
+      return new ConversionDto(conversion_result, conversion_rate);
+    } catch (error) {
+      throw new InternalServerErrorException(
+        error?.message || 'An error occurred while converting currencies',
+      );
     }
   }
 

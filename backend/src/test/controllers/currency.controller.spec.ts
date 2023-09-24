@@ -5,7 +5,7 @@ import {
 import { Test } from '@nestjs/testing';
 import { HttpModule } from '@nestjs/axios';
 import { IGroupedCountry } from '../../utils/@types';
-import { CurrencyDto, CountryDto } from '../../api/currency/dto';
+import { CurrencyDto, CountryDto, ConversionDto } from '../../api/currency/dto';
 import { CurrencyService } from '../../api/currency/currency.service';
 import { CurrencyController } from '../../api/currency/currency.controller';
 import { CurrencyValidationService } from '../../common/services/currency-validation.service';
@@ -151,6 +151,64 @@ describe('CurrencyController', () => {
       const result = await currencyController.getAllCountries('en', true);
 
       expect(result).toStrictEqual(mockGroupedCountries);
+    });
+  });
+
+  describe('convertCurrency', () => {
+    const mockConversionDto: ConversionDto = {
+      result: 986.98,
+      unit_value: 4.98,
+    };
+
+    it('should return the value converted', async () => {
+      jest
+        .spyOn(currencyService, 'convertCurrency')
+        .mockResolvedValueOnce(mockConversionDto);
+
+      const result = await currencyController.convertCurrency(
+        'en',
+        'USD',
+        'BRL',
+        200,
+      );
+
+      expect(result).toStrictEqual(mockConversionDto);
+    });
+
+    it('should throw a BadRequest if provides an invalid currency code', async () => {
+      jest
+        .spyOn(currencyService, 'convertCurrency')
+        .mockRejectedValueOnce(
+          new BadRequestException('The codes provided are not valids.'),
+        );
+
+      try {
+        await currencyController.convertCurrency('en', 'INVALID', 'BRL', 200);
+      } catch (error) {
+        expect(error).toBeInstanceOf(BadRequestException);
+        expect(error.message).toStrictEqual(
+          'The codes provided are not valids.',
+        );
+      }
+    });
+
+    it('should throw an InternalServerError if currency conversion fails', async () => {
+      jest
+        .spyOn(currencyService, 'convertCurrency')
+        .mockRejectedValueOnce(
+          new InternalServerErrorException(
+            'An error occurred while converting currencies',
+          ),
+        );
+
+      try {
+        await currencyController.convertCurrency('en', 'USD', 'BRL', 200);
+      } catch (error) {
+        expect(error).toBeInstanceOf(InternalServerErrorException);
+        expect(error.message).toStrictEqual(
+          'An error occurred while converting currencies',
+        );
+      }
     });
   });
 });

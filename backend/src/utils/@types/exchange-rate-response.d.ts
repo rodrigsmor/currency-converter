@@ -9,5 +9,8 @@ export interface IExchangeRateResponse {
   time_next_update_unix: number;
   time_next_update_utc: Date;
   base_code: string;
-  conversion_rates: IConversionRate;
+  target_code?: string;
+  conversion_rates?: IConversionRate;
+  conversion_rate?: number;
+  conversion_result?: number;
 }
