@@ -11,6 +11,6 @@ async function bootstrap() {
   app.use(json({ limit: '100mb' }));
   app.use(urlencoded({ limit: '100mb', extended: true }));
 
-  await app.listen(3000);
+  await app.listen(process.env.BACKEND_HOST ?? 3000);
 }
 bootstrap();

@@ -3,10 +3,11 @@ services:
   backend:
     build: ./backend
     ports:
-      - 3000:3000
+      - ${BACKEND_HOST}:${BACKEND_HOST}
     environment:
       EXCHANGE_RATE_ACCESS_KEY: ${EXCHANGE_RATE_ACCESS_KEY}
       EXCHANGE_RATE_BASE_URL: ${EXCHANGE_RATE_BASE_URL}
+      BACKEND_HOST: ${BACKEND_HOST}
 
   backend-tests:
     build:
@@ -14,3 +15,6 @@ services:
       dockerfile: Dockerfile.tests
     depends_on:
       - backend
+
+  frontend:
+    build: ./frontend
