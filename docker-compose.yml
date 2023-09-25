@@ -3,10 +3,11 @@ services:
   backend:
     build: ./backend
     ports:
-      - 3001:3001
+      - ${BACKEND_HOST}:${BACKEND_HOST}
     environment:
       EXCHANGE_RATE_ACCESS_KEY: ${EXCHANGE_RATE_ACCESS_KEY}
       EXCHANGE_RATE_BASE_URL: ${EXCHANGE_RATE_BASE_URL}
+      BACKEND_HOST: ${BACKEND_HOST}
 
   backend-tests:
     build:
@@ -17,5 +18,3 @@ services:
 
   frontend:
     build: ./frontend
-    ports:
-      - 3000:3000
