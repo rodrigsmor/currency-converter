@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
+    height: 100dvh;
     max-width: 100vw;
     overflow-x: hidden;
     background: ${({ theme }) => theme.colors.gradients.primaryToSecondary};
