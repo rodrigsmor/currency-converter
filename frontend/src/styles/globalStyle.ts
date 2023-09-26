@@ -1,13 +1,17 @@
+import { Manrope } from 'next/font/google';
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+const manrope = Manrope({
+  weight: ['400', '500', '600', '700', '800'],
+  subsets: ['latin']
+})
 
+export const GlobalStyle = createGlobalStyle`
  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Manrope', sans-serif;
+    font-family: ${manrope.style.fontFamily};
   }
 
   html {
