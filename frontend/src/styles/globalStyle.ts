@@ -13,6 +13,6 @@ export const GlobalStyle = createGlobalStyle`
   html {
     max-width: 100vw;
     overflow-x: hidden;
-    background-color: ${({ theme }) => theme.colors.background};
+    background: ${({ theme }) => theme.colors.gradients.primaryToSecondary};
   }
 `;
