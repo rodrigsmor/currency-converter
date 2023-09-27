@@ -6,6 +6,7 @@ import { GlobalStyle } from '@/styles/globalStyle';
 import { useServerInsertedHTML } from 'next/navigation';
 import { CurrentThemeProvider } from '@/contexts/CurrentThemeProvider';
 import { ServerStyleSheet, StyleSheetManager, ThemeProvider } from 'styled-components';
+import { LanguageContextProvider } from '@/contexts/LanguageContextProvider';
 
 export default function StyledComponentsRegistry({
   children,
@@ -24,12 +25,14 @@ export default function StyledComponentsRegistry({
 
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
-      <CurrentThemeProvider>
-        <ThemeProvider theme={theme.light}>
-          <GlobalStyle />
-          {children}
-        </ThemeProvider>
-      </CurrentThemeProvider>
+      <LanguageContextProvider>
+        <CurrentThemeProvider>
+          <ThemeProvider theme={theme.light}>
+            <GlobalStyle />
+            {children}
+          </ThemeProvider>
+        </CurrentThemeProvider>
+      </LanguageContextProvider>
     </StyleSheetManager>
   )
 }
