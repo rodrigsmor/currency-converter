@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { CurrentThemeProvider } from '@/contexts/CurrentThemeProvider'
+import { LanguageContextProvider } from '@/contexts/LanguageContextProvider'
 import StyledComponentsRegistry from '@/configs/libs/StyledComponentsRegistry'
 
 export const metadata: Metadata = {
@@ -14,9 +16,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StyledComponentsRegistry>
-          {children}
-        </StyledComponentsRegistry>
+        <CurrentThemeProvider>
+          <LanguageContextProvider>
+            <StyledComponentsRegistry>
+              {children}
+            </StyledComponentsRegistry>
+          </LanguageContextProvider>
+        </CurrentThemeProvider>
       </body>
     </html>
   )
