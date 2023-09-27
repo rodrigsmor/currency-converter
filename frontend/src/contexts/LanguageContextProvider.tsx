@@ -1,3 +1,5 @@
+'use client'
+
 import { LangEnum } from '@/utils/enums/lang.enum';
 import { PropsWithChildren, createContext, useEffect, useState } from 'react';
 

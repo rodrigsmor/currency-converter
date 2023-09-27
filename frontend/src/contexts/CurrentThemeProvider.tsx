@@ -1,17 +1,21 @@
-import { PropsWithChildren, createContext, useEffect, useState } from 'react';
+'use client'
 
-interface CurrentThemeProps {
-  currentTheme: 'light' | 'dark' | string;
-  setCurrentTheme: (value: 'light' | 'dark' | string) => void;
+import { Dispatch, PropsWithChildren, createContext, useEffect, useState } from 'react';
+
+export interface CurrentThemeProps {
+  isLightTheme: boolean;
+  currentTheme: 'light' | 'dark' ;
+  setCurrentTheme: Dispatch<'light' | 'dark'>;
 }
 
 export const CurrentTheme = createContext<CurrentThemeProps>({
   currentTheme: 'light',
-  setCurrentTheme: () => { }
+  setCurrentTheme: () => {},
+  isLightTheme: true,
 });
 
 export function CurrentThemeProvider({ children }: PropsWithChildren) {
-  const [currentTheme, setCurrentTheme] = useState<'light' | 'dark' | string>(() => {
+  const [currentTheme, setCurrentTheme] = useState<'light' | 'dark'>(() => {
     let storageValue = null;
 
     if (typeof window !== 'undefined') {
@@ -35,6 +39,7 @@ export function CurrentThemeProvider({ children }: PropsWithChildren) {
       value={{
         currentTheme,
         setCurrentTheme,
+        isLightTheme: currentTheme === 'light',
       }}
     >
       {children}
