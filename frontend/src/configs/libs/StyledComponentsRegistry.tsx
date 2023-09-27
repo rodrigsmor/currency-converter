@@ -5,8 +5,8 @@ import React, { useState } from 'react';
 import { GlobalStyle } from '@/styles/globalStyle';
 import { useServerInsertedHTML } from 'next/navigation';
 import { CurrentThemeProvider } from '@/contexts/CurrentThemeProvider';
-import { ServerStyleSheet, StyleSheetManager, ThemeProvider } from 'styled-components';
 import { LanguageContextProvider } from '@/contexts/LanguageContextProvider';
+import { ServerStyleSheet, StyleSheetManager, ThemeProvider } from 'styled-components';
 
 export default function StyledComponentsRegistry({
   children,
