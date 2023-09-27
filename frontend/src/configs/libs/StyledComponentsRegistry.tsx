@@ -4,6 +4,7 @@ import { theme } from '@/styles/theme';
 import React, { useState } from 'react';
 import { GlobalStyle } from '@/styles/globalStyle';
 import { useServerInsertedHTML } from 'next/navigation';
+import { CurrentThemeProvider } from '@/contexts/CurrentThemeProvider';
 import { ServerStyleSheet, StyleSheetManager, ThemeProvider } from 'styled-components';
 
 export default function StyledComponentsRegistry({
@@ -23,10 +24,12 @@ export default function StyledComponentsRegistry({
 
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
-      <ThemeProvider theme={theme.light}>
-        <GlobalStyle />
-        {children}
-      </ThemeProvider>
+      <CurrentThemeProvider>
+        <ThemeProvider theme={theme.light}>
+          <GlobalStyle />
+          {children}
+        </ThemeProvider>
+      </CurrentThemeProvider>
     </StyleSheetManager>
   )
 }
