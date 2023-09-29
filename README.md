@@ -10,6 +10,8 @@ This is a simple currency converter application that supports over 160 currencie
 
 - [📖 Description](#-description)
 - [📜 Table of contents](#-table-of-contents)
+- [⚒️ Technologies](#️-technologies)
+- [🖼️ Screenshots](#️-screenshots)
 - [🏃🏽‍♂️ How to run](#️-how-to-run)
   - [⚙️ Preparing the environment](#️-preparing-the-environment)
   - [🚀 Running the application](#-running-the-application)
@@ -66,6 +68,13 @@ To do this, in the root of the project you have created, simply create a file ca
 EXCHANGE_RATE_ACCESS_KEY = "the credential to access exchangerate-api services"
 EXCHANGE_RATE_BASE_URL = "the base URL of the exchange rate api"
 ````
+
+Finally, you need to create an environment variable to define which port the back-end will run on. To do this, create the following environment variable in your `.env`.
+
+````
+BACKEND_HOST="the back-end host port'
+````
+> 💭 **Considerations:** by default the front-end will be running on port 3000.
 
 With these simple settings, your application should already be close to working perfectly.
 
