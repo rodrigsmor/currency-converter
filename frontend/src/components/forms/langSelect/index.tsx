@@ -49,7 +49,7 @@ export function LangSelect() {
                 role='option'
                 aria-selected={isSelected}
               >
-                <button onClick={e => setLang(langOption?.lang)}>
+                <button disabled={isSelected} onClick={() => [setLang(langOption?.lang), setIsSelectExpanded(false)]}>
                   <div aria-label={`${langOption?.label} flag miniature`} className={`fi fi-${langOption?.countryCode} fis country-flag-lang`}></div>
                   <span
                     className='option-language_CODE'
