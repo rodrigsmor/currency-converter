@@ -16,18 +16,14 @@ export const CurrentTheme = createContext<CurrentThemeProps>({
 
 export function CurrentThemeProvider({ children }: PropsWithChildren) {
   const [currentTheme, setCurrentTheme] = useState<'light' | 'dark'>(() => {
-    let storageValue = null;
+    // let storageValue = null;
 
-    if (typeof window !== 'undefined') {
-      storageValue = localStorage.getItem('theme@currency-converter');
-    }
+    // if (typeof window !== 'undefined') {
+    //   storageValue = localStorage.getItem('theme@currency-converter');
+    // }
 
-    if (storageValue) {
-      return JSON.parse(storageValue);
-    }
-    else {
-      return 'light';
-    }
+    // return storageValue ? JSON.parse(storageValue) : 'light';
+    return 'light';
   });
 
   useEffect(() => {
