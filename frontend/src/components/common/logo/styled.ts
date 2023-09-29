@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SvgContainer = styled.svg`
+export const SvgContainer = styled.svg.attrs(props => ({ className: props.className }))`
   width: 40px;
   height: 40px;
 
@@ -10,7 +10,7 @@ export const SvgContainer = styled.svg`
 
   &.dark {
     > path {
-      fill: ${(props) => `${props?.theme?.colors?.typography}${props?.theme?.opacities?.[80]}` };
+      fill: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[80]}` };
     }
   }
 
