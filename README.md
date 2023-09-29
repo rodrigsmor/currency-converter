@@ -10,6 +10,8 @@ This is a simple currency converter application that supports over 160 currencie
 
 - [📖 Description](#-description)
 - [📜 Table of contents](#-table-of-contents)
+- [⚒️ Technologies](#️-technologies)
+- [🖼️ Screenshots](#️-screenshots)
 - [🏃🏽‍♂️ How to run](#️-how-to-run)
   - [⚙️ Preparing the environment](#️-preparing-the-environment)
   - [🚀 Running the application](#-running-the-application)
@@ -30,7 +32,9 @@ This is a simple currency converter application that supports over 160 currencie
   <img src="https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white" alt="Nest.js" />
   <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
   <img src="https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white" alt="Jest.js" />
+  <img src="https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white" alt="React Query" />
   <img src="https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white" alt="Swagger" />
+  <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" alt="Styled components" />
   <img src="https://img.shields.io/badge/i18n-0781b5?style=for-the-badge" alt="i18n" />
 </div>
 
@@ -67,6 +71,13 @@ EXCHANGE_RATE_ACCESS_KEY = "the credential to access exchangerate-api services"
 EXCHANGE_RATE_BASE_URL = "the base URL of the exchange rate api"
 ````
 
+Finally, you need to create an environment variable to define which port the back-end will run on. To do this, create the following environment variable in your `.env`.
+
+````
+BACKEND_HOST="the back-end host port'
+````
+> 💭 **Considerations:** by default the front-end will be running on port 3000.
+
 With these simple settings, your application should already be close to working perfectly.
 
 ### 🚀 Running the application
@@ -102,10 +113,11 @@ So that's it! It's running 🎉
 
 ## 🌍  Support links and tutorials
 
+- 🔗 Next.js documentation: https://nextjs.org/docs/
 - 🔗 Nest.js documentation: https://docs.nestjs.com/
 - 🔗 Docker installation tutorial: https://docs.docker.com/get-docker/
+- 🔗 Styled components documentation: https://styled-components.com/docs
 - 🔗 ExchangeRate API documentation: https://www.exchangerate-api.com/docs/overview
-
 
 ## 👨🏽‍🦱 Author
 
