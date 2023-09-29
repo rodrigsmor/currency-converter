@@ -22,5 +22,8 @@
     "remixicon-react": "^1.0.0",
     "styled-components": "^6.0.8",
     "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "cypress": "^13.3.0"
   }
 }
