@@ -1,20 +1,23 @@
 import { LangEnum } from "../enums/lang.enum"
 
-type LangList = {
+export type Language = {
   lang: LangEnum;
   label: string;
   langCode: string;
+  countryCode: string;
 }
 
-export const langList: LangList[] = [
+export const langList: Language[] = [
   {
     lang: LangEnum.en,
     label: 'English',
-    langCode: 'en',
+    langCode: 'EN',
+    countryCode: 'us',
   },
   {
     lang: LangEnum['pt-BR'],
     label: 'Brazilian Portuguese',
-    langCode: 'pt-BR',
+    langCode: 'PT',
+    countryCode: 'br'
   }
 ]
