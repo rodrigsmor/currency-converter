@@ -115,6 +115,7 @@ So that's it! It's running 🎉
 
 - 🔗 Next.js documentation: https://nextjs.org/docs/
 - 🔗 Nest.js documentation: https://docs.nestjs.com/
+- 🔗 Jest documentation: https://jestjs.io/docs/getting-started
 - 🔗 Docker installation tutorial: https://docs.docker.com/get-docker/
 - 🔗 Styled components documentation: https://styled-components.com/docs
 - 🔗 ExchangeRate API documentation: https://www.exchangerate-api.com/docs/overview
