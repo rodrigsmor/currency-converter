@@ -118,6 +118,8 @@ So that's it! It's running 🎉
 - 🔗 Docker installation tutorial: https://docs.docker.com/get-docker/
 - 🔗 Styled components documentation: https://styled-components.com/docs
 - 🔗 ExchangeRate API documentation: https://www.exchangerate-api.com/docs/overview
+- 🔗 Cypress Component Testing: https://docs.cypress.io/guides/component-testing/getting-started
+- 🔗 Next.js Testing optimization: https://nextjs.org/docs/pages/building-your-application/optimizing/testing
 
 ## 👨🏽‍🦱 Author
 
