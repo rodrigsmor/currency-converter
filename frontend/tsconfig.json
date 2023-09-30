@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "baseUrl": "./src",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -8,7 +9,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -19,12 +20,12 @@
       }
     ],
     "paths": {
-      "@/i18n/*": ["./src/i18n/*"],
-      "@/utils/*": ["./src/utils/*"],
-      "@/styles/*": ["./src/styles/*"],
-      "@/configs/*": ["./src/configs/*"],
-      "@/contexts/*": ["./src/contexts/*"],
-      "@/components/*": ["./src/components/*"],
+      "@/i18n/*": ["i18n/*"],
+      "@/utils/*": ["utils/*"],
+      "@/styles/*": ["styles/*"],
+      "@/configs/*": ["configs/*"],
+      "@/contexts/*": ["contexts/*"],
+      "@/components/*": ["components/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
