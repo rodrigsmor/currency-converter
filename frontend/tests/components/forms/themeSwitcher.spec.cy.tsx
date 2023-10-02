@@ -1,4 +1,5 @@
 import { ThemeSwitcher } from "@/components/forms/themeSwitcher";
+import { CurrentThemeProvider } from "@/contexts/CurrentThemeProvider";
 
 describe('<ThemeSwitcher/>', () => {
   it('should render a ThemeSwitcher button when isButton is set to true', () => {
@@ -15,4 +16,18 @@ describe('<ThemeSwitcher/>', () => {
       expect(buttonText).to.match(/^(light|dark)$/);
     });
   })
+
+  it('should toggle theme when click on theme button', () => {;
+    cy.mount(
+      <CurrentThemeProvider>
+        <ThemeSwitcher isButton={true} />
+      </CurrentThemeProvider>
+    );
+
+    cy.get('button').should('contain.text', 'light');
+
+    cy.get('button').click();
+
+    cy.get('button').should('contain.text', 'dark');
+  });
 });
