@@ -16,6 +16,8 @@ This is a simple currency converter application that supports over 160 currencie
   - [⚙️ Preparing the environment](#️-preparing-the-environment)
   - [🚀 Running the application](#-running-the-application)
   - [✅ Run tests](#-run-tests)
+- [📚 Documentation](#-documentation)
+  - [🔌 API Documentation](#-api-documentation)
 - [🌍  Support links and tutorials](#--support-links-and-tutorials)
 - [👨🏽‍🦱 Author](#-author)
 
@@ -112,6 +114,18 @@ docker-compose up frontend-tests (not available yet)
 ````
 
 So that's it! It's running 🎉
+
+## 📚 Documentation
+
+If you want to access the application's documentation, you'll need to follow these steps:
+
+### 🔌 API Documentation
+
+To access the API documentation, you should first follow the previous steps to set up and run the application correctly. Once the application is properly configured and running, you only need to open the `/documentation` route on the backend server in your preferred web browser. For example:
+
+```
+http://localhost:3001/documentation
+```
 
 ## 🌍  Support links and tutorials
 
