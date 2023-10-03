@@ -131,9 +131,11 @@ http://localhost:3001/documentation
 
 - 🔗 Next.js documentation: https://nextjs.org/docs/
 - 🔗 Nest.js documentation: https://docs.nestjs.com/
+- 🔗 Swagger documentation: https://swagger.io/docs/
 - 🔗 Jest documentation: https://jestjs.io/docs/getting-started
 - 🔗 Docker installation tutorial: https://docs.docker.com/get-docker/
 - 🔗 Styled components documentation: https://styled-components.com/docs
+- 🔗 Swagger configuration in Nestjs: https://docs.nestjs.com/openapi/introduction
 - 🔗 ExchangeRate API documentation: https://www.exchangerate-api.com/docs/overview
 - 🔗 Cypress Component Testing: https://docs.cypress.io/guides/component-testing/getting-started
 - 🔗 Next.js Testing optimization: https://nextjs.org/docs/pages/building-your-application/optimizing/testing
