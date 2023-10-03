@@ -21,6 +21,7 @@ export function LangSelect() {
       <LangSelectToggle
         type='button'
         aria-haspopup={true}
+        id='Lang-Select_Toggle'
         aria-expanded={isSelectExpanded}
         onClick={() => setIsSelectExpanded(!isSelectExpanded)}
       >
@@ -37,6 +38,7 @@ export function LangSelect() {
         role='listbox'
         aria-hidden={!isSelectExpanded}
         aria-labelledby='language-selected_code'
+        id='Lang-Select_List'
       >
         {
           langList.map((langOption) => {
@@ -44,12 +46,12 @@ export function LangSelect() {
 
             return (
               <LangOption
-                key={langOption?.langCode}
-                id='option1'
                 role='option'
+                id={`option-${langOption.langCode}`}
+                key={langOption?.langCode}
                 aria-selected={isSelected}
               >
-                <button disabled={isSelected} onClick={() => [setLang(langOption?.lang), setIsSelectExpanded(false)]}>
+                <button disabled={isSelected || !isSelectExpanded} onClick={() => [setLang(langOption?.lang), setIsSelectExpanded(false)]}>
                   <div aria-label={`${langOption?.label} flag miniature`} className={`fi fi-${langOption?.countryCode} fis country-flag-lang`}></div>
                   <span
                     className='option-language_CODE'
