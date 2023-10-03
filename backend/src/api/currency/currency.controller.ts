@@ -16,8 +16,9 @@ import { Language } from '../../utils/decorators';
 import { CurrencyService } from './currency.service';
 import { IGroupedCountry } from '../../utils/@types';
 import { ConversionDto, CountryDto, CurrencyDto } from './dto';
-import { CurrenciesEnum } from '../../utils/enums/currencies.enum';
-import { TranslationEnum } from '../../utils/enums/translation.enum';
+import { CurrenciesEnum, TranslationEnum } from '../../utils/enums';
+
+type CountryResponse = CountryDto | IGroupedCountry;
 
 @Controller('/api/v1/currency')
 export class CurrencyController {
@@ -32,7 +33,7 @@ export class CurrencyController {
   @ApiResponse({
     status: 200,
     isArray: true,
-    type: Array<CurrencyDto>,
+    type: CurrencyDto,
     description: 'An array with all available currencies.',
   })
   @ApiHeader({
@@ -62,7 +63,30 @@ export class CurrencyController {
   @Get('/countries')
   @HttpCode(HttpStatus.OK)
   @ApiOperation({
-    description: '',
+    description: `It returns all countries. You can group them alphabetically by the countries' initial letter or simply receive them as an array.`,
+  })
+  @ApiHeader({
+    name: 'accept-language',
+    required: false,
+    example: 'en',
+    enum: TranslationEnum,
+    allowEmptyValue: true,
+    description: 'The language in which you would like to receive data',
+  })
+  @ApiResponse({
+    status: 200,
+    isArray: true,
+    type: CountryDto,
+    description:
+      'By default it will return an array with countries, however it is possible to group them in alphabetical order if "alphabeticalGrouping" is equal to true.',
+  })
+  @ApiQuery({
+    type: Boolean,
+    example: true,
+    required: true,
+    name: 'alphabeticalGrouping',
+    description:
+      'whether you want to receive the data grouped by the initial letter of the country or receive just an array with the countries.',
   })
   async getAllCountries(
     @Language() lang: string,
