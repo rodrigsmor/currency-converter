@@ -1025,7 +1025,7 @@ export const EnCountries: Currencies = {
   },
   USD: {
     unit_value: 0,
-    country_name: 'United States',
+    country_name: 'United States of America',
     currency_code: 'USD',
     currency_name: 'United States Dollar',
     monetary_symbol: '$',

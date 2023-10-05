@@ -16,6 +16,8 @@ This is a simple currency converter application that supports over 160 currencie
   - [⚙️ Preparing the environment](#️-preparing-the-environment)
   - [🚀 Running the application](#-running-the-application)
   - [✅ Run tests](#-run-tests)
+- [📚 Documentation](#-documentation)
+  - [🔌 API Documentation](#-api-documentation)
 - [🌍  Support links and tutorials](#--support-links-and-tutorials)
 - [👨🏽‍🦱 Author](#-author)
 
@@ -113,13 +115,27 @@ docker-compose up frontend-tests (not available yet)
 
 So that's it! It's running 🎉
 
+## 📚 Documentation
+
+If you want to access the application's documentation, you'll need to follow these steps:
+
+### 🔌 API Documentation
+
+To access the API documentation, you should first follow the previous steps to set up and run the application correctly. Once the application is properly configured and running, you only need to open the `/documentation` route on the backend server in your preferred web browser. For example:
+
+```
+http://localhost:3001/documentation
+```
+
 ## 🌍  Support links and tutorials
 
 - 🔗 Next.js documentation: https://nextjs.org/docs/
 - 🔗 Nest.js documentation: https://docs.nestjs.com/
+- 🔗 Swagger documentation: https://swagger.io/docs/
 - 🔗 Jest documentation: https://jestjs.io/docs/getting-started
 - 🔗 Docker installation tutorial: https://docs.docker.com/get-docker/
 - 🔗 Styled components documentation: https://styled-components.com/docs
+- 🔗 Swagger configuration in Nestjs: https://docs.nestjs.com/openapi/introduction
 - 🔗 ExchangeRate API documentation: https://www.exchangerate-api.com/docs/overview
 - 🔗 Cypress Component Testing: https://docs.cypress.io/guides/component-testing/getting-started
 - 🔗 Next.js Testing optimization: https://nextjs.org/docs/pages/building-your-application/optimizing/testing
