@@ -9,6 +9,7 @@ import {
 import {
   ApiHeader,
   ApiOperation,
+  ApiParam,
   ApiQuery,
   ApiResponse,
 } from '@nestjs/swagger';
@@ -17,8 +18,6 @@ import { CurrencyService } from './currency.service';
 import { IGroupedCountry } from '../../utils/@types';
 import { ConversionDto, CountryDto, CurrencyDto } from './dto';
 import { CurrenciesEnum, TranslationEnum } from '../../utils/enums';
-
-type CountryResponse = CountryDto | IGroupedCountry;
 
 @Controller('/api/v1/currency')
 export class CurrencyController {
@@ -98,7 +97,44 @@ export class CurrencyController {
   @Get('/convert/:base_country/:target_country')
   @HttpCode(HttpStatus.OK)
   @ApiOperation({
-    description: '',
+    description:
+      'It will convert the value entered based on the currencies provided and return the values, the converted value and the unit values',
+  })
+  @ApiHeader({
+    name: 'accept-language',
+    required: false,
+    example: 'en',
+    enum: TranslationEnum,
+    allowEmptyValue: true,
+    description: 'The language in which you would like to receive data',
+  })
+  @ApiParam({
+    type: String,
+    required: true,
+    enum: CurrenciesEnum,
+    name: 'base_country',
+    description: 'the base country code that will be converted',
+  })
+  @ApiParam({
+    type: String,
+    required: true,
+    enum: CurrenciesEnum,
+    name: 'target_country',
+    description: 'the target country code that will be converted',
+  })
+  @ApiQuery({
+    type: Number,
+    example: 12.5,
+    required: true,
+    name: 'value',
+    description: 'The value you would like to convert',
+  })
+  @ApiResponse({
+    status: 200,
+    isArray: false,
+    type: ConversionDto,
+    description:
+      'The unit value is the result of the conversion of the provided currencies.',
   })
   async convertCurrency(
     @Language() lang: string,
