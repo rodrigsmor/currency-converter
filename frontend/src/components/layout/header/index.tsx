@@ -8,7 +8,7 @@ import Menu4FillIcon from 'remixicon-react/Menu4FillIcon';
 import { LangSelect } from '@/components/forms/langSelect';
 import { IconButton } from '@/components/buttons/IconButton';
 import { ThemeSwitcher } from '@/components/forms/themeSwitcher';
-import { HeaderContainer, HeaderNav, HeaderNavOption } from './styled';
+import { HeaderContainer, HeaderNav, HeaderNavOption, InteractionsWrapper } from './styled';
 
 export const Header = () => {
   const pathname = usePathname();
@@ -35,12 +35,12 @@ export const Header = () => {
           </ul>
         </HeaderNav>
       </div>
-      <div className='details-container'>
+      <InteractionsWrapper>
         <ThemeSwitcher isButton={true} />
         <LangSelect />
         <Searchbar color='background' />
-        <IconButton color='transparent' Icon={<Menu4FillIcon size={32} />} />
-      </div>
+      </InteractionsWrapper>
+      <IconButton color='transparent' Icon={<Menu4FillIcon size={32} />} />
     </HeaderContainer>
   );
 }
