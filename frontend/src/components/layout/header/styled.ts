@@ -33,12 +33,18 @@ export const HeaderContainer = styled.header`
       display: none;
     }
   }
+
+  @media ${(props) => props?.theme?.breakpoints?.extraLarge } {
+    padding: 0 10dvw;
+  }
 `;
 
 export const InteractionsWrapper = styled.section`
-  gap: 12px;
+  gap: 10px;
   display: none;
   align-items: center;
+  min-width: 368px;
+  max-width: 24%;
 
   > .searchbar-ui {
     min-width: 120%;
