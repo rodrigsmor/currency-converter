@@ -25,7 +25,10 @@ export const Header = () => {
 
                 return (
                   <li key={index}>
-                    <HeaderNavOption className={`${isSelected && 'selected'}`} href={path}>
+                    <HeaderNavOption
+                      href={path}
+                      {...(isSelected && { "aria-current": "page" })}
+                    >
                       { label }
                     </HeaderNavOption>
                   </li>

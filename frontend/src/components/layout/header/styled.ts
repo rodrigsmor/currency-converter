@@ -100,7 +100,7 @@ export const HeaderNavOption = styled(Link)`
     }
   }
 
-  &.selected {
+  &[aria-current^="page"] {
     font-weight: ${(props) => props?.theme?.typography?.weight?.bold };
 
     &::after {
