@@ -16,7 +16,7 @@ export const MenuSidebarContainer = styled.aside`
   box-shadow: ${(props) => props?.theme?.boxShadow?.main };
   background-color: ${(props) => props?.theme?.colors?.background };
 
-  > .menuside_topContent {
+  > .menu-sidebar_topContent {
     gap: 12px;
     width: 100%;
     display: flex;
@@ -47,6 +47,11 @@ export const MenuHeader = styled.header`
 
 export const MenuSidebarBody = styled.nav`
 
+  > .menu-sidebar_BodyForms {
+    gap: 18px;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const MenuFooter = styled.footer`
