@@ -78,7 +78,6 @@ export const LangOption = styled.li`
     width: 100%;
     padding: 4px;
     display: flex;
-    cursor: pointer;
     border-radius: 8px;
     align-items: center;
     transition: all .3s ease-out;
@@ -102,6 +101,10 @@ export const LangOption = styled.li`
   &:not([aria-selected^="true"]):hover {
     > button {
       background-color: ${(props) => props?.theme?.colors?.primary + props?.theme?.opacities?.[20]};
+
+      &:not(:disabled) {
+        cursor: pointer;
+      }
     }
   }
 
