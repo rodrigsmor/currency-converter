@@ -38,7 +38,6 @@ export const MenuHeader = styled.header`
   width: 100%;
   height: 74px;
   display: flex;
-  /* padding: 0 24px; */
   position: sticky;
   align-items: center;
   justify-content: space-between;
@@ -46,12 +45,22 @@ export const MenuHeader = styled.header`
 `;
 
 export const MenuSidebarBody = styled.nav`
+  gap: 38px;
+  display: flex;
+  flex-direction: column;
 
   > .menu-sidebar_BodyForms {
-    gap: 18px;
+    gap: 12px;
     display: flex;
     flex-direction: column;
   }
+`;
+
+export const NavigationOptionsList = styled.ul`
+  gap: 14px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const MenuFooter = styled.footer`
