@@ -41,6 +41,8 @@ export const NavbarOptionAnchor = styled(Link)`
   }
   
   &[aria-current^="page"] {
+    pointer-events: none;
+    
     > span {
       font-weight: ${(props) => props?.theme?.typography?.weight?.semibold};
       color: ${(props) => props?.theme?.colors?.primary + props?.theme?.opacities?.[80]};
