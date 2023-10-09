@@ -40,6 +40,7 @@ export const MenuHeader = styled.header`
   display: flex;
   position: sticky;
   align-items: center;
+  flex-direction: row;
   justify-content: space-between;
   background-color: ${(props) => props?.theme?.colors?.background };
 `;
