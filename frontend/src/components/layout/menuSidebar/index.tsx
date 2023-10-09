@@ -6,8 +6,12 @@ import { Dispatch } from 'react';
 import { Searchbar } from '@/components/forms/searchbar';
 import { LangSelect } from '@/components/forms/langSelect';
 
+// constants
+import { navRoutes } from '@/utils/constants/nav-routes';
+
 // style
-import { MenuFooter, MenuHeader, MenuSidebarBody, MenuSidebarContainer } from './styled';
+import { MenuFooter, MenuHeader, MenuSidebarBody, MenuSidebarContainer, NavigationOptionsList } from './styled';
+import { NavbarOption } from '@/components/buttons/navbarOption';
 
 interface MenuSidebarProps {
   showSidebar: boolean;
@@ -28,9 +32,11 @@ export const MenuSidebar = ({ showSidebar, toggleSidebar }: MenuSidebarProps) =>
             <Searchbar />
             <LangSelect style='background' showCountryLabel={true} />
           </section>
+          <NavigationOptionsList>
+            { navRoutes.map((route, index) => <NavbarOption key={index} route={route} />) }
+          </NavigationOptionsList>
         </MenuSidebarBody>
       </div>
-
       <MenuFooter>
         footer
       </MenuFooter>
