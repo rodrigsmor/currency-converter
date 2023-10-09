@@ -3,15 +3,20 @@
 import { Dispatch } from 'react';
 
 // components
+import { Logo } from '@/components/common/logo';
 import { Searchbar } from '@/components/forms/searchbar';
 import { LangSelect } from '@/components/forms/langSelect';
+import { IconButton } from '@/components/buttons/IconButton';
+import { NavbarOption } from '@/components/buttons/navbarOption';
 
 // constants
 import { navRoutes } from '@/utils/constants/nav-routes';
 
+// Icons
+import CloseLineIcon from 'remixicon-react/CloseLineIcon';
+
 // style
 import { MenuFooter, MenuHeader, MenuSidebarBody, MenuSidebarContainer, NavigationOptionsList } from './styled';
-import { NavbarOption } from '@/components/buttons/navbarOption';
 
 interface MenuSidebarProps {
   showSidebar: boolean;
@@ -25,7 +30,8 @@ export const MenuSidebar = ({ showSidebar, toggleSidebar }: MenuSidebarProps) =>
     >
       <div className='menu-sidebar_topContent'>
         <MenuHeader>
-          header
+          <Logo logoColor='dark' />
+          <IconButton Icon={<CloseLineIcon size={32} />} color='background' />
         </MenuHeader>
         <MenuSidebarBody>
           <section className='menu-sidebar_BodyForms'>
