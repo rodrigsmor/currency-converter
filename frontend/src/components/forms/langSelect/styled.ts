@@ -106,6 +106,7 @@ export const LangOptionsList = styled.ul`
     gap: 4px;
     padding: 8px;
     border-radius: 12px;
+    background-color: ${(props) => props?.theme?.colors?.background};
   }
 `;
 
