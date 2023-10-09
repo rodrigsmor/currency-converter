@@ -1,18 +1,21 @@
 import styled from 'styled-components';
 
 export const MenuSidebarContainer = styled.aside`
-  gap: 48px;
   top: 0;
   right: 0;
+  gap: 48px;
   z-index: 50;
   width: 93dvw;
   display: flex;
   height: 100dvh;
   position: fixed;
   align-items: center;
-  padding: 0 24px 24px;
+  padding: 0 16px 24px;
+  pointer-events: none;
   flex-direction: column;
+  transform: translateX(100dvw);
   justify-content: space-between;
+  transition: all .3s ease-in-out;
   box-shadow: ${(props) => props?.theme?.boxShadow?.main };
   background-color: ${(props) => props?.theme?.colors?.background };
 
@@ -23,12 +26,22 @@ export const MenuSidebarContainer = styled.aside`
     flex-direction: column;
   }
 
+  &[aria-hidden^="false"] {
+    pointer-events: all;
+    transform: translateX(0dvw);
+  }
+
   @media ${(props) => props?.theme?.breakpoints?.medium } {
-    width: 91dvw;
+    width: 96dvw;
+    padding: 0 48px 24px;
   }
 
   @media ${(props) => props?.theme?.breakpoints?.large } {
     display: none;
+
+    &[aria-hidden^="false"] {
+      display: none;
+    }
   }
 `;
 
