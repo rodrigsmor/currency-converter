@@ -93,6 +93,7 @@ export const LangOptionsList = styled.ul`
   list-style: none;
   position: absolute;
   border-radius: 6px;
+  pointer-events: none;
   flex-direction: column;
   transition: all .2s ease-in;
   background-color: ${(props) => props?.theme?.colors?.background + props?.theme?.opacities?.[80]};
@@ -100,6 +101,7 @@ export const LangOptionsList = styled.ul`
 
   &[aria-hidden^="false"] {
     opacity: 1;
+    pointer-events: all;
   }
 
   .Lang-Select_Complete & {
