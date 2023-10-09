@@ -26,12 +26,12 @@ interface MenuSidebarProps {
 export const MenuSidebar = ({ showSidebar, toggleSidebar }: MenuSidebarProps) => {
   return (
     <MenuSidebarContainer
-      aria-hidden={showSidebar}
+      aria-hidden={!showSidebar}
     >
       <div className='menu-sidebar_topContent'>
         <MenuHeader>
           <Logo logoColor='dark' />
-          <IconButton Icon={<CloseLineIcon size={32} />} color='background' />
+          <IconButton label='close Sidebar Menu' onClick={() => toggleSidebar(!showSidebar)} Icon={<CloseLineIcon size={32} />} color='background' />
         </MenuHeader>
         <MenuSidebarBody>
           <section className='menu-sidebar_BodyForms'>
