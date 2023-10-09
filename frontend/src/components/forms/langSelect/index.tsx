@@ -68,14 +68,18 @@ export function LangSelect({ style = 'transparent', showCountryLabel = false }: 
                 id={`option-${langOption.langCode}`}
                 key={langOption?.langCode}
                 aria-selected={isSelected}
+                className={`${showCountryLabel && 'Lang-Select_Complete'}`}
               >
                 <button disabled={isSelected || !isSelectExpanded} onClick={() => [setLang(langOption?.lang), setIsSelectExpanded(false)]}>
                   <div aria-label={`${langOption?.label} flag miniature`} className={`fi fi-${langOption?.countryCode} fis country-flag-lang`}></div>
-                  <span
-                    className='option-language_CODE'
-                  >
-                    { langOption?.langCode }
-                  </span>
+                  <div className='option-language_DATA'>
+                    <span
+                      className='option-language_CODE'
+                    >
+                      { langOption?.langCode }
+                    </span>
+                    { showCountryLabel && <span className='option-language_LABEL'>({ langOption?.label })</span> }
+                  </div>
                 </button>
               </LangOption>
             )
