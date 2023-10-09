@@ -53,7 +53,7 @@ export const Header = () => {
         <LangSelect />
         <Searchbar color='background' />
       </InteractionsWrapper>
-      <IconButton color='transparent' Icon={<Menu4FillIcon size={32} />} />
+      <IconButton label='open the sidebar menu' color='transparent' Icon={<Menu4FillIcon size={32} />} />
       <MenuSidebar showSidebar={showSidebar} toggleSidebar={setSidebar} />
     </HeaderContainer>
   );
