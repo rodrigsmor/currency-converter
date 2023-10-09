@@ -4,7 +4,7 @@ import { MouseEventHandler } from 'react';
 import { IconButtonContainer } from './styled'
 
 interface IconButtonProps {
-  label: string;
+  label?: string;
   Icon: JSX.Element;
   color?: 'transparent' | 'background';
   onClick?: MouseEventHandler<HTMLButtonElement>;
@@ -14,10 +14,11 @@ export const IconButton = ({
   color = 'background',
   Icon,
   onClick,
-  label,
+  label = 'Icon button',
 }: IconButtonProps) => {
   return (
     <IconButtonContainer
+      title={label}
       onClick={onClick}
       aria-label={label}
       className={`icon-button ${color}`}
