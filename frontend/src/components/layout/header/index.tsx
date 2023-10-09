@@ -1,17 +1,27 @@
 'use client'
 
+import { useState } from 'react';
 import { usePathname } from 'next/navigation';
+
+// components
+import { MenuSidebar } from '../menuSidebar';
 import { Logo } from '@/components/common/logo';
 import { navRoutes } from '@/utils/constants/nav-routes';
 import { Searchbar } from '@/components/forms/searchbar';
-import Menu4FillIcon from 'remixicon-react/Menu4FillIcon';
 import { LangSelect } from '@/components/forms/langSelect';
 import { IconButton } from '@/components/buttons/IconButton';
 import { ThemeSwitcher } from '@/components/forms/themeSwitcher';
-import { HeaderContainer, HeaderNav, HeaderNavOption } from './styled';
+
+// icons
+import Menu4FillIcon from 'remixicon-react/Menu4FillIcon';
+
+// styles
+import { HeaderContainer, HeaderNav, HeaderNavOption, InteractionsWrapper } from './styled';
 
 export const Header = () => {
   const pathname = usePathname();
+
+  const [showSidebar, setSidebar] = useState<boolean>(false);
 
   return (
     <HeaderContainer>
@@ -25,7 +35,10 @@ export const Header = () => {
 
                 return (
                   <li key={index}>
-                    <HeaderNavOption className={`${isSelected && 'selected'}`} href={path}>
+                    <HeaderNavOption
+                      href={path}
+                      {...(isSelected && { "aria-current": "page" })}
+                    >
                       { label }
                     </HeaderNavOption>
                   </li>
@@ -35,12 +48,13 @@ export const Header = () => {
           </ul>
         </HeaderNav>
       </div>
-      <div className='details-container'>
+      <InteractionsWrapper>
         <ThemeSwitcher isButton={true} />
         <LangSelect />
         <Searchbar color='background' />
-        <IconButton color='transparent' Icon={<Menu4FillIcon size={32} />} />
-      </div>
+      </InteractionsWrapper>
+      <IconButton color='transparent' Icon={<Menu4FillIcon size={32} />} />
+      <MenuSidebar showSidebar={showSidebar} toggleSidebar={setSidebar} />
     </HeaderContainer>
   );
 }

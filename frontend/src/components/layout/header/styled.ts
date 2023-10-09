@@ -22,18 +22,6 @@ export const HeaderContainer = styled.header`
   > .navigation-wrapper {
     gap: 34px;
   }
-
-  > .details-container {
-    gap: 12px;
-  }
-
-  @media screen and (max-width: 767px) {
-    > .details-container {
-      > .searchbar-container {
-        display: none;
-      }
-    }
-  }
   
   @media ${(props) => props?.theme?.breakpoints?.medium } {
     height: 74px;
@@ -41,11 +29,29 @@ export const HeaderContainer = styled.header`
   }
 
   @media ${(props) => props?.theme?.breakpoints?.large } {
-    > .details-container {
-      > .icon-button {
-        display: none;
-      }
+    > .icon-button {
+      display: none;
     }
+  }
+
+  @media ${(props) => props?.theme?.breakpoints?.extraLarge } {
+    padding: 0 10dvw;
+  }
+`;
+
+export const InteractionsWrapper = styled.section`
+  gap: 10px;
+  display: none;
+  align-items: center;
+  min-width: 368px;
+  max-width: 24%;
+
+  > .searchbar-ui {
+    min-width: 120%;
+  }
+
+  @media ${(props) => props?.theme?.breakpoints?.large } {
+    display: flex;
   }
 `;
 
@@ -59,7 +65,7 @@ export const HeaderNav = styled.nav`
     align-items: center;
   }
 
-  @media ${(props) => props?.theme?.breakpoints?.medium } {
+  @media ${(props) => props?.theme?.breakpoints?.large } {
     display: flex;
   }
 `;
@@ -94,7 +100,7 @@ export const HeaderNavOption = styled(Link)`
     }
   }
 
-  &.selected {
+  &[aria-current^="page"] {
     font-weight: ${(props) => props?.theme?.typography?.weight?.bold };
 
     &::after {

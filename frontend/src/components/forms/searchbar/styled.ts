@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SearchbarContainer = styled.fieldset`
+export const SearchbarContainer = styled.div`
   gap: 12px;
   height: 48px;
   display: flex;

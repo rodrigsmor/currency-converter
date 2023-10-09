@@ -14,21 +14,21 @@ export const navRoutes: NavRoutes[] = [
   {
     path: '/',
     label: 'Home',
-    Icon: <Home2LineIcon />
+    Icon: <Home2LineIcon size={30} />
   },
   {
     path: '/currencies',
     label: 'List of currencies',
-    Icon: <MoneyDollarCircleLineIcon />
+    Icon: <MoneyDollarCircleLineIcon size={30} />
   },
   {
     path: '/convert-currencies',
     label: 'Convert currencies',
-    Icon: <ExchangeLineIcon />
+    Icon: <ExchangeLineIcon size={30} />
   },
   {
     path: '/exchanges-rates',
     label: 'Exchange rates',
-    Icon: <ExchangeDollarLineIcon />
+    Icon: <ExchangeDollarLineIcon size={30} />
   }
 ]
