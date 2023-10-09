@@ -14,14 +14,6 @@ export const LangSelectWrapper = styled.div`
 
     > #Lang-Select_List {
       top: 52px;
-
-      > li {
-        height: 40px;
-
-        > button {
-          height: 100%;
-        }
-      }
     }
   }
 `;
@@ -104,10 +96,16 @@ export const LangOptionsList = styled.ul`
   flex-direction: column;
   transition: all .2s ease-in;
   background-color: ${(props) => props?.theme?.colors?.background + props?.theme?.opacities?.[80]};
-  border: 2px solid ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[20]}`};
+  border: 1px solid ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[20]}`};
 
   &[aria-hidden^="false"] {
     opacity: 1;
+  }
+
+  .Lang-Select_Complete & {
+    gap: 4px;
+    padding: 8px;
+    border-radius: 12px;
   }
 `;
 
@@ -117,10 +115,13 @@ export const LangOption = styled.li`
   > button {
     gap: 6px;
     width: 100%;
+    height: 100%;
     padding: 4px;
     display: flex;
-    border-radius: 8px;
+    max-height: 100%;
+    border-radius: 6px;
     align-items: center;
+    border: 1px solid transparent;
     transition: all .3s ease-out;
     border: 0px solid transparent;
     background-color: transparent;
@@ -132,16 +133,36 @@ export const LangOption = styled.li`
       border-radius: 14px;
     }
 
-    > .option-language_CODE {
-      font-size: ${(props) => props?.theme?.typography?.sizes?.h6};
-      font-weight: ${(props) => props?.theme?.typography?.weight?.medium};
-      color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[60]}`};
+    > .option-language_DATA {
+      gap: 4px;
+      display: flex;
+      flex-grow: 100%;
+      max-width: 100%;
+      overflow: hidden;
+      align-items: center;
+      flex-direction: row;
+
+      > .option-language_CODE {
+        font-size: ${(props) => props?.theme?.typography?.sizes?.h5};
+        font-weight: ${(props) => props?.theme?.typography?.weight?.semibold};
+        color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[80]}`};
+      }
+  
+      > .option-language_LABEL {
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap; 
+        text-overflow: ellipsis; 
+        font-size: ${(props) => props?.theme?.typography?.sizes?.h6};
+        font-weight: ${(props) => props?.theme?.typography?.weight?.medium};
+        color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[60]}`};
+      }
     }
   }
 
   &:not([aria-selected^="true"]):hover {
     > button {
-      background-color: ${(props) => props?.theme?.colors?.primary + props?.theme?.opacities?.[20]};
+      background-color: ${(props) => props?.theme?.colors?.typography + (props && '1A')};
 
       &:not(:disabled) {
         cursor: pointer;
@@ -151,12 +172,28 @@ export const LangOption = styled.li`
 
   &[aria-selected^="true"] {
     > button {
-      background-color: ${(props) => props?.theme?.colors?.primary + props?.theme?.opacities?.[60]};
+      border: 1px solid ${(props) => props?.theme?.colors?.primary + props?.theme?.opacities?.[20]};
+      background-color: ${(props) => props?.theme?.colors?.primary + props?.theme?.opacities?.[20]};
 
-      > .option-language_CODE {
-        font-weight: ${(props) => props?.theme?.typography?.weight?.semibold};
-        color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[80]}`};
+      > .option-language_DATA {
+        > .option-language_CODE {
+          font-weight: ${(props) => props?.theme?.typography?.weight?.bold};
+          color: ${(props) => `${props?.theme?.colors?.primary + props?.theme?.opacities?.[80]}`};
+        }
+
+        > .option-language_LABEL {
+          color: ${(props) => `${props?.theme?.colors?.primary + props?.theme?.opacities?.[60]}`};
+        }
       }
+    }
+  }
+
+  &.Lang-Select_Complete {
+    height: 40px;
+
+    > button {
+      padding: 0 8px;
+      border-radius: 10px;
     }
   }
 `;
