@@ -78,5 +78,28 @@ export const NavigationOptionsList = styled.ul`
 `;
 
 export const MenuFooter = styled.footer`
+  gap: 24px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+`;
 
+export const FooterCredits = styled.div`
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+
+  > p {
+    font-size: ${(props) => props?.theme?.typography?.sizes?.h5};
+    font-weight: ${(props) => props?.theme?.typography?.weight?.bold };
+    color: ${(props) => props?.theme?.colors?.typography + props?.theme?.opacities?.[80]};
+  }
+
+  > span {
+    font-size: ${(props) => props?.theme?.typography?.sizes?.h6};
+    font-weight: ${(props) => props?.theme?.typography?.weight?.medium};
+    color: ${(props) => props?.theme?.colors?.typography + props?.theme?.opacities?.[40]};
+  }
 `;
