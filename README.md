@@ -110,7 +110,7 @@ Running the tests is actually quite easy. Given that the application is already 
 docker-compose up backend-tests
 
 ## to run frontend tests
-docker-compose up frontend-tests (not available yet)
+docker-compose up frontend-tests
 ````
 
 So that's it! It's running 🎉
