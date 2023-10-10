@@ -1,0 +1,12 @@
+FROM node:latest
+FROM cypress/included:13.3.0
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+
+RUN npm install
+
+COPY . .
+
+CMD [ "npm", "run", "cypress:open" ]
