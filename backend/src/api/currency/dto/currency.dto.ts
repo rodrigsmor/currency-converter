@@ -37,6 +37,13 @@ export class CurrencyDto implements CurrencyType {
   })
   monetary_symbol: string;
 
+  @ApiProperty({
+    example: 'USA',
+    type: String,
+    description: 'The flag code that will be render in UI',
+  })
+  flag_code: string;
+
   constructor(value: number, currencyData: CurrencyType) {
     this.unit_value = value;
     this.country_name = currencyData.country_name;
