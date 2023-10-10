@@ -8,6 +8,7 @@ import { Searchbar } from '@/components/forms/searchbar';
 import { LangSelect } from '@/components/forms/langSelect';
 import { IconButton } from '@/components/buttons/IconButton';
 import { NavbarOption } from '@/components/buttons/navbarOption';
+import { ThemeSwitcher } from '@/components/forms/themeSwitcher';
 
 // constants
 import { navRoutes } from '@/utils/constants/nav-routes';
@@ -16,7 +17,7 @@ import { navRoutes } from '@/utils/constants/nav-routes';
 import CloseLineIcon from 'remixicon-react/CloseLineIcon';
 
 // style
-import { MenuFooter, MenuHeader, MenuSidebarBody, MenuSidebarContainer, NavigationOptionsList } from './styled';
+import { FooterCredits, MenuFooter, MenuHeader, MenuSidebarBody, MenuSidebarContainer, NavigationOptionsList } from './styled';
 
 interface MenuSidebarProps {
   showSidebar: boolean;
@@ -44,7 +45,11 @@ export const MenuSidebar = ({ showSidebar, toggleSidebar }: MenuSidebarProps) =>
         </MenuSidebarBody>
       </div>
       <MenuFooter>
-        footer
+        <ThemeSwitcher/>
+        <FooterCredits>
+          <p>App Version - v0.0.0</p>
+          <span>made by Rodrigo Moreira</span>
+        </FooterCredits>
       </MenuFooter>
     </MenuSidebarContainer>
   )
