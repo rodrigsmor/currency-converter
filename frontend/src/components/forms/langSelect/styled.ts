@@ -88,6 +88,7 @@ export const LangOptionsList = styled.ul`
   top: 42px;
   opacity: 0;
   width: 100%;
+  z-index: 10;
   padding: 4px;
   display: flex;
   list-style: none;

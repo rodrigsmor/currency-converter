@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react';
+import { MouseEvent, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 // components
@@ -21,7 +21,12 @@ import { HeaderContainer, HeaderNav, HeaderNavOption, InteractionsWrapper } from
 export const Header = () => {
   const pathname = usePathname();
 
-  const [showSidebar, setSidebar] = useState<boolean>(false);
+  const [showSidebar, setShowSidebar] = useState<boolean>(false);
+
+  function handleShowSideBar(event: MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
+    setShowSidebar(true);
+  }
 
   return (
     <HeaderContainer>
@@ -53,8 +58,8 @@ export const Header = () => {
         <LangSelect />
         <Searchbar color='background' />
       </InteractionsWrapper>
-      <IconButton color='transparent' Icon={<Menu4FillIcon size={32} />} />
-      <MenuSidebar showSidebar={showSidebar} toggleSidebar={setSidebar} />
+      <IconButton onClick={handleShowSideBar} label='open the sidebar menu' color='transparent' Icon={<Menu4FillIcon size={32} />} />
+      <MenuSidebar showSidebar={showSidebar} toggleSidebar={setShowSidebar} />
     </HeaderContainer>
   );
 }

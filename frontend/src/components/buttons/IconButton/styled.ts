@@ -9,8 +9,8 @@ export const IconButtonContainer = styled.button`
   place-items: center;
   transition: all .3s ease-in;
   border: 0px solid transparent;
-  color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[80]}`};
   background-color: ${(props) => props?.theme?.colors?.background};
+  color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[60]}`};
 
   &.transparent {
     background-color: transparent;
