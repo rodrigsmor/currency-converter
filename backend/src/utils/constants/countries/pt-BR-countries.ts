@@ -7,6 +7,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'EUR',
     currency_name: 'Euro',
     monetary_symbol: '€',
+    flag_code: 'eu',
   },
   AED: {
     unit_value: 0,
@@ -14,6 +15,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'AED',
     currency_name: 'Dirham dos Emirados Árabes Unidos',
     monetary_symbol: 'د.إ',
+    flag_code: 'ae',
   },
   AFN: {
     unit_value: 0,
@@ -21,6 +23,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'AFN',
     currency_name: 'Afegani Afegão',
     monetary_symbol: '؋',
+    flag_code: 'af',
   },
   ALL: {
     unit_value: 0,
@@ -28,6 +31,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'ALL',
     currency_name: 'Lek Albanês',
     monetary_symbol: 'L',
+    flag_code: 'al',
   },
   AMD: {
     unit_value: 0,
@@ -35,6 +39,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'AMD',
     currency_name: 'Dram Armênio',
     monetary_symbol: '֏',
+    flag_code: 'am',
   },
   ANG: {
     unit_value: 0,
@@ -42,6 +47,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'ANG',
     currency_name: 'Florim das Antilhas Neerlandesas',
     monetary_symbol: 'ƒ',
+    flag_code: 'nl',
   },
   AOA: {
     unit_value: 0,
@@ -49,6 +55,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'AOA',
     currency_name: 'Kwanza Angolano',
     monetary_symbol: 'Kz',
+    flag_code: 'ao',
   },
   ARS: {
     unit_value: 0,
@@ -56,6 +63,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'ARS',
     currency_name: 'Peso Argentino',
     monetary_symbol: '$',
+    flag_code: 'ar',
   },
   AUD: {
     unit_value: 0,
@@ -63,6 +71,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'AUD',
     currency_name: 'Dólar Australiano',
     monetary_symbol: '$',
+    flag_code: 'au',
   },
   AWG: {
     unit_value: 0,
@@ -70,6 +79,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'AWG',
     currency_name: 'Florim de Aruba',
     monetary_symbol: 'Afl',
+    flag_code: 'aw',
   },
   AZN: {
     unit_value: 0,
@@ -77,6 +87,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'AZN',
     currency_name: 'Manat Azerbaijano',
     monetary_symbol: '₼',
+    flag_code: 'az',
   },
   BAM: {
     unit_value: 0,
@@ -84,6 +95,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'BAM',
     currency_name: 'Marco Conversível da Bósnia e Herzegovina',
     monetary_symbol: 'KM',
+    flag_code: 'ba',
   },
   BBD: {
     unit_value: 0,
@@ -91,6 +103,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'BBD',
     currency_name: 'Dólar de Barbados',
     monetary_symbol: 'Bds$',
+    flag_code: 'bb',
   },
   BDT: {
     unit_value: 0,
@@ -98,6 +111,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'BDT',
     currency_name: 'Taka de Bangladesh',
     monetary_symbol: '৳',
+    flag_code: 'bd',
   },
   BGN: {
     unit_value: 0,
@@ -105,6 +119,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'BGN',
     currency_name: 'Lev Búlgaro',
     monetary_symbol: 'лв',
+    flag_code: 'bg',
   },
   BHD: {
     unit_value: 0,
@@ -119,6 +134,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'BIF',
     currency_name: 'Franco de Burundi',
     monetary_symbol: 'FBu',
+    flag_code: 'bi',
   },
   BMD: {
     unit_value: 0,
@@ -126,6 +142,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'BMD',
     currency_name: 'Dólar das Bermudas',
     monetary_symbol: 'BD$',
+    flag_code: 'bm',
   },
   BND: {
     unit_value: 0,
@@ -133,6 +150,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'BND',
     currency_name: 'Dólar de Brunei',
     monetary_symbol: 'B$',
+    flag_code: 'bn',
   },
   BOB: {
     unit_value: 0,
@@ -140,6 +158,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'BOB',
     currency_name: 'Boliviano Boliviano',
     monetary_symbol: 'Bs.',
+    flag_code: 'bo',
   },
   BRL: {
     unit_value: 0,
@@ -147,6 +166,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'BRL',
     currency_name: 'Real Brasileiro',
     monetary_symbol: 'R$',
+    flag_code: 'br',
   },
   BSD: {
     unit_value: 0,
@@ -154,6 +174,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'BSD',
     currency_name: 'Dólar das Bahamas',
     monetary_symbol: 'BSD$',
+    flag_code: 'bs',
   },
   BTN: {
     unit_value: 0,
@@ -161,6 +182,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'BTN',
     currency_name: 'Ngultrum Butanês',
     monetary_symbol: 'Nu.',
+    flag_code: 'bh',
   },
   BWP: {
     unit_value: 0,
@@ -168,6 +190,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'BWP',
     currency_name: 'Pula Botsuanesa',
     monetary_symbol: 'P',
+    flag_code: 'bw',
   },
   BYN: {
     unit_value: 0,
@@ -175,6 +198,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'BYN',
     currency_name: 'Rublo Bielorrusso',
     monetary_symbol: 'Br',
+    flag_code: 'by',
   },
   BZD: {
     unit_value: 0,
@@ -182,6 +206,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'BZD',
     currency_name: 'Dólar do Belize',
     monetary_symbol: 'BZ$',
+    flag_code: 'bz',
   },
   CAD: {
     unit_value: 0,
@@ -189,6 +214,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'CAD',
     currency_name: 'Dólar Canadense',
     monetary_symbol: 'CA$',
+    flag_code: 'ca',
   },
   CDF: {
     unit_value: 0,
@@ -1029,6 +1055,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'USD',
     currency_name: 'Dólar Americano',
     monetary_symbol: '$',
+    flag_code: 'us',
   },
   UYU: {
     unit_value: 0,
@@ -1085,6 +1112,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'XCD',
     currency_name: 'Dólar do Caribe Oriental',
     monetary_symbol: '$',
+    flag_code: 'dm',
   },
   XDR: {
     unit_value: 0,
@@ -1092,6 +1120,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'XDR',
     currency_name: 'Direitos Especiais de Giro',
     monetary_symbol: 'XDR',
+    flag_code: 'un',
   },
   XOF: {
     unit_value: 0,
@@ -1099,6 +1128,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'XOF',
     currency_name: 'Franco CFA da África Ocidental',
     monetary_symbol: 'CFA',
+    flag_code: 'sn',
   },
   XPF: {
     unit_value: 0,
@@ -1106,6 +1136,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'XPF',
     currency_name: 'Franco CFP',
     monetary_symbol: '₣',
+    flag_code: 'tf',
   },
   YER: {
     unit_value: 0,
@@ -1113,6 +1144,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'YER',
     currency_name: 'Rial Iemenita',
     monetary_symbol: '﷼',
+    flag_code: 'ye',
   },
   ZAR: {
     unit_value: 0,
@@ -1120,6 +1152,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'ZAR',
     currency_name: 'Rand Sul-Africano',
     monetary_symbol: 'R',
+    flag_code: 'za',
   },
   ZMW: {
     unit_value: 0,
@@ -1127,6 +1160,7 @@ export const PtBrCountries: Currencies = {
     currency_code: 'ZMW',
     currency_name: 'Kwacha Zambiano',
     monetary_symbol: 'ZK',
+    flag_code: 'zm',
   },
   ZWL: {
     unit_value: 0,
@@ -1134,5 +1168,6 @@ export const PtBrCountries: Currencies = {
     currency_code: 'ZWL',
     currency_name: 'Dólar do Zimbábue',
     monetary_symbol: '$',
+    flag_code: 'zw',
   },
 };
