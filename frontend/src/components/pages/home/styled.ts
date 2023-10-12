@@ -56,6 +56,7 @@ export const TopGreetingsHeader = styled.header`
 export const CurrencyPreviewBox = styled.section`
   gap: 6px;
   display: flex;
+  position: relative;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -79,6 +80,11 @@ export const CurrencyPreviewBox = styled.section`
         font-weight: ${(props) => props?.theme?.typography?.weight?.regular};
       }
     }
+  }
+
+  > .icon-button {
+    width: 42px;
+    height: 56px;
   }
 `;
 
