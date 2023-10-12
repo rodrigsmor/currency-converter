@@ -17,11 +17,20 @@ export const IconButtonContainer = styled.button`
     color: ${(props) => props?.theme?.colors?.background};
   }
 
+  &.background-20 {
+    color: ${(props) => props?.theme?.colors?.background};
+    background-color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[20]}`};
+  }
+
   &:hover {
     background-color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[20]}`};
 
     &.transparent {
       background-color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[20]}`};
+    }
+
+    &.background-20 {
+      background-color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[40]}`};
     }
   }
 `;
