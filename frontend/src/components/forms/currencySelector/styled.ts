@@ -4,6 +4,7 @@ export const CurrencySelectorContainer = styled.div`
   top: 88px;
   right: 0px;
   opacity: 1;
+  z-index: 10;
   height: 306px;
   display: flex;
   overflow: hidden;
@@ -35,9 +36,17 @@ export const CurrencySelectorHeader = styled.header`
 `;
 
 export const CurrencyOptionsList = styled.ul`
-
+  gap: 6px;
+  width: 100%;
+  flex-grow: 1;
+  max-width: 100%;
+  list-style: none;
+  max-height: 100%;
+  padding: 14px 0px;
+  overflow-x: visible;
+  overflow-y: hidden;
 `;
 
 export const CurrencyOption = styled.li`
-
+  cursor: pointer;
 `;
