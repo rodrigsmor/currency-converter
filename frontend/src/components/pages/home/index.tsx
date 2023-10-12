@@ -12,7 +12,14 @@ import { CurrencySelector } from '@/components/forms/currencySelector'
 // styles
 import { CurrencyPreviewBox, CurrencyValudeConverted, HomePageMainContainer, TopGreetingsHeader } from './styled'
 
+// types
+import { Currency } from '@/utils/@types/currency';
+
+// mock
+import { currencies_mock } from '@/utils/mocks/currencies';
+
 export const HomePageContent = () => {
+  const [targetCurrency, setTargetCurrency] = useState<Currency>(currencies_mock[0])
   const [showCurrencySelector, setShowCurrencySelector] = useState<boolean>(false);
 
   function handleToggleCurrencySelector(event: MouseEvent<HTMLButtonElement>) {
@@ -20,8 +27,9 @@ export const HomePageContent = () => {
     setShowCurrencySelector(!showCurrencySelector)
   }
 
-  function handleSelectOption(event: MouseEvent<HTMLButtonElement>) {
-    event.preventDefault();
+  async function handleTargetCurrency(currency: Currency) {
+    // makes request and start loading
+    setTargetCurrency(currency);
   }
 
   return (
@@ -36,16 +44,16 @@ export const HomePageContent = () => {
             1 United States Dollar equals
             <strong className='ValueConverted_Container'>
               <CurrencyValudeConverted>
-                <small className='ValueConverted_MonetarySymbol'>€</small> 1.07
+                <small className='ValueConverted_MonetarySymbol'>{ targetCurrency.monetary_symbol }</small> 1.07
               </CurrencyValudeConverted>
-              <span className='ValueConverted_CurrencyName'>Euro</span>
+              <span className='ValueConverted_CurrencyName'>{ targetCurrency.currency_name }</span>
             </strong>
           </p>
           <IconButton
             Icon={<More2LineIcon />}
             color='background-20'
             onClick={handleToggleCurrencySelector}
-            label={`${showCurrencySelector ? 'Open' : 'Close'} currency selector`}
+            label={`${showCurrencySelector ? 'Close' : 'Open'} currency selector`}
             attributes={{
               'aria-haspopup': 'listbox',
               'aria-expanded': showCurrencySelector,
@@ -53,9 +61,10 @@ export const HomePageContent = () => {
             }}
           />
           <CurrencySelector
+            currency={targetCurrency}
             id='CurrencySelector_Header'
+            onSelectOption={handleTargetCurrency}
             showCurrencySelector={showCurrencySelector}
-            onSelectOption={handleSelectOption}
           />
         </CurrencyPreviewBox>
       </TopGreetingsHeader>
