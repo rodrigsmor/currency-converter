@@ -3,10 +3,12 @@
 import styled from 'styled-components';
 
 export const HomePageMainContainer = styled.main`
+  z-index: 1;
   width: 100%;
   height: 100%;
   flex-grow: 1;
   min-height: 100%;
+  position: relative;
 `;
 
 export const TopGreetingsHeader = styled.header`
@@ -55,6 +57,7 @@ export const TopGreetingsHeader = styled.header`
 
 export const CurrencyPreviewBox = styled.section`
   gap: 6px;
+  z-index: 1;
   display: flex;
   position: relative;
   flex-direction: row;
@@ -63,6 +66,7 @@ export const CurrencyPreviewBox = styled.section`
 
   > p {
     gap: 4px;
+    z-index: 1;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
