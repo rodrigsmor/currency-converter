@@ -61,8 +61,8 @@ export const HomePageContent = () => {
             }}
           />
           <CurrencySelector
-            currency={targetCurrency}
             id='CurrencySelector_Header'
+            selectedCurrency={targetCurrency}
             onSelectOption={handleTargetCurrency}
             showCurrencySelector={showCurrencySelector}
           />
