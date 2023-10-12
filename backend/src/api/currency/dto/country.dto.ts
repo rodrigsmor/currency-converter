@@ -23,7 +23,15 @@ export class CountryDto implements Partial<CurrencyType> {
   })
   monetary_symbol?: string;
 
+  @ApiProperty({
+    example: 'USA',
+    type: String,
+    description: 'The flag code that will be render in UI',
+  })
+  flag_code: string;
+
   constructor(currency: CurrencyType) {
+    this.flag_code = currency.flag_code;
     this.country_name = currency.country_name;
     this.currency_code = currency.currency_code;
     this.monetary_symbol = currency.monetary_symbol;

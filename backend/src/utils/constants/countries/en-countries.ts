@@ -7,6 +7,7 @@ export const EnCountries: Currencies = {
     currency_code: 'EUR',
     currency_name: 'Euro',
     monetary_symbol: '€',
+    flag_code: 'eu',
   },
   AED: {
     unit_value: 0,
@@ -14,6 +15,7 @@ export const EnCountries: Currencies = {
     currency_code: 'AED',
     currency_name: 'Dirham',
     monetary_symbol: 'د.إ',
+    flag_code: 'ae',
   },
   AFN: {
     unit_value: 0,
@@ -21,6 +23,7 @@ export const EnCountries: Currencies = {
     currency_code: 'AFN',
     currency_name: 'Afghani',
     monetary_symbol: '؋',
+    flag_code: 'af',
   },
   ALL: {
     unit_value: 0,
@@ -28,6 +31,7 @@ export const EnCountries: Currencies = {
     currency_code: 'ALL',
     currency_name: 'Lek',
     monetary_symbol: 'L',
+    flag_code: 'al',
   },
   AMD: {
     unit_value: 0,
@@ -35,6 +39,7 @@ export const EnCountries: Currencies = {
     currency_code: 'AMD',
     currency_name: 'Dram',
     monetary_symbol: '֏',
+    flag_code: 'am',
   },
   ANG: {
     unit_value: 0,
@@ -42,6 +47,7 @@ export const EnCountries: Currencies = {
     currency_code: 'ANG',
     currency_name: 'Guilder',
     monetary_symbol: 'ƒ',
+    flag_code: 'nl',
   },
   AOA: {
     unit_value: 0,
@@ -49,6 +55,7 @@ export const EnCountries: Currencies = {
     currency_code: 'AOA',
     currency_name: 'Kwanza',
     monetary_symbol: 'Kz',
+    flag_code: 'ao',
   },
   ARS: {
     unit_value: 0,
@@ -56,6 +63,7 @@ export const EnCountries: Currencies = {
     currency_code: 'ARS',
     currency_name: 'Peso',
     monetary_symbol: '$',
+    flag_code: 'ar',
   },
   AUD: {
     unit_value: 0,
@@ -63,6 +71,7 @@ export const EnCountries: Currencies = {
     currency_code: 'AUD',
     currency_name: 'Dollar',
     monetary_symbol: '$',
+    flag_code: 'au',
   },
   AWG: {
     unit_value: 0,
@@ -70,6 +79,7 @@ export const EnCountries: Currencies = {
     currency_code: 'AWG',
     currency_name: 'Aruban Florin',
     monetary_symbol: 'Afl',
+    flag_code: 'aw',
   },
   AZN: {
     unit_value: 0,
@@ -77,6 +87,7 @@ export const EnCountries: Currencies = {
     currency_code: 'AZN',
     currency_name: 'Azerbaijani Manat',
     monetary_symbol: '₼',
+    flag_code: 'az',
   },
   BAM: {
     unit_value: 0,
@@ -84,6 +95,7 @@ export const EnCountries: Currencies = {
     currency_code: 'BAM',
     currency_name: 'Bosnia-Herzegovina Convertible Mark',
     monetary_symbol: 'KM',
+    flag_code: 'ba',
   },
   BBD: {
     unit_value: 0,
@@ -91,6 +103,7 @@ export const EnCountries: Currencies = {
     currency_code: 'BBD',
     currency_name: 'Barbadian Dollar',
     monetary_symbol: 'Bds$',
+    flag_code: 'bb',
   },
   BDT: {
     unit_value: 0,
@@ -98,6 +111,7 @@ export const EnCountries: Currencies = {
     currency_code: 'BDT',
     currency_name: 'Bangladeshi Taka',
     monetary_symbol: '৳',
+    flag_code: 'bd',
   },
   BGN: {
     unit_value: 0,
@@ -105,6 +119,7 @@ export const EnCountries: Currencies = {
     currency_code: 'BGN',
     currency_name: 'Bulgarian Lev',
     monetary_symbol: 'лв',
+    flag_code: 'bg',
   },
   BHD: {
     unit_value: 0,
@@ -112,6 +127,7 @@ export const EnCountries: Currencies = {
     currency_code: 'BHD',
     currency_name: 'Bahraini Dinar',
     monetary_symbol: 'BD',
+    flag_code: 'bh',
   },
   BIF: {
     unit_value: 0,
@@ -119,6 +135,7 @@ export const EnCountries: Currencies = {
     currency_code: 'BIF',
     currency_name: 'Burundian Franc',
     monetary_symbol: 'FBu',
+    flag_code: 'bi',
   },
   BMD: {
     unit_value: 0,
@@ -126,6 +143,7 @@ export const EnCountries: Currencies = {
     currency_code: 'BMD',
     currency_name: 'Bermudian Dollar',
     monetary_symbol: 'BD$',
+    flag_code: 'bm',
   },
   BND: {
     unit_value: 0,
@@ -133,6 +151,7 @@ export const EnCountries: Currencies = {
     currency_code: 'BND',
     currency_name: 'Brunei Dollar',
     monetary_symbol: 'B$',
+    flag_code: 'bn',
   },
   BOB: {
     unit_value: 0,
@@ -140,6 +159,7 @@ export const EnCountries: Currencies = {
     currency_code: 'BOB',
     currency_name: 'Bolivian Boliviano',
     monetary_symbol: 'Bs.',
+    flag_code: 'bo',
   },
   BRL: {
     unit_value: 0,
@@ -147,6 +167,7 @@ export const EnCountries: Currencies = {
     currency_code: 'BRL',
     currency_name: 'Brazilian Real',
     monetary_symbol: 'R$',
+    flag_code: 'br',
   },
   BSD: {
     unit_value: 0,
@@ -154,6 +175,7 @@ export const EnCountries: Currencies = {
     currency_code: 'BSD',
     currency_name: 'Bahamian Dollar',
     monetary_symbol: 'BSD$',
+    flag_code: 'bs',
   },
   BTN: {
     unit_value: 0,
@@ -161,6 +183,7 @@ export const EnCountries: Currencies = {
     currency_code: 'BTN',
     currency_name: 'Bhutanese Ngultrum',
     monetary_symbol: 'Nu.',
+    flag_code: 'bh',
   },
   BWP: {
     unit_value: 0,
@@ -168,6 +191,7 @@ export const EnCountries: Currencies = {
     currency_code: 'BWP',
     currency_name: 'Botswana Pula',
     monetary_symbol: 'P',
+    flag_code: 'bw',
   },
   BYN: {
     unit_value: 0,
@@ -175,6 +199,7 @@ export const EnCountries: Currencies = {
     currency_code: 'BYN',
     currency_name: 'Belarusian Ruble',
     monetary_symbol: 'Br',
+    flag_code: 'by',
   },
   BZD: {
     unit_value: 0,
@@ -182,6 +207,7 @@ export const EnCountries: Currencies = {
     currency_code: 'BZD',
     currency_name: 'Belize Dollar',
     monetary_symbol: 'BZ$',
+    flag_code: 'bz',
   },
   CAD: {
     unit_value: 0,
@@ -189,6 +215,7 @@ export const EnCountries: Currencies = {
     currency_code: 'CAD',
     currency_name: 'Canadian Dollar',
     monetary_symbol: 'CA$',
+    flag_code: 'ca',
   },
   CDF: {
     unit_value: 0,
@@ -196,6 +223,7 @@ export const EnCountries: Currencies = {
     currency_code: 'CDF',
     currency_name: 'Congolese Franc',
     monetary_symbol: 'FC',
+    flag_code: 'cd',
   },
   CHF: {
     unit_value: 0,
@@ -203,6 +231,7 @@ export const EnCountries: Currencies = {
     currency_code: 'CHF',
     currency_name: 'Swiss Franc',
     monetary_symbol: 'CHF',
+    flag_code: 'ch',
   },
   CLP: {
     unit_value: 0,
@@ -210,6 +239,7 @@ export const EnCountries: Currencies = {
     currency_code: 'CLP',
     currency_name: 'Chilean Peso',
     monetary_symbol: 'CLP$',
+    flag_code: 'cl',
   },
   CNY: {
     unit_value: 0,
@@ -217,6 +247,7 @@ export const EnCountries: Currencies = {
     currency_code: 'CNY',
     currency_name: 'Chinese Renminbi',
     monetary_symbol: '¥',
+    flag_code: 'cn',
   },
   COP: {
     unit_value: 0,
@@ -224,6 +255,7 @@ export const EnCountries: Currencies = {
     currency_code: 'COP',
     currency_name: 'Colombian Peso',
     monetary_symbol: 'COL$',
+    flag_code: 'co',
   },
   CRC: {
     unit_value: 0,
@@ -231,6 +263,7 @@ export const EnCountries: Currencies = {
     currency_code: 'CRC',
     currency_name: 'Costa Rican Colón',
     monetary_symbol: '₡',
+    flag_code: 'cr',
   },
   CUP: {
     unit_value: 0,
@@ -238,6 +271,7 @@ export const EnCountries: Currencies = {
     currency_code: 'CUP',
     currency_name: 'Cuban Peso',
     monetary_symbol: 'CUP$',
+    flag_code: 'cu',
   },
   CVE: {
     unit_value: 0,
@@ -245,6 +279,7 @@ export const EnCountries: Currencies = {
     currency_code: 'CVE',
     currency_name: 'Cape Verdean Escudo',
     monetary_symbol: 'Esc',
+    flag_code: 'cv',
   },
   CZK: {
     unit_value: 0,
@@ -252,6 +287,7 @@ export const EnCountries: Currencies = {
     currency_code: 'CZK',
     currency_name: 'Czech Koruna',
     monetary_symbol: 'Kč',
+    flag_code: 'cz',
   },
   DJF: {
     unit_value: 0,
@@ -259,6 +295,7 @@ export const EnCountries: Currencies = {
     currency_code: 'DJF',
     currency_name: 'Djiboutian Franc',
     monetary_symbol: 'Fdj',
+    flag_code: 'dj',
   },
   DKK: {
     unit_value: 0,
@@ -266,6 +303,7 @@ export const EnCountries: Currencies = {
     currency_code: 'DKK',
     currency_name: 'Danish Krone',
     monetary_symbol: 'kr',
+    flag_code: 'dk',
   },
   DOP: {
     unit_value: 0,
@@ -273,6 +311,7 @@ export const EnCountries: Currencies = {
     currency_code: 'DOP',
     currency_name: 'Dominican Peso',
     monetary_symbol: 'RD$',
+    flag_code: 'do',
   },
   DZD: {
     unit_value: 0,
@@ -280,6 +319,7 @@ export const EnCountries: Currencies = {
     currency_code: 'DZD',
     currency_name: 'Algerian Dinar',
     monetary_symbol: 'د.ج',
+    flag_code: 'dz',
   },
   EGP: {
     unit_value: 0,
@@ -287,6 +327,7 @@ export const EnCountries: Currencies = {
     currency_code: 'EGP',
     currency_name: 'Egyptian Pound',
     monetary_symbol: 'ج.م',
+    flag_code: 'eg',
   },
   ERN: {
     unit_value: 0,
@@ -294,6 +335,7 @@ export const EnCountries: Currencies = {
     currency_code: 'ERN',
     currency_name: 'Eritrean Nakfa',
     monetary_symbol: 'Nfk',
+    flag_code: 'er',
   },
   ETB: {
     unit_value: 0,
@@ -301,6 +343,7 @@ export const EnCountries: Currencies = {
     currency_code: 'ETB',
     currency_name: 'Ethiopian Birr',
     monetary_symbol: 'Br',
+    flag_code: 'et',
   },
   FJD: {
     unit_value: 0,
@@ -308,6 +351,7 @@ export const EnCountries: Currencies = {
     currency_code: 'FJD',
     currency_name: 'Fijian Dollar',
     monetary_symbol: 'FJ$',
+    flag_code: 'fj',
   },
   FKP: {
     unit_value: 0,
@@ -315,6 +359,7 @@ export const EnCountries: Currencies = {
     currency_code: 'FKP',
     currency_name: 'Falkland Islands Pound',
     monetary_symbol: 'FK£',
+    flag_code: 'fk',
   },
   FOK: {
     unit_value: 0,
@@ -322,6 +367,7 @@ export const EnCountries: Currencies = {
     currency_code: 'FOK',
     currency_name: 'Faroese Króna',
     monetary_symbol: 'kr',
+    flag_code: 'fo',
   },
   GBP: {
     unit_value: 0,
@@ -329,6 +375,7 @@ export const EnCountries: Currencies = {
     currency_code: 'GBP',
     currency_name: 'British Pound Sterling',
     monetary_symbol: '£',
+    flag_code: 'gb',
   },
   GEL: {
     unit_value: 0,
@@ -336,6 +383,7 @@ export const EnCountries: Currencies = {
     currency_code: 'GEL',
     currency_name: 'Georgian Lari',
     monetary_symbol: '₾',
+    flag_code: 'ge',
   },
   GGP: {
     unit_value: 0,
@@ -343,6 +391,7 @@ export const EnCountries: Currencies = {
     currency_code: 'GGP',
     currency_name: 'Guernsey Pound',
     monetary_symbol: '£',
+    flag_code: 'gg',
   },
   GHS: {
     unit_value: 0,
@@ -350,6 +399,7 @@ export const EnCountries: Currencies = {
     currency_code: 'GHS',
     currency_name: 'Ghanaian Cedi',
     monetary_symbol: 'GH₵',
+    flag_code: 'gh',
   },
   GIP: {
     unit_value: 0,
@@ -357,6 +407,7 @@ export const EnCountries: Currencies = {
     currency_code: 'GIP',
     currency_name: 'Gibraltar Pound',
     monetary_symbol: '£',
+    flag_code: 'gi',
   },
   GMD: {
     unit_value: 0,
@@ -364,6 +415,7 @@ export const EnCountries: Currencies = {
     currency_code: 'GMD',
     currency_name: 'Gambian Dalasi',
     monetary_symbol: 'D',
+    flag_code: 'gm',
   },
   GNF: {
     unit_value: 0,
@@ -371,6 +423,7 @@ export const EnCountries: Currencies = {
     currency_code: 'GNF',
     currency_name: 'Guinean Franc',
     monetary_symbol: 'FG',
+    flag_code: 'gn',
   },
   GTQ: {
     unit_value: 0,
@@ -378,6 +431,7 @@ export const EnCountries: Currencies = {
     currency_code: 'GTQ',
     currency_name: 'Guatemalan Quetzal',
     monetary_symbol: 'Q',
+    flag_code: 'gt',
   },
   GYD: {
     unit_value: 0,
@@ -385,6 +439,7 @@ export const EnCountries: Currencies = {
     currency_code: 'GYD',
     currency_name: 'Guyanese Dollar',
     monetary_symbol: 'GY$',
+    flag_code: 'gy',
   },
   HKD: {
     unit_value: 0,
@@ -392,6 +447,7 @@ export const EnCountries: Currencies = {
     currency_code: 'HKD',
     currency_name: 'Hong Kong Dollar',
     monetary_symbol: 'HK$',
+    flag_code: 'hk',
   },
   HNL: {
     unit_value: 0,
@@ -399,6 +455,7 @@ export const EnCountries: Currencies = {
     currency_code: 'HNL',
     currency_name: 'Honduran Lempira',
     monetary_symbol: 'L',
+    flag_code: 'hn',
   },
   HRK: {
     unit_value: 0,
@@ -406,6 +463,7 @@ export const EnCountries: Currencies = {
     currency_code: 'HRK',
     currency_name: 'Croatian Kuna',
     monetary_symbol: 'kn',
+    flag_code: 'hr',
   },
   HTG: {
     unit_value: 0,
@@ -413,6 +471,7 @@ export const EnCountries: Currencies = {
     currency_code: 'HTG',
     currency_name: 'Haitian Gourde',
     monetary_symbol: 'G',
+    flag_code: 'ht',
   },
   HUF: {
     unit_value: 0,
@@ -420,6 +479,7 @@ export const EnCountries: Currencies = {
     currency_code: 'HUF',
     currency_name: 'Hungarian Forint',
     monetary_symbol: 'Ft',
+    flag_code: 'hu',
   },
   IDR: {
     unit_value: 0,
@@ -427,6 +487,7 @@ export const EnCountries: Currencies = {
     currency_code: 'IDR',
     currency_name: 'Indonesian Rupiah',
     monetary_symbol: 'Rp',
+    flag_code: 'id',
   },
   ILS: {
     unit_value: 0,
@@ -434,6 +495,7 @@ export const EnCountries: Currencies = {
     currency_code: 'ILS',
     currency_name: 'Israeli New Shekel',
     monetary_symbol: '₪',
+    flag_code: 'is',
   },
   IMP: {
     unit_value: 0,
@@ -441,6 +503,7 @@ export const EnCountries: Currencies = {
     currency_code: 'IMP',
     currency_name: 'Isle of Man Pound',
     monetary_symbol: '£',
+    flag_code: 'im',
   },
   INR: {
     unit_value: 0,
@@ -448,6 +511,7 @@ export const EnCountries: Currencies = {
     currency_code: 'INR',
     currency_name: 'Indian Rupee',
     monetary_symbol: '₹',
+    flag_code: 'in',
   },
   IQD: {
     unit_value: 0,
@@ -455,6 +519,7 @@ export const EnCountries: Currencies = {
     currency_code: 'IQD',
     currency_name: 'Iraqi Dinar',
     monetary_symbol: 'ع.د',
+    flag_code: 'iq',
   },
   IRR: {
     unit_value: 0,
@@ -462,6 +527,7 @@ export const EnCountries: Currencies = {
     currency_code: 'IRR',
     currency_name: 'Iranian Rial',
     monetary_symbol: '﷼',
+    flag_code: 'ir',
   },
   ISK: {
     unit_value: 0,
@@ -469,6 +535,7 @@ export const EnCountries: Currencies = {
     currency_code: 'ISK',
     currency_name: 'Icelandic Króna',
     monetary_symbol: 'kr',
+    flag_code: 'is',
   },
   JEP: {
     unit_value: 0,
@@ -476,6 +543,7 @@ export const EnCountries: Currencies = {
     currency_code: 'JEP',
     currency_name: 'Jersey Pound',
     monetary_symbol: '£',
+    flag_code: 'je',
   },
   JMD: {
     unit_value: 0,
@@ -483,6 +551,7 @@ export const EnCountries: Currencies = {
     currency_code: 'JMD',
     currency_name: 'Jamaican Dollar',
     monetary_symbol: 'J$',
+    flag_code: 'jm',
   },
   JOD: {
     unit_value: 0,
@@ -490,6 +559,7 @@ export const EnCountries: Currencies = {
     currency_code: 'JOD',
     currency_name: 'Jordanian Dinar',
     monetary_symbol: 'د.ا',
+    flag_code: 'jo',
   },
   JPY: {
     unit_value: 0,
@@ -497,6 +567,7 @@ export const EnCountries: Currencies = {
     currency_code: 'JPY',
     currency_name: 'Japanese Yen',
     monetary_symbol: '¥',
+    flag_code: 'jp',
   },
   KES: {
     unit_value: 0,
@@ -504,6 +575,7 @@ export const EnCountries: Currencies = {
     currency_code: 'KES',
     currency_name: 'Kenyan Shilling',
     monetary_symbol: 'Ksh',
+    flag_code: 'ke',
   },
   KGS: {
     unit_value: 0,
@@ -511,6 +583,7 @@ export const EnCountries: Currencies = {
     currency_code: 'KGS',
     currency_name: 'Kyrgystani Som',
     monetary_symbol: 'с',
+    flag_code: 'kg',
   },
   KHR: {
     unit_value: 0,
@@ -518,6 +591,7 @@ export const EnCountries: Currencies = {
     currency_code: 'KHR',
     currency_name: 'Cambodian Riel',
     monetary_symbol: '៛',
+    flag_code: 'kh',
   },
   KID: {
     unit_value: 0,
@@ -525,6 +599,7 @@ export const EnCountries: Currencies = {
     currency_code: 'KID',
     currency_name: 'Kiribati Dollar',
     monetary_symbol: '$',
+    flag_code: 'ki',
   },
   KMF: {
     unit_value: 0,
@@ -532,6 +607,7 @@ export const EnCountries: Currencies = {
     currency_code: 'KMF',
     currency_name: 'Comorian Franc',
     monetary_symbol: 'CF',
+    flag_code: 'km',
   },
   KRW: {
     unit_value: 0,
@@ -539,6 +615,7 @@ export const EnCountries: Currencies = {
     currency_code: 'KRW',
     currency_name: 'South Korean Won',
     monetary_symbol: '₩',
+    flag_code: 'kr',
   },
   KWD: {
     unit_value: 0,
@@ -546,6 +623,7 @@ export const EnCountries: Currencies = {
     currency_code: 'KWD',
     currency_name: 'Kuwaiti Dinar',
     monetary_symbol: 'د.ك',
+    flag_code: 'kw',
   },
   KYD: {
     unit_value: 0,
@@ -553,6 +631,7 @@ export const EnCountries: Currencies = {
     currency_code: 'KYD',
     currency_name: 'Cayman Islands Dollar',
     monetary_symbol: '$',
+    flag_code: 'ky',
   },
   KZT: {
     unit_value: 0,
@@ -560,6 +639,7 @@ export const EnCountries: Currencies = {
     currency_code: 'KZT',
     currency_name: 'Kazakhstani Tenge',
     monetary_symbol: '₸',
+    flag_code: 'kz',
   },
   LAK: {
     unit_value: 0,
@@ -567,6 +647,7 @@ export const EnCountries: Currencies = {
     currency_code: 'LAK',
     currency_name: 'Laotian Kip',
     monetary_symbol: '₭',
+    flag_code: 'la',
   },
   LBP: {
     unit_value: 0,
@@ -574,6 +655,7 @@ export const EnCountries: Currencies = {
     currency_code: 'LBP',
     currency_name: 'Lebanese Pound',
     monetary_symbol: 'ل.ل',
+    flag_code: 'lb',
   },
   LKR: {
     unit_value: 0,
@@ -581,6 +663,7 @@ export const EnCountries: Currencies = {
     currency_code: 'LKR',
     currency_name: 'Sri Lankan Rupee',
     monetary_symbol: 'රු',
+    flag_code: 'lk',
   },
   LRD: {
     unit_value: 0,
@@ -588,6 +671,7 @@ export const EnCountries: Currencies = {
     currency_code: 'LRD',
     currency_name: 'Liberian Dollar',
     monetary_symbol: '$',
+    flag_code: 'lr',
   },
   LSL: {
     unit_value: 0,
@@ -595,6 +679,7 @@ export const EnCountries: Currencies = {
     currency_code: 'LSL',
     currency_name: 'Lesotho Loti',
     monetary_symbol: 'L',
+    flag_code: 'ls',
   },
   LYD: {
     unit_value: 0,
@@ -602,6 +687,7 @@ export const EnCountries: Currencies = {
     currency_code: 'LYD',
     currency_name: 'Libyan Dinar',
     monetary_symbol: 'ل.د',
+    flag_code: 'ly',
   },
   MAD: {
     unit_value: 0,
@@ -609,6 +695,7 @@ export const EnCountries: Currencies = {
     currency_code: 'MAD',
     currency_name: 'Moroccan Dirham',
     monetary_symbol: 'د.م.',
+    flag_code: 'ma',
   },
   MDL: {
     unit_value: 0,
@@ -616,6 +703,7 @@ export const EnCountries: Currencies = {
     currency_code: 'MDL',
     currency_name: 'Moldovan Leu',
     monetary_symbol: 'L',
+    flag_code: 'md',
   },
   MGA: {
     unit_value: 0,
@@ -623,6 +711,7 @@ export const EnCountries: Currencies = {
     currency_code: 'MGA',
     currency_name: 'Malagasy Ariary',
     monetary_symbol: 'Ar',
+    flag_code: 'mg',
   },
   MKD: {
     unit_value: 0,
@@ -630,6 +719,7 @@ export const EnCountries: Currencies = {
     currency_code: 'MKD',
     currency_name: 'Macedonian Denar',
     monetary_symbol: 'ден',
+    flag_code: 'mk',
   },
   MMK: {
     unit_value: 0,
@@ -637,6 +727,7 @@ export const EnCountries: Currencies = {
     currency_code: 'MMK',
     currency_name: 'Myanmar Kyat',
     monetary_symbol: 'Ks',
+    flag_code: 'mm',
   },
   MNT: {
     unit_value: 0,
@@ -644,6 +735,7 @@ export const EnCountries: Currencies = {
     currency_code: 'MNT',
     currency_name: 'Mongolian Tugrik',
     monetary_symbol: '₮',
+    flag_code: 'mn',
   },
   MOP: {
     unit_value: 0,
@@ -651,6 +743,7 @@ export const EnCountries: Currencies = {
     currency_code: 'MOP',
     currency_name: 'Macanese Pataca',
     monetary_symbol: 'P',
+    flag_code: 'mo',
   },
   MRU: {
     unit_value: 0,
@@ -658,6 +751,7 @@ export const EnCountries: Currencies = {
     currency_code: 'MRU',
     currency_name: 'Mauritanian Ouguiya',
     monetary_symbol: 'UM',
+    flag_code: 'mr',
   },
   MUR: {
     unit_value: 0,
@@ -665,6 +759,7 @@ export const EnCountries: Currencies = {
     currency_code: 'MUR',
     currency_name: 'Mauritian Rupee',
     monetary_symbol: '₨',
+    flag_code: 'mu',
   },
   MVR: {
     unit_value: 0,
@@ -672,6 +767,7 @@ export const EnCountries: Currencies = {
     currency_code: 'MVR',
     currency_name: 'Maldivian Rufiyaa',
     monetary_symbol: 'ރ.',
+    flag_code: 'mv',
   },
   MWK: {
     unit_value: 0,
@@ -679,6 +775,7 @@ export const EnCountries: Currencies = {
     currency_code: 'MWK',
     currency_name: 'Malawian Kwacha',
     monetary_symbol: 'MK',
+    flag_code: 'mw',
   },
   MXN: {
     unit_value: 0,
@@ -686,6 +783,7 @@ export const EnCountries: Currencies = {
     currency_code: 'MXN',
     currency_name: 'Mexican Peso',
     monetary_symbol: '$',
+    flag_code: 'mx',
   },
   MYR: {
     unit_value: 0,
@@ -693,6 +791,7 @@ export const EnCountries: Currencies = {
     currency_code: 'MYR',
     currency_name: 'Malaysian Ringgit',
     monetary_symbol: 'RM',
+    flag_code: 'my',
   },
   MZN: {
     unit_value: 0,
@@ -700,6 +799,7 @@ export const EnCountries: Currencies = {
     currency_code: 'MZN',
     currency_name: 'Mozambican Metical',
     monetary_symbol: 'MT',
+    flag_code: 'mz',
   },
   NAD: {
     unit_value: 0,
@@ -707,6 +807,7 @@ export const EnCountries: Currencies = {
     currency_code: 'NAD',
     currency_name: 'Namibian Dollar',
     monetary_symbol: '$',
+    flag_code: 'na',
   },
   NGN: {
     unit_value: 0,
@@ -714,6 +815,7 @@ export const EnCountries: Currencies = {
     currency_code: 'NGN',
     currency_name: 'Nigerian Naira',
     monetary_symbol: '₦',
+    flag_code: 'ng',
   },
   NIO: {
     unit_value: 0,
@@ -721,6 +823,7 @@ export const EnCountries: Currencies = {
     currency_code: 'NIO',
     currency_name: 'Nicaraguan Córdoba',
     monetary_symbol: 'C$',
+    flag_code: 'ni',
   },
   NOK: {
     unit_value: 0,
@@ -728,6 +831,7 @@ export const EnCountries: Currencies = {
     currency_code: 'NOK',
     currency_name: 'Norwegian Krone',
     monetary_symbol: 'kr',
+    flag_code: 'no',
   },
   NPR: {
     unit_value: 0,
@@ -735,6 +839,7 @@ export const EnCountries: Currencies = {
     currency_code: 'NPR',
     currency_name: 'Nepalese Rupee',
     monetary_symbol: 'रू',
+    flag_code: 'np',
   },
   NZD: {
     unit_value: 0,
@@ -742,6 +847,7 @@ export const EnCountries: Currencies = {
     currency_code: 'NZD',
     currency_name: 'New Zealand Dollar',
     monetary_symbol: '$',
+    flag_code: 'nz',
   },
   OMR: {
     unit_value: 0,
@@ -749,6 +855,7 @@ export const EnCountries: Currencies = {
     currency_code: 'OMR',
     currency_name: 'Omani Rial',
     monetary_symbol: 'ر.ع.',
+    flag_code: 'om',
   },
   PAB: {
     unit_value: 0,
@@ -756,6 +863,7 @@ export const EnCountries: Currencies = {
     currency_code: 'PAB',
     currency_name: 'Panamanian Balboa',
     monetary_symbol: 'B/.',
+    flag_code: 'pa',
   },
   PEN: {
     unit_value: 0,
@@ -763,6 +871,7 @@ export const EnCountries: Currencies = {
     currency_code: 'PEN',
     currency_name: 'Peruvian Nuevo Sol',
     monetary_symbol: 'S/.',
+    flag_code: 'pe',
   },
   PGK: {
     unit_value: 0,
@@ -770,6 +879,7 @@ export const EnCountries: Currencies = {
     currency_code: 'PGK',
     currency_name: 'Papua New Guinean Kina',
     monetary_symbol: 'K',
+    flag_code: 'pg',
   },
   PHP: {
     unit_value: 0,
@@ -777,6 +887,7 @@ export const EnCountries: Currencies = {
     currency_code: 'PHP',
     currency_name: 'Philippine Peso',
     monetary_symbol: '₱',
+    flag_code: 'ph',
   },
   PKR: {
     unit_value: 0,
@@ -784,6 +895,7 @@ export const EnCountries: Currencies = {
     currency_code: 'PKR',
     currency_name: 'Pakistani Rupee',
     monetary_symbol: '₨',
+    flag_code: 'pk',
   },
   PLN: {
     unit_value: 0,
@@ -791,6 +903,7 @@ export const EnCountries: Currencies = {
     currency_code: 'PLN',
     currency_name: 'Polish Złoty',
     monetary_symbol: 'zł',
+    flag_code: 'pl',
   },
   PYG: {
     unit_value: 0,
@@ -798,6 +911,7 @@ export const EnCountries: Currencies = {
     currency_code: 'PYG',
     currency_name: 'Paraguayan Guarani',
     monetary_symbol: '₲',
+    flag_code: 'py',
   },
   QAR: {
     unit_value: 0,
@@ -805,6 +919,7 @@ export const EnCountries: Currencies = {
     currency_code: 'QAR',
     currency_name: 'Qatari Rial',
     monetary_symbol: 'ر.ق.',
+    flag_code: 'qa',
   },
   RON: {
     unit_value: 0,
@@ -812,6 +927,7 @@ export const EnCountries: Currencies = {
     currency_code: 'RON',
     currency_name: 'Romanian Leu',
     monetary_symbol: 'lei',
+    flag_code: 'ro',
   },
   RSD: {
     unit_value: 0,
@@ -819,6 +935,7 @@ export const EnCountries: Currencies = {
     currency_code: 'RSD',
     currency_name: 'Serbian Dinar',
     monetary_symbol: 'дин.',
+    flag_code: 'rs',
   },
   RUB: {
     unit_value: 0,
@@ -826,6 +943,7 @@ export const EnCountries: Currencies = {
     currency_code: 'RUB',
     currency_name: 'Russian Ruble',
     monetary_symbol: '₽',
+    flag_code: 'ru',
   },
   RWF: {
     unit_value: 0,
@@ -833,6 +951,7 @@ export const EnCountries: Currencies = {
     currency_code: 'RWF',
     currency_name: 'Rwandan Franc',
     monetary_symbol: 'FRw',
+    flag_code: 'rw',
   },
   SAR: {
     unit_value: 0,
@@ -840,6 +959,7 @@ export const EnCountries: Currencies = {
     currency_code: 'SAR',
     currency_name: 'Saudi Riyal',
     monetary_symbol: 'ر.س.',
+    flag_code: 'sa',
   },
   SBD: {
     unit_value: 0,
@@ -847,6 +967,7 @@ export const EnCountries: Currencies = {
     currency_code: 'SBD',
     currency_name: 'Solomon Islands Dollar',
     monetary_symbol: '$',
+    flag_code: 'sb',
   },
   SCR: {
     unit_value: 0,
@@ -854,6 +975,7 @@ export const EnCountries: Currencies = {
     currency_code: 'SCR',
     currency_name: 'Seychellois Rupee',
     monetary_symbol: '₨',
+    flag_code: 'sc',
   },
   SDG: {
     unit_value: 0,
@@ -861,6 +983,7 @@ export const EnCountries: Currencies = {
     currency_code: 'SDG',
     currency_name: 'Sudanese Pound',
     monetary_symbol: '£',
+    flag_code: 'sd',
   },
   SEK: {
     unit_value: 0,
@@ -868,6 +991,7 @@ export const EnCountries: Currencies = {
     currency_code: 'SEK',
     currency_name: 'Swedish Krona',
     monetary_symbol: 'kr',
+    flag_code: 'se',
   },
   SGD: {
     unit_value: 0,
@@ -875,6 +999,7 @@ export const EnCountries: Currencies = {
     currency_code: 'SGD',
     currency_name: 'Singapore Dollar',
     monetary_symbol: '$',
+    flag_code: 'sg',
   },
   SHP: {
     unit_value: 0,
@@ -882,6 +1007,7 @@ export const EnCountries: Currencies = {
     currency_code: 'SHP',
     currency_name: 'Saint Helena Pound',
     monetary_symbol: '£',
+    flag_code: 'sh',
   },
   SLE: {
     unit_value: 0,
@@ -889,6 +1015,7 @@ export const EnCountries: Currencies = {
     currency_code: 'SLE',
     currency_name: 'Sierra Leonean Leone',
     monetary_symbol: 'Le',
+    flag_code: 'sl',
   },
   SLL: {
     unit_value: 0,
@@ -896,6 +1023,7 @@ export const EnCountries: Currencies = {
     currency_code: 'SLL',
     currency_name: 'Sierra Leonean Leone',
     monetary_symbol: 'Le',
+    flag_code: 'sl',
   },
   SOS: {
     unit_value: 0,
@@ -903,6 +1031,7 @@ export const EnCountries: Currencies = {
     currency_code: 'SOS',
     currency_name: 'Somali Shilling',
     monetary_symbol: 'Sh',
+    flag_code: 'so',
   },
   SRD: {
     unit_value: 0,
@@ -910,6 +1039,7 @@ export const EnCountries: Currencies = {
     currency_code: 'SRD',
     currency_name: 'Surinamese Dollar',
     monetary_symbol: '$',
+    flag_code: 'sr',
   },
   SSP: {
     unit_value: 0,
@@ -917,6 +1047,7 @@ export const EnCountries: Currencies = {
     currency_code: 'SSP',
     currency_name: 'South Sudanese Pound',
     monetary_symbol: '£',
+    flag_code: 'ss',
   },
   STN: {
     unit_value: 0,
@@ -924,6 +1055,7 @@ export const EnCountries: Currencies = {
     currency_code: 'STN',
     currency_name: 'São Tomé and Príncipe Dobra',
     monetary_symbol: 'Db',
+    flag_code: 'st',
   },
   SYP: {
     unit_value: 0,
@@ -931,6 +1063,7 @@ export const EnCountries: Currencies = {
     currency_code: 'SYP',
     currency_name: 'Syrian Pound',
     monetary_symbol: 'ل.س',
+    flag_code: 'sy',
   },
   SZL: {
     unit_value: 0,
@@ -938,6 +1071,7 @@ export const EnCountries: Currencies = {
     currency_code: 'SZL',
     currency_name: 'Swazi Lilangeni',
     monetary_symbol: 'E',
+    flag_code: 'sz',
   },
   THB: {
     unit_value: 0,
@@ -945,6 +1079,7 @@ export const EnCountries: Currencies = {
     currency_code: 'THB',
     currency_name: 'Thai Baht',
     monetary_symbol: '฿',
+    flag_code: 'th',
   },
   TJS: {
     unit_value: 0,
@@ -952,6 +1087,7 @@ export const EnCountries: Currencies = {
     currency_code: 'TJS',
     currency_name: 'Tajikistani Somoni',
     monetary_symbol: 'ЅМ',
+    flag_code: 'tj',
   },
   TMT: {
     unit_value: 0,
@@ -959,6 +1095,7 @@ export const EnCountries: Currencies = {
     currency_code: 'TMT',
     currency_name: 'Turkmenistani Manat',
     monetary_symbol: 'T',
+    flag_code: 'tm',
   },
   TND: {
     unit_value: 0,
@@ -966,6 +1103,7 @@ export const EnCountries: Currencies = {
     currency_code: 'TND',
     currency_name: 'Tunisian Dinar',
     monetary_symbol: 'د.ت',
+    flag_code: 'tn',
   },
   TOP: {
     unit_value: 0,
@@ -973,6 +1111,7 @@ export const EnCountries: Currencies = {
     currency_code: 'TOP',
     currency_name: 'Tongan Paʻanga',
     monetary_symbol: 'T$',
+    flag_code: 'to',
   },
   TRY: {
     unit_value: 0,
@@ -980,6 +1119,7 @@ export const EnCountries: Currencies = {
     currency_code: 'TRY',
     currency_name: 'Turkish Lira',
     monetary_symbol: '₺',
+    flag_code: 'tr',
   },
   TTD: {
     unit_value: 0,
@@ -987,6 +1127,7 @@ export const EnCountries: Currencies = {
     currency_code: 'TTD',
     currency_name: 'Trinidad and Tobago Dollar',
     monetary_symbol: '$',
+    flag_code: 'tt',
   },
   TVD: {
     unit_value: 0,
@@ -994,6 +1135,7 @@ export const EnCountries: Currencies = {
     currency_code: 'TVD',
     currency_name: 'Tuvaluan Dollar',
     monetary_symbol: '$',
+    flag_code: 'tv',
   },
   TWD: {
     unit_value: 0,
@@ -1001,6 +1143,7 @@ export const EnCountries: Currencies = {
     currency_code: 'TWD',
     currency_name: 'New Taiwan Dollar',
     monetary_symbol: 'NT$',
+    flag_code: 'tw',
   },
   TZS: {
     unit_value: 0,
@@ -1008,6 +1151,7 @@ export const EnCountries: Currencies = {
     currency_code: 'TZS',
     currency_name: 'Tanzanian Shilling',
     monetary_symbol: 'TSh',
+    flag_code: 'tz',
   },
   UAH: {
     unit_value: 0,
@@ -1015,6 +1159,7 @@ export const EnCountries: Currencies = {
     currency_code: 'UAH',
     currency_name: 'Ukrainian Hryvnia',
     monetary_symbol: '₴',
+    flag_code: 'ua',
   },
   UGX: {
     unit_value: 0,
@@ -1022,6 +1167,7 @@ export const EnCountries: Currencies = {
     currency_code: 'UGX',
     currency_name: 'Ugandan Shilling',
     monetary_symbol: 'USh',
+    flag_code: 'ug',
   },
   USD: {
     unit_value: 0,
@@ -1029,6 +1175,7 @@ export const EnCountries: Currencies = {
     currency_code: 'USD',
     currency_name: 'United States Dollar',
     monetary_symbol: '$',
+    flag_code: 'us',
   },
   UYU: {
     unit_value: 0,
@@ -1036,6 +1183,7 @@ export const EnCountries: Currencies = {
     currency_code: 'UYU',
     currency_name: 'Uruguayan Peso',
     monetary_symbol: '$',
+    flag_code: 'uy',
   },
   UZS: {
     unit_value: 0,
@@ -1043,6 +1191,7 @@ export const EnCountries: Currencies = {
     currency_code: 'UZS',
     currency_name: 'Uzbekistani Som',
     monetary_symbol: 'UZS',
+    flag_code: 'uz',
   },
   VES: {
     unit_value: 0,
@@ -1050,6 +1199,7 @@ export const EnCountries: Currencies = {
     currency_code: 'VES',
     currency_name: 'Venezuelan Bolívar',
     monetary_symbol: 'Bs.S.',
+    flag_code: 've',
   },
   VND: {
     unit_value: 0,
@@ -1057,6 +1207,7 @@ export const EnCountries: Currencies = {
     currency_code: 'VND',
     currency_name: 'Vietnamese Dong',
     monetary_symbol: '₫',
+    flag_code: 'vn',
   },
   VUV: {
     unit_value: 0,
@@ -1064,6 +1215,7 @@ export const EnCountries: Currencies = {
     currency_code: 'VUV',
     currency_name: 'Vanuatu Vatu',
     monetary_symbol: 'Vt',
+    flag_code: 'vu',
   },
   WST: {
     unit_value: 0,
@@ -1071,6 +1223,7 @@ export const EnCountries: Currencies = {
     currency_code: 'WST',
     currency_name: 'Samoan Tala',
     monetary_symbol: 'T',
+    flag_code: 'ws',
   },
   XAF: {
     unit_value: 0,
@@ -1078,6 +1231,7 @@ export const EnCountries: Currencies = {
     currency_code: 'XAF',
     currency_name: 'Central African CFA Franc',
     monetary_symbol: 'FCFA',
+    flag_code: 'cf',
   },
   XCD: {
     unit_value: 0,
@@ -1085,6 +1239,7 @@ export const EnCountries: Currencies = {
     currency_code: 'XCD',
     currency_name: 'Eastern Caribbean Dollar',
     monetary_symbol: '$',
+    flag_code: 'dm',
   },
   XDR: {
     unit_value: 0,
@@ -1092,6 +1247,7 @@ export const EnCountries: Currencies = {
     currency_code: 'XDR',
     currency_name: 'Special Drawing Rights',
     monetary_symbol: 'XDR',
+    flag_code: 'un',
   },
   XOF: {
     unit_value: 0,
@@ -1099,6 +1255,7 @@ export const EnCountries: Currencies = {
     currency_code: 'XOF',
     currency_name: 'West African CFA Franc',
     monetary_symbol: 'CFA',
+    flag_code: 'sn',
   },
   XPF: {
     unit_value: 0,
@@ -1106,6 +1263,7 @@ export const EnCountries: Currencies = {
     currency_code: 'XPF',
     currency_name: 'CFP Franc',
     monetary_symbol: '₣',
+    flag_code: 'tf',
   },
   YER: {
     unit_value: 0,
@@ -1113,6 +1271,7 @@ export const EnCountries: Currencies = {
     currency_code: 'YER',
     currency_name: 'Yemeni Rial',
     monetary_symbol: '﷼',
+    flag_code: 'ye',
   },
   ZAR: {
     unit_value: 0,
@@ -1120,6 +1279,7 @@ export const EnCountries: Currencies = {
     currency_code: 'ZAR',
     currency_name: 'South African Rand',
     monetary_symbol: 'R',
+    flag_code: 'za',
   },
   ZMW: {
     unit_value: 0,
@@ -1127,6 +1287,7 @@ export const EnCountries: Currencies = {
     currency_code: 'ZMW',
     currency_name: 'Zambian Kwacha',
     monetary_symbol: 'ZK',
+    flag_code: 'zm',
   },
   ZWL: {
     unit_value: 0,
@@ -1134,5 +1295,6 @@ export const EnCountries: Currencies = {
     currency_code: 'ZWL',
     currency_name: 'Zimbabwean Dollar',
     monetary_symbol: '$',
+    flag_code: 'zw',
   },
 };
