@@ -1,13 +1,16 @@
 'use client'
 
 import { MouseEventHandler } from 'react';
+
+// style
 import { IconButtonContainer } from './styled'
 
 interface IconButtonProps {
   label?: string;
   Icon: JSX.Element;
-  color?: 'transparent' | 'background' | 'background-20';
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  color?: 'transparent' | 'background' | 'background-20';
+  attributes?: React.ButtonHTMLAttributes<HTMLButtonElement>;
 }
 
 export const IconButton = ({
@@ -15,6 +18,7 @@ export const IconButton = ({
   Icon,
   onClick,
   label = 'Icon button',
+  attributes
 }: IconButtonProps) => {
   return (
     <IconButtonContainer
@@ -22,6 +26,7 @@ export const IconButton = ({
       onClick={onClick}
       aria-label={label}
       className={`icon-button ${color}`}
+      {...attributes}
     >
       { Icon }
     </IconButtonContainer>
