@@ -6,7 +6,7 @@ import { IconButtonContainer } from './styled'
 interface IconButtonProps {
   label?: string;
   Icon: JSX.Element;
-  color?: 'transparent' | 'background';
+  color?: 'transparent' | 'background' | 'background-20';
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
