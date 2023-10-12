@@ -46,8 +46,14 @@ export const HomePageContent = () => {
             color='background-20'
             onClick={handleToggleCurrencySelector}
             label={`${showCurrencySelector ? 'Open' : 'Close'} currency selector`}
+            attributes={{
+              'aria-haspopup': 'listbox',
+              'aria-expanded': showCurrencySelector,
+              'aria-controls': 'CurrencySelector_Header',
+            }}
           />
           <CurrencySelector
+            id='CurrencySelector_Header'
             showCurrencySelector={showCurrencySelector}
             onSelectOption={handleSelectOption}
           />
