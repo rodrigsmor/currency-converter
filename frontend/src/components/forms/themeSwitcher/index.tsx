@@ -6,12 +6,16 @@ import { CurrentTheme, CurrentThemeProps } from '@/contexts/CurrentThemeProvider
 
 interface ThemeSwitcherProps {
   isButton?: boolean;
+  color?: 'background' | 'typography';
 }
 
 const DarkIcon = () => <MoonLineIcon aria-label='dark theme' size={20} />
 const LightIcon = () => <SunLineIcon aria-label='light theme' size={20} />
 
-export const ThemeSwitcher = ({ isButton = false }: ThemeSwitcherProps) => {
+export const ThemeSwitcher = ({
+  isButton = false,
+  color = 'background',
+}: ThemeSwitcherProps) => {
   const { setCurrentTheme, currentTheme, isLightTheme } = useContext<CurrentThemeProps>(CurrentTheme);
 
   function switchTheme(event: MouseEvent<HTMLButtonElement>) {
@@ -23,8 +27,8 @@ export const ThemeSwitcher = ({ isButton = false }: ThemeSwitcherProps) => {
   if (isButton) {
     return (
       <ThemeSwitcherButton
+        data-color={color}
         onClick={switchTheme}
-        $colorType='background'
         className='theme-switcher_Button'
       >
         {isLightTheme ? <LightIcon /> : <DarkIcon /> }
