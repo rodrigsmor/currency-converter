@@ -18,7 +18,11 @@ import Menu4FillIcon from 'remixicon-react/Menu4FillIcon';
 // styles
 import { HeaderContainer, HeaderNav, HeaderNavOption, InteractionsWrapper } from './styled';
 
-export const Header = () => {
+interface HeaderProps {
+  hasScrolled: boolean;
+}
+
+export const Header = ({ hasScrolled }: HeaderProps) => {
   const pathname = usePathname();
 
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
@@ -29,9 +33,11 @@ export const Header = () => {
   }
 
   return (
-    <HeaderContainer>
+    <HeaderContainer
+      data-scrolled={hasScrolled}
+    >
       <div className='navigation-wrapper'>
-        <Logo logoColor='light' />
+        <Logo logoColor={hasScrolled ? 'dark' : 'light'} />
         <HeaderNav>
           <ul>
             {
@@ -42,6 +48,7 @@ export const Header = () => {
                   <li key={index}>
                     <HeaderNavOption
                       href={path}
+                      data-variant={hasScrolled ? 'typography' : 'background'}
                       {...(isSelected && { "aria-current": "page" })}
                     >
                       { label }
@@ -54,11 +61,16 @@ export const Header = () => {
         </HeaderNav>
       </div>
       <InteractionsWrapper>
-        <ThemeSwitcher isButton={true} />
-        <LangSelect />
-        <Searchbar color='background' />
+        <ThemeSwitcher isButton={true} color={hasScrolled ? 'typography' : 'background'} />
+        <LangSelect style={hasScrolled ? 'background' : 'transparent'} />
+        <Searchbar color={hasScrolled ? 'primary' : 'background'} />
       </InteractionsWrapper>
-      <IconButton onClick={handleShowSideBar} label='open the sidebar menu' color='transparent' Icon={<Menu4FillIcon size={32} />} />
+      <IconButton
+        onClick={handleShowSideBar}
+        label='open the sidebar menu'
+        Icon={<Menu4FillIcon size={32} />}
+        color={hasScrolled ? 'background' : 'transparent'}
+      />
       <MenuSidebar showSidebar={showSidebar} toggleSidebar={setShowSidebar} />
     </HeaderContainer>
   );
