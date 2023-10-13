@@ -38,7 +38,7 @@ export function LangSelect({ style = 'transparent', showCountryLabel = false }: 
         id='Lang-Select_Toggle'
         aria-expanded={isSelectExpanded}
         onClick={() => setIsSelectExpanded(!isSelectExpanded)}
-        colorVariant={style === 'transparent' ? 'background' : 'typography'}
+        data-variant={style === 'transparent' ? 'background' : 'typography'}
       >
         <div
           aria-label={`${currentLanguage?.label} flag`} className={`fi fi-${currentLanguage?.countryCode} fis country-flag-lang`}></div>

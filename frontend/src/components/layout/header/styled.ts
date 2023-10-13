@@ -12,6 +12,7 @@ export const HeaderContainer = styled.header`
   position: sticky;
   min-width: 100vw;
   align-items: center;
+  transition: all .3s ease-in;
   background-color: transparent;
   justify-content: space-between;
 
@@ -22,6 +23,10 @@ export const HeaderContainer = styled.header`
 
   > .navigation-wrapper {
     gap: 34px;
+  }
+
+  &[data-scrolled^="true"] {
+    background-color: ${(props) => props?.theme?.colors?.background};
   }
   
   @media ${(props) => props?.theme?.breakpoints?.medium } {
@@ -107,6 +112,14 @@ export const HeaderNavOption = styled(Link)`
     &::after {
       width: 100%;
       opacity: 1;
+    }
+  }
+
+  &[data-variant^="typography"] {
+    color: ${(props) => props?.theme?.colors?.typography};
+
+    &::after {
+      background-color: ${(props) => props?.theme?.colors?.typography };
     }
   }
 `;

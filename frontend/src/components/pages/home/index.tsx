@@ -1,6 +1,6 @@
 'use client'
 
-import { MouseEvent, useState } from 'react'
+import { MouseEvent, useRef, useState } from 'react'
 
 // icons
 import More2LineIcon from 'remixicon-react/More2LineIcon';
@@ -17,8 +17,13 @@ import { Currency } from '@/utils/@types/currency';
 
 // mock
 import { currencies_mock } from '@/utils/mocks/currencies';
+import { PageContainer } from '@/styles/common/styled';
+import { Header } from '@/components/layout/header';
 
 export const HomePageContent = () => {
+  const pageRef = useRef<HTMLDivElement>(null)
+  const [hasScrolled, setHasScrolled] = useState<boolean>(false);
+
   const [targetCurrency, setTargetCurrency] = useState<Currency>(currencies_mock[0])
   const [showCurrencySelector, setShowCurrencySelector] = useState<boolean>(false);
 
@@ -33,41 +38,51 @@ export const HomePageContent = () => {
   }
 
   return (
-    <HomePageMainContainer>
-      <TopGreetingsHeader>
-        <hgroup>
-          <h1>Welcome back!</h1>
-          <h2>Check the euro today</h2>
-        </hgroup>
-        <CurrencyPreviewBox>
-          <p>
-            1 United States Dollar equals
-            <strong className='ValueConverted_Container'>
-              <CurrencyValudeConverted>
-                <small className='ValueConverted_MonetarySymbol'>{ targetCurrency.monetary_symbol }</small> 1.07
-              </CurrencyValudeConverted>
-              <span className='ValueConverted_CurrencyName'>{ targetCurrency.currency_name }</span>
-            </strong>
-          </p>
-          <IconButton
-            Icon={<More2LineIcon />}
-            color='background-20'
-            onClick={handleToggleCurrencySelector}
-            label={`${showCurrencySelector ? 'Close' : 'Open'} currency selector`}
-            attributes={{
-              'aria-haspopup': 'listbox',
-              'aria-expanded': showCurrencySelector,
-              'aria-controls': 'CurrencySelector_Header',
-            }}
-          />
-          <CurrencySelector
-            id='CurrencySelector_Header'
-            selectedCurrency={targetCurrency}
-            onSelectOption={handleTargetCurrency}
-            showCurrencySelector={showCurrencySelector}
-          />
-        </CurrencyPreviewBox>
-      </TopGreetingsHeader>
-    </HomePageMainContainer>
+    <PageContainer
+      ref={pageRef}
+      onScroll = { e => {
+        setHasScrolled((e.currentTarget.scrollTop > 60))
+      }}
+    >
+      <Header hasScrolled={hasScrolled} />
+      <HomePageMainContainer>
+        <TopGreetingsHeader>
+          <hgroup>
+            <h1>Welcome back!</h1>
+            <h2>Check the euro today</h2>
+          </hgroup>
+          <CurrencyPreviewBox>
+            <p>
+              1 United States Dollar equals
+              <strong className='ValueConverted_Container'>
+                <CurrencyValudeConverted>
+                  <small className='ValueConverted_MonetarySymbol'>{ targetCurrency.monetary_symbol }</small> 1.07
+                </CurrencyValudeConverted>
+                <span className='ValueConverted_CurrencyName'>{ targetCurrency.currency_name }</span>
+              </strong>
+            </p>
+            <IconButton
+              Icon={<More2LineIcon />}
+              color='background-20'
+              onClick={handleToggleCurrencySelector}
+              label={`${showCurrencySelector ? 'Close' : 'Open'} currency selector`}
+              attributes={{
+                'aria-haspopup': 'listbox',
+                'aria-expanded': showCurrencySelector,
+                'aria-controls': 'CurrencySelector_Header',
+              }}
+            />
+            <CurrencySelector
+              id='CurrencySelector_Header'
+              selectedCurrency={targetCurrency}
+              onSelectOption={handleTargetCurrency}
+              showCurrencySelector={showCurrencySelector}
+            />
+          </CurrencyPreviewBox>
+        </TopGreetingsHeader>
+      </HomePageMainContainer>
+    </PageContainer >
+
   )
 }
+

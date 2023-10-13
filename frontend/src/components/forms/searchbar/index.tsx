@@ -23,7 +23,8 @@ export const Searchbar = ({
 }: SearchbarProps) => {
   return (
     <SearchbarContainer
-      className={`searchbar-container ${color}`}
+      data-color={color}
+      className='searchbar-container'
       {...(label && { "aria-label": label })}
     >
       <SearchLineIcon size={24} />
