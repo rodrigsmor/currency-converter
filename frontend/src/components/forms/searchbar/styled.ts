@@ -7,11 +7,12 @@ export const SearchbarContainer = styled.div`
   padding: 0 10px;
   align-items: center;
   border-radius: 16px;
+  transition: all .3s ease;
   border: 0px solid transparent;
   color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[60]}`};
   background-color: ${(props) => `${props?.theme?.colors?.primary + props?.theme?.opacities?.[20]}`};
 
-  &.background {
+  &[data-color^="background"] {
     background-color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[20]}`};
   }
 `;

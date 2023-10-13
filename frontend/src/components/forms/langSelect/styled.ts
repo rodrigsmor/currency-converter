@@ -18,11 +18,7 @@ export const LangSelectWrapper = styled.div`
   }
 `;
 
-interface LangSelectToggleProps {
-  colorVariant: 'background' | 'typography';
-}
-
-export const LangSelectToggle = styled.button<LangSelectToggleProps>`
+export const LangSelectToggle = styled.button`
   gap: 8px;
   width: 100%;
   height: 100%;
@@ -38,8 +34,8 @@ export const LangSelectToggle = styled.button<LangSelectToggleProps>`
   outline: 0px solid transparent;
   font-size: ${(props) => props?.theme?.typography?.sizes?.h5};
   font-weight: ${(props) => props?.theme?.typography?.weight?.bold};
-  color: ${(props) => `${props?.theme?.colors?.[props?.colorVariant] + props?.theme?.opacities?.[80]}`};
-  border: 1px solid ${(props) => `${props?.theme?.colors?.[props?.colorVariant] + props?.theme?.opacities?.[20]}`};
+  color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[80]}`};
+  border: 1px solid ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[20]}`};
 
   > .country-flag-lang {
     width: 20px;
@@ -70,7 +66,7 @@ export const LangSelectToggle = styled.button<LangSelectToggleProps>`
       text-overflow: ellipsis; 
       font-size: ${(props) => props?.theme?.typography?.sizes?.h6};
       font-weight: ${(props) => props?.theme?.typography?.weight?.medium};
-      color: ${(props) => `${props?.theme?.colors?.[props?.colorVariant] + props?.theme?.opacities?.[60]}`};
+      color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[60]}`};
     }
   }
 
@@ -79,7 +75,20 @@ export const LangSelectToggle = styled.button<LangSelectToggleProps>`
   }
 
   &:hover {
-    background-color: ${(props) => props?.theme?.colors?.[props?.colorVariant]}0D;
+    background-color: ${(props) => props?.theme?.colors?.background}0D;
+  }
+
+  &[data-variant^="typography"] {
+    color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[80]}`};
+    border: 1px solid ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[20]}`};
+
+    > #language-selected_label {
+      color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[60]}`};
+    }
+
+    &:hover {
+      background-color: ${(props) => props?.theme?.colors?.typography}0D;
+    }
   }
 `;
 
