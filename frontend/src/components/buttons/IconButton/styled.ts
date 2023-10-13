@@ -12,12 +12,12 @@ export const IconButtonContainer = styled.button`
   background-color: ${(props) => props?.theme?.colors?.background};
   color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[60]}`};
 
-  &[data-colorˆ="transparent"] {
+  &[color-variant="transparent"] {
     background-color: transparent;
     color: ${(props) => props?.theme?.colors?.background};
   }
 
-  &[data-colorˆ="background-20"] {
+  &[color-variant="background-20"] {
     color: ${(props) => props?.theme?.colors?.background};
     background-color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[20]}`};
   }
@@ -25,11 +25,11 @@ export const IconButtonContainer = styled.button`
   &:hover {
     background-color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[20]}`};
 
-    &[data-colorˆ="transparent"] {
+    &[color-variant="transparent"] {
       background-color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[20]}`};
     }
 
-    &[data-colorˆ="background-20"] {
+    &[color-variant="background-20"] {
       background-color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[40]}`};
     }
   }
