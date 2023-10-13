@@ -1,12 +1,15 @@
 'use client'
 
-import { MouseEvent } from 'react';
+import { ChangeEvent, useMemo, useState } from 'react';
 
 // components
 import { Searchbar } from '../searchbar';
 
+// icons
+import SearchLineIcon from 'remixicon-react/SearchLineIcon';
+
 // style
-import { CurrencyOption, CurrencyOptionsList, CurrencySelectorContainer, CurrencySelectorHeader } from './styled';
+import { CurrencyOptionsList, CurrencySelectorContainer, CurrencySelectorHeader } from './styled';
 
 // mocks
 import { currencies_mock } from '@/utils/mocks/currencies';
@@ -27,6 +30,27 @@ export const CurrencySelector = ({
   onSelectOption,
   showCurrencySelector,
 }: CurrencySelectorProps) => {
+  const [ searchValue, setSearchValue ] = useState<string>('');
+
+  function onChangeSearch(event: ChangeEvent<HTMLInputElement>) {
+    event.preventDefault();
+    setSearchValue(event.target.value);
+  }
+
+  const currenciesResult = useMemo<Currency[]>(() => {
+    let currenciesItems = [...currencies_mock];
+    let searchQuery = searchValue.toLowerCase();
+
+    return currenciesItems.filter((currency) => {
+      return (
+        currency.flag_code.toLowerCase().includes(searchQuery) ||
+        currency.currency_name.toLowerCase().includes(searchQuery) ||
+        currency.currency_code.toLowerCase().includes(searchQuery) ||
+        currency.country_name.toLowerCase().includes(searchQuery)
+      );
+    });
+  }, [searchValue]);
+  
   return (
     <CurrencySelectorContainer
       id={id}
@@ -36,8 +60,10 @@ export const CurrencySelector = ({
     >
       <CurrencySelectorHeader>
         <Searchbar
-          placeholder='search for currency...'
+          value={searchValue}
+          onChange={onChangeSearch}
           label='Search for a currency'
+          placeholder='search for currency...'
         />
       </CurrencySelectorHeader>
       <CurrencyOptionsList
@@ -45,27 +71,44 @@ export const CurrencySelector = ({
         aria-activedescendant={`${id}_${selectedCurrency.currency_code}`}
       >
         {
-          currencies_mock.map((currency, index) => {
-            const isSelected = (currency.currency_code === selectedCurrency.currency_code)
+          currenciesResult.length > 0
+            ? currenciesResult.map((currency, index) => {
+              const isSelected = (currency.currency_code === selectedCurrency.currency_code)
 
-            return (
-              <CurrencyOption
-                role='option'
-                tabIndex={0}
-                aria-selected={isSelected}
-                id={`${id}_${currency.currency_code}`}
-                key={`${currency.currency_code}_${index}`}
-                onClick={() => onSelectOption(currency)}
-                onKeyDown={event => {
-                  if (['Escape', 'Enter'].includes(event.key))
-                    event.preventDefault();
-                    onSelectOption(currency)
-                }}
-              >
-                { currency.currency_code }
-              </CurrencyOption>
+              return (
+                <li
+                  role='option'
+                  aria-selected={isSelected}
+                  key={currency.currency_code}
+                  id={`${id}_${currency.currency_code}`}
+                  onClick={() => onSelectOption(currency)}
+                  onKeyDown={event => {
+                    if ([' ', 'Enter'].includes(event.key)) {
+                      event.preventDefault();
+                      onSelectOption(currency)
+                    }
+                  }}
+                  className='CurrencySelect_CurrencyOption'
+                  tabIndex={(isSelected || !showCurrencySelector) ? -1 : 0}
+                >
+                  <figure>
+                    <span
+                      aria-label={`${currency.country_name} flag`}
+                      className={`fi fi-${currency.flag_code} CurrencySelect_FlagIcon`}
+                    ></span>
+                  </figure>
+                  <div>
+                    <p>{currency.currency_name}</p> 
+                    <span>{currency.currency_code}</span>
+                  </div>
+                </li>
+              )
+            }) : (
+              <li className='CurrencySelect_EmptyState'>
+                <SearchLineIcon size={48} className='currency-selector-empty' />
+                <p>No results for <strong>&ldquo;{searchValue}&rdquo;</strong>.</p>
+              </li>
             )
-          })
         }
       </CurrencyOptionsList>
     </CurrencySelectorContainer>
