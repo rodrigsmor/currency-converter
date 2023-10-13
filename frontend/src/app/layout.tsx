@@ -18,13 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <CurrentThemeProvider>
-          <LanguageContextProvider>
-            <StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <CurrentThemeProvider>
+            <LanguageContextProvider>
               {children}
-            </StyledComponentsRegistry>
-          </LanguageContextProvider>
-        </CurrentThemeProvider>
+            </LanguageContextProvider>
+          </CurrentThemeProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   )
