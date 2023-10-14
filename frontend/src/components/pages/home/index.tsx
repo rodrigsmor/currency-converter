@@ -12,7 +12,7 @@ import { CurrencySelector } from '@/components/forms/currencySelector'
 
 // styles
 import { PageContainer } from '@/styles/common/styled';
-import { CurrencyPreviewBox, CurrencyValueConverted, HomeBodyContent, HomePageMainContainer, TopGreetingsHeader } from './styled'
+import { CurrenciesGroupList, CurrencyPreviewBox, CurrencyValueConverted, HomeBodyContent, HomePageMainContainer, TopGreetingsHeader } from './styled'
 
 // types
 import { Currency } from '@/utils/@types/currency';
@@ -20,6 +20,7 @@ import { Currency } from '@/utils/@types/currency';
 // mock
 import { currencies_mock } from '@/utils/mocks/currencies';
 import { NavigationBox } from '@/components/layout/navigationBox';
+import { CurrencyCard } from '@/components/common/currencyCard';
 
 export const HomePageContent = () => {
   const pageRef = useRef<HTMLDivElement>(null)
@@ -83,6 +84,17 @@ export const HomePageContent = () => {
         </TopGreetingsHeader>
         <HomeBodyContent>
           <NavigationBox />
+          <CurrenciesGroupList>
+            {
+              currencies_mock.map((currency, index) => {
+                return (
+                  <li key={currency.currency_code}>
+                    <CurrencyCard currency={currency} />
+                  </li>
+                )
+              })
+            }
+          </CurrenciesGroupList>
         </HomeBodyContent>
       </HomePageMainContainer>
     </PageContainer >
