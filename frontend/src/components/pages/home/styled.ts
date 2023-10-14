@@ -7,8 +7,9 @@ export const HomePageMainContainer = styled.main`
   width: 100%;
   height: 100%;
   flex-grow: 1;
-  min-height: 100%;
+  display: flex;
   position: relative;
+  flex-direction: column;
 `;
 
 export const TopGreetingsHeader = styled.header`
@@ -113,20 +114,35 @@ export const CurrencyValueConverted = styled.span`
 
 export const HomeBodyContent = styled.section`
   width: 100%;
+  height: 100%;
+  flex-grow: 1;
   display: flex;
   max-width: 100%;
   position: relative;
   align-items: center;
   margin: 62px 0px 0px;
-  padding: 74px 16px 0px;
-  justify-content: center;
+  flex-direction: column;
+  padding: 74px 16px 24px;
+  border-radius: 24px 24px 0px 0px;
   background-color: ${(props) => props?.theme?.colors?.background};
   
   @media ${(props) => props?.theme?.breakpoints?.medium} {
-    padding: 74px 48px 0px;
+    padding: 74px 48px 48px;
   }
 
   @media ${(props) => props?.theme?.breakpoints?.extraLarge} {
-    padding: 74px 10dvw 0px;
+    padding: 74px 10dvw 48px;
+  }
+`;
+
+export const CurrenciesGroupList = styled.ul`
+  gap: 12px;
+  width: 100%;
+  display: grid;
+  max-width: 100%;
+  list-style: none;
+
+  @media ${(props) => props?.theme?.breakpoints?.large} {
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
   }
 `;
