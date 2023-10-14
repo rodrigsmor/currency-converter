@@ -142,6 +142,11 @@ export const CurrenciesGroupList = styled.ul`
   max-width: 100%;
   list-style: none;
 
+  > li {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
   @media ${(props) => props?.theme?.breakpoints?.large} {
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
   }
