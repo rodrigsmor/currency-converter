@@ -92,7 +92,7 @@ export const CurrencyPreviewBox = styled.section`
   }
 `;
 
-export const CurrencyValudeConverted = styled.span`
+export const CurrencyValueConverted = styled.span`
   gap: 4px;
   display: flex;
   font-size: 58px;
@@ -108,5 +108,25 @@ export const CurrencyValudeConverted = styled.span`
     font-size: ${(props) => props?.theme?.typography?.sizes?.h6};
     font-weight: ${(props) => props?.theme?.typography?.weight?.medium};
     color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[80]}`};
+  }
+`;
+
+export const HomeBodyContent = styled.section`
+  width: 100%;
+  display: flex;
+  max-width: 100%;
+  position: relative;
+  align-items: center;
+  margin: 62px 0px 0px;
+  padding: 74px 16px 0px;
+  justify-content: center;
+  background-color: ${(props) => props?.theme?.colors?.background};
+  
+  @media ${(props) => props?.theme?.breakpoints?.medium} {
+    padding: 74px 48px 0px;
+  }
+
+  @media ${(props) => props?.theme?.breakpoints?.extraLarge} {
+    padding: 74px 10dvw 0px;
   }
 `;
