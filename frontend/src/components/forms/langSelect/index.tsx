@@ -40,8 +40,7 @@ export function LangSelect({ style = 'transparent', showCountryLabel = false }: 
         onClick={() => setIsSelectExpanded(!isSelectExpanded)}
         data-variant={style === 'transparent' ? 'background' : 'typography'}
       >
-        <div
-          aria-label={`${currentLanguage?.label} flag`} className={`fi fi-${currentLanguage?.countryCode} fis country-flag-lang`}></div>
+        <div aria-label={`${currentLanguage?.label} flag`} className={`fi fi-${currentLanguage?.countryCode} fis country-flag-lang`}></div>
         <div className='language-selected_data'>
           <span
             id='language-selected_code'

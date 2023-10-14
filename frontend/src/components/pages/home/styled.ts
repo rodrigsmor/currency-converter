@@ -7,8 +7,9 @@ export const HomePageMainContainer = styled.main`
   width: 100%;
   height: 100%;
   flex-grow: 1;
-  min-height: 100%;
+  display: flex;
   position: relative;
+  flex-direction: column;
 `;
 
 export const TopGreetingsHeader = styled.header`
@@ -92,7 +93,7 @@ export const CurrencyPreviewBox = styled.section`
   }
 `;
 
-export const CurrencyValudeConverted = styled.span`
+export const CurrencyValueConverted = styled.span`
   gap: 4px;
   display: flex;
   font-size: 58px;
@@ -108,5 +109,45 @@ export const CurrencyValudeConverted = styled.span`
     font-size: ${(props) => props?.theme?.typography?.sizes?.h6};
     font-weight: ${(props) => props?.theme?.typography?.weight?.medium};
     color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[80]}`};
+  }
+`;
+
+export const HomeBodyContent = styled.section`
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  max-width: 100%;
+  position: relative;
+  align-items: center;
+  margin: 62px 0px 0px;
+  flex-direction: column;
+  padding: 74px 16px 24px;
+  border-radius: 24px 24px 0px 0px;
+  background-color: ${(props) => props?.theme?.colors?.background};
+  
+  @media ${(props) => props?.theme?.breakpoints?.medium} {
+    padding: 74px 48px 48px;
+  }
+
+  @media ${(props) => props?.theme?.breakpoints?.extraLarge} {
+    padding: 74px 10dvw 48px;
+  }
+`;
+
+export const CurrenciesGroupList = styled.ul`
+  gap: 12px;
+  width: 100%;
+  display: grid;
+  max-width: 100%;
+  list-style: none;
+
+  > li {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  @media ${(props) => props?.theme?.breakpoints?.large} {
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
   }
 `;

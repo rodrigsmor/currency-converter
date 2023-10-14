@@ -11,6 +11,7 @@ export const HeaderContainer = styled.header`
   padding: 0 16px;
   position: sticky;
   min-width: 100vw;
+  min-height: 68px;
   align-items: center;
   transition: all .3s ease-in;
   background-color: transparent;
@@ -26,6 +27,7 @@ export const HeaderContainer = styled.header`
   }
 
   &[data-scrolled^="true"] {
+    box-shadow: ${(props) => props?.theme?.boxShadow?.main};
     background-color: ${(props) => props?.theme?.colors?.background};
   }
   

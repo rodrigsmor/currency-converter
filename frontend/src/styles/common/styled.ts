@@ -10,5 +10,7 @@ export const PageContainer = styled.div`
   overflow-x: hidden;
   position: relative;
   min-height: 100dvh;
+  max-height: 100dvh;
+  overflow-y: scroll;
   flex-direction: column;
 `;
