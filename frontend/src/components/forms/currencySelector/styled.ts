@@ -21,6 +21,7 @@ export const CurrencySelectorContainer = styled.div`
 
   &[aria-hidden^="true"] {
     opacity: 0;
+    pointer-events: none;
   }
 
   @media ${(props) => props?.theme?.breakpoints?.medium} {
