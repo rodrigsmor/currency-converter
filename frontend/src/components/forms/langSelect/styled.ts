@@ -82,8 +82,10 @@ export const LangSelectToggle = styled.button`
     color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[80]}`};
     border: 1px solid ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[20]}`};
 
-    > #language-selected_label {
-      color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[60]}`};
+    > .language-selected_data {
+      > #language-selected_label {
+        color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[80]}`};
+      }
     }
 
     &:hover {
