@@ -6,19 +6,20 @@ import { MouseEvent, useRef, useState } from 'react'
 import More2LineIcon from 'remixicon-react/More2LineIcon';
 
 // buttons
+import { Header } from '@/components/layout/header';
 import { IconButton } from '@/components/buttons/IconButton'
 import { CurrencySelector } from '@/components/forms/currencySelector'
 
 // styles
-import { CurrencyPreviewBox, CurrencyValudeConverted, HomePageMainContainer, TopGreetingsHeader } from './styled'
+import { PageContainer } from '@/styles/common/styled';
+import { CurrencyPreviewBox, CurrencyValueConverted, HomeBodyContent, HomePageMainContainer, TopGreetingsHeader } from './styled'
 
 // types
 import { Currency } from '@/utils/@types/currency';
 
 // mock
 import { currencies_mock } from '@/utils/mocks/currencies';
-import { PageContainer } from '@/styles/common/styled';
-import { Header } from '@/components/layout/header';
+import { NavigationBox } from '@/components/layout/navigationBox';
 
 export const HomePageContent = () => {
   const pageRef = useRef<HTMLDivElement>(null)
@@ -55,9 +56,9 @@ export const HomePageContent = () => {
             <p>
               1 United States Dollar equals
               <strong className='ValueConverted_Container'>
-                <CurrencyValudeConverted>
+                <CurrencyValueConverted>
                   <small className='ValueConverted_MonetarySymbol'>{ targetCurrency.monetary_symbol }</small> 1.07
-                </CurrencyValudeConverted>
+                </CurrencyValueConverted>
                 <span className='ValueConverted_CurrencyName'>{ targetCurrency.currency_name }</span>
               </strong>
             </p>
@@ -80,6 +81,9 @@ export const HomePageContent = () => {
             />
           </CurrencyPreviewBox>
         </TopGreetingsHeader>
+        <HomeBodyContent>
+          <NavigationBox />
+        </HomeBodyContent>
       </HomePageMainContainer>
     </PageContainer >
 
