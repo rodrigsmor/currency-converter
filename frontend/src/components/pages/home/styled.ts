@@ -56,7 +56,38 @@ export const TopGreetingsHeader = styled.header`
   }
 `;
 
-export const CurrencyPreviewBox = styled.section`
+export const CurrencyTodayContainer = styled.section`
+  width: 100%;
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+
+  > .BaseCurrency_Container {
+    gap: 4px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    > p {
+      font-size: ${(props) => props?.theme?.typography?.sizes?.h5};
+      font-weight: ${(props) => props?.theme?.typography?.weight?.regular};
+      color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[80]}`};
+    }
+
+    > .BaseCurrencySelect_Container {
+      position: relative;
+      min-width: min-content;
+
+      > #BaseCurrencySelector_Header {
+        top: 32px;
+        position: fixed;
+        transform: translateY(-50%);
+      }
+    }
+  }
+`;
+
+export const CurrencyPreviewBox = styled.div`
   gap: 6px;
   z-index: 1;
   display: flex;
@@ -70,12 +101,11 @@ export const CurrencyPreviewBox = styled.section`
     z-index: 1;
     flex-grow: 1;
     display: flex;
-    flex-direction: column;
     font-size: ${(props) => props?.theme?.typography?.sizes?.h5};
     font-weight: ${(props) => props?.theme?.typography?.weight?.regular};
     color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[80]}`};
 
-    > .ValueConverted_Container {
+    &.ValueConverted_Container {
       gap: 4px;
       display: flex;
       align-items: flex-end;
