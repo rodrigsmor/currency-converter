@@ -61,10 +61,12 @@ export const CurrencyTodayContainer = styled.section`
   display: flex;
   max-width: 100%;
   flex-direction: column;
-
+  
   > .BaseCurrency_Container {
     gap: 4px;
+    width: 100%;
     display: flex;
+    position: relative;
     align-items: center;
     flex-direction: row;
 
@@ -75,13 +77,31 @@ export const CurrencyTodayContainer = styled.section`
     }
 
     > .BaseCurrencySelect_Container {
-      position: relative;
+      display: flex;
+      align-items: center;
       min-width: min-content;
+      justify-content: center;
 
       > #BaseCurrencySelector_Header {
         top: 32px;
-        position: fixed;
-        transform: translateY(-50%);
+      }
+    }
+  }
+
+  @media (max-width: 1023px) {
+    > .BaseCurrency_Container {
+      > .BaseCurrencySelect_Container {
+        > #BaseCurrencySelector_Header {
+          left: 0;
+        }
+      }
+    }
+  }
+
+  @media ${(props) => props?.theme?.breakpoints?.large} {
+    > .BaseCurrency_Container {
+      > .BaseCurrencySelect_Container {
+        position: relative;
       }
     }
   }
@@ -120,6 +140,10 @@ export const CurrencyPreviewBox = styled.div`
   > .icon-button {
     width: 42px;
     height: 56px;
+  }
+
+  > #TargetCurrencySelector_Header {
+    right: 0px;
   }
 `;
 
