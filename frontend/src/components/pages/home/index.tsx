@@ -1,6 +1,6 @@
 'use client'
 
-import { MouseEvent, useRef, useState } from 'react'
+import { MouseEvent, useEffect, useRef, useState } from 'react'
 
 // icons
 import More2LineIcon from 'remixicon-react/More2LineIcon';
@@ -24,7 +24,15 @@ import { CurrencyCard } from '@/components/common/currencyCard';
 
 export const HomePageContent = () => {
   const pageRef = useRef<HTMLDivElement>(null)
-  const [hasScrolled, setHasScrolled] = useState<boolean>(false);
+  const [hasScrolled, setHasScrolled] = useState<boolean>(
+    pageRef && pageRef.current ? pageRef.current.scrollTop > 10 : false
+  );
+
+  useEffect(() => {
+    if (pageRef.current) {
+      setHasScrolled(pageRef.current.scrollTop > 10);
+    }
+  }, [ pageRef ])
 
   const [targetCurrency, setTargetCurrency] = useState<Currency>(currencies_mock[0])
   const [showCurrencySelector, setShowCurrencySelector] = useState<boolean>(false);
@@ -42,8 +50,8 @@ export const HomePageContent = () => {
   return (
     <PageContainer
       ref={pageRef}
-      onScroll = { e => {
-        setHasScrolled((e.currentTarget.scrollTop > 60))
+      onScroll={(e) => {
+        setHasScrolled((e.currentTarget.scrollTop > 10))
       }}
     >
       <Header hasScrolled={hasScrolled} />
