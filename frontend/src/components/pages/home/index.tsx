@@ -94,10 +94,10 @@ export const HomePageContent = () => {
           <NavigationBox />
           <CurrenciesGroupList>
             {
-              currencies_mock.map((currency, index) => {
+              currencies_mock.map((currency) => {
                 return (
                   <li key={currency.currency_code}>
-                    <CurrencyCard currency={currency} />
+                    <CurrencyCard isCountry={false} currency={currency} />
                   </li>
                 )
               })
