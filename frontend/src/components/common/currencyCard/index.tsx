@@ -3,15 +3,16 @@ import { Currency } from '@/utils/@types/currency'
 
 interface CurrencyCardProps {
   currency: Currency;
+  isCountry: boolean;
 }
 
-export const CurrencyCard = ({ currency }: CurrencyCardProps) => {
+export const CurrencyCard = ({ currency, isCountry }: CurrencyCardProps) => {
   return (
     <CurrencyCardContainer>
       <div aria-label={`${currency?.country_name} flag`} className={`CurrencyCard_Flag fi fi-${currency?.flag_code} fis`}></div>
       <section>
         <CurrencyCardHeader>
-          <h4>{ currency.currency_name }</h4>
+          <h4>{ isCountry ? currency.country_name : currency.currency_name }</h4>
           <p>{ `${currency.monetary_symbol} ${currency.unit_value}` }</p>
         </CurrencyCardHeader>
         <CurrencyCardFooter>
