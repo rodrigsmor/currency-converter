@@ -5,9 +5,11 @@ import { MouseEvent, useEffect, useRef, useState } from 'react'
 // icons
 import More2LineIcon from 'remixicon-react/More2LineIcon';
 
-// buttons
+// components
 import { Header } from '@/components/layout/header';
 import { IconButton } from '@/components/buttons/IconButton'
+import { CurrencyCard } from '@/components/common/currencyCard';
+import { NavigationBox } from '@/components/layout/navigationBox';
 import { CurrencySelector } from '@/components/forms/currencySelector'
 
 // styles
@@ -17,10 +19,9 @@ import { CurrenciesGroupList, CurrencyPreviewBox, CurrencyValueConverted, HomeBo
 // types
 import { Currency } from '@/utils/@types/currency';
 
-// mock
+// utils and mock
 import { currencies_mock } from '@/utils/mocks/currencies';
-import { NavigationBox } from '@/components/layout/navigationBox';
-import { CurrencyCard } from '@/components/common/currencyCard';
+import { USDCurrency } from '@/utils/constants/usd-currency';
 
 export const HomePageContent = () => {
   const pageRef = useRef<HTMLDivElement>(null)
@@ -34,6 +35,7 @@ export const HomePageContent = () => {
     }
   }, [ pageRef ])
 
+  const [baseCurrency, setBaseCurrency] = useState<Currency>(USDCurrency)
   const [targetCurrency, setTargetCurrency] = useState<Currency>(currencies_mock[0])
   const [showCurrencySelector, setShowCurrencySelector] = useState<boolean>(false);
 
@@ -59,11 +61,11 @@ export const HomePageContent = () => {
         <TopGreetingsHeader>
           <hgroup>
             <h1>Welcome back!</h1>
-            <h2>Check the euro today</h2>
+            <h2>Check the {targetCurrency.currency_name} today</h2>
           </hgroup>
           <CurrencyPreviewBox>
             <p>
-              1 United States Dollar equals
+              1 {baseCurrency.currency_name} equals
               <strong className='ValueConverted_Container'>
                 <CurrencyValueConverted>
                   <small className='ValueConverted_MonetarySymbol'>{ targetCurrency.monetary_symbol }</small> 1.07
@@ -97,7 +99,11 @@ export const HomePageContent = () => {
               currencies_mock.map((currency) => {
                 return (
                   <li key={currency.currency_code}>
-                    <CurrencyCard isCountry={false} currency={currency} />
+                    <CurrencyCard
+                      isCountry={false}
+                      currency={currency}
+                      baseCurrency={baseCurrency}
+                    />
                   </li>
                 )
               })
