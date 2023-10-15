@@ -70,5 +70,9 @@ export const CurrencyCardFooter = styled.footer`
     min-width: min-content;
     font-weight: ${(props) => props?.theme?.typography?.weight?.regular};
     color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[40]}`};
+
+    > abbr {
+      text-decoration: none;
+    }
   }
 `;
