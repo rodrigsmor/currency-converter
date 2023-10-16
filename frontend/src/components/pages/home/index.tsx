@@ -21,11 +21,15 @@ import { CurrenciesGroupList, CurrencyPreviewBox, CurrencyTodayContainer, Curren
 import { Currency } from '@/utils/@types/currency';
 
 // utils and mock
+import useBlur from '@/utils/hooks/useBlur';
 import { currencies_mock } from '@/utils/mocks/currencies';
 import { USDCurrency } from '@/utils/constants/usd-currency';
 
 export const HomePageContent = () => {
   const pageRef = useRef<HTMLDivElement>(null)
+  const baseSelectorRef = useRef<HTMLDivElement>(null);
+  const targetSelectorRef = useRef<HTMLDivElement>(null);
+
   const [hasScrolled, setHasScrolled] = useState<boolean>(
     pageRef && pageRef.current ? pageRef.current.scrollTop > 10 : false
   );
@@ -37,23 +41,21 @@ export const HomePageContent = () => {
   }, [ pageRef ])
 
   const [baseCurrency, setBaseCurrency] = useState<Currency>(USDCurrency)
+  const [targetCurrency, setTargetCurrency] = useState<Currency>(currencies_mock[0])
   const [showBaseSelector, setShowBaseSelector] = useState<boolean>(false);
   const [showTargetSelector, setShowTargetSelector] = useState<boolean>(false);
-  const [targetCurrency, setTargetCurrency] = useState<Currency>(currencies_mock[0])
-
-  function handleToggleCurrencySelector(event: MouseEvent<HTMLButtonElement>) {
-    event.preventDefault();
-    setShowTargetSelector(!showTargetSelector)
-  }
 
   async function handleTargetCurrency(currency: Currency, isBaseCurrency?: true) {
+    // makes request and start loading
     if (isBaseCurrency) {
       setBaseCurrency(currency)
     } else {
       setTargetCurrency(currency);
     }
-    // makes request and start loading
   }
+
+  useBlur(baseSelectorRef, () => setShowBaseSelector(false));
+  useBlur(targetSelectorRef, () => setShowTargetSelector(false));
 
   return (
     <PageContainer
@@ -74,7 +76,7 @@ export const HomePageContent = () => {
               <p aria-live='polite'>
                 1 {baseCurrency.currency_name} equals
               </p>
-              <div className='BaseCurrencySelect_Container'>
+              <div ref={baseSelectorRef} className='BaseCurrencySelect_Container'>
                 <button
                   aria-haspopup='listbox'
                   className='BaseCurrency_Button'
@@ -103,24 +105,29 @@ export const HomePageContent = () => {
                 </CurrencyValueConverted>
                 <span className='ValueConverted_CurrencyName'>{ targetCurrency.currency_name }</span>
               </p>
-              <IconButton
-                Icon={<More2LineIcon />}
-                color='background-20'
-                onClick={handleToggleCurrencySelector}
-                label={`${showTargetSelector ? 'Close' : 'Show'} currency selector`}
-                attributes={{
-                  'aria-haspopup': 'listbox',
-                  'aria-expanded': showTargetSelector,
-                  'aria-controls': 'TargetCurrencySelector_Header',
-                }}
-              />
-              <CurrencySelector
-                otherSelected={baseCurrency}
-                id='TargetCurrencySelector_Header'
-                selectedCurrency={targetCurrency}
-                onSelectOption={handleTargetCurrency}
-                showCurrencySelector={showTargetSelector}
-              />
+              <div
+                ref={targetSelectorRef}
+                className='TargetCurrencySelect_Container'
+              >
+                <IconButton
+                  Icon={<More2LineIcon />}
+                  color='background-20'
+                  onClick={(event) => setShowTargetSelector(!showTargetSelector)}
+                  label={`${showTargetSelector ? 'Close' : 'Show'} currency selector`}
+                  attributes={{
+                    'aria-haspopup': 'listbox',
+                    'aria-expanded': showTargetSelector,
+                    'aria-controls': 'TargetCurrencySelector_Header',
+                  }}
+                />
+                <CurrencySelector
+                  otherSelected={baseCurrency}
+                  id='TargetCurrencySelector_Header'
+                  selectedCurrency={targetCurrency}
+                  onSelectOption={handleTargetCurrency}
+                  showCurrencySelector={showTargetSelector}
+                />
+              </div>
             </CurrencyPreviewBox>
           </CurrencyTodayContainer>
         </TopGreetingsHeader>
@@ -144,7 +151,6 @@ export const HomePageContent = () => {
         </HomeBodyContent>
       </HomePageMainContainer>
     </PageContainer >
-
   )
 }
 
