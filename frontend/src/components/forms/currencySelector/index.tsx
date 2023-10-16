@@ -19,6 +19,7 @@ import { Currency } from '@/utils/@types/currency';
 
 interface CurrencySelectorProps {
   id: string,
+  otherSelected?: Currency;
   selectedCurrency: Currency,
   showCurrencySelector: boolean;
   onSelectOption: (currency: Currency) => void;
@@ -29,6 +30,7 @@ export const CurrencySelector = ({
   selectedCurrency,
   onSelectOption,
   showCurrencySelector,
+  otherSelected,
 }: CurrencySelectorProps) => {
   const [ searchValue, setSearchValue ] = useState<string>('');
 
@@ -43,13 +45,16 @@ export const CurrencySelector = ({
 
     return currenciesItems.filter((currency) => {
       return (
-        currency.flag_code.toLowerCase().includes(searchQuery) ||
-        currency.currency_name.toLowerCase().includes(searchQuery) ||
-        currency.currency_code.toLowerCase().includes(searchQuery) ||
-        currency.country_name.toLowerCase().includes(searchQuery)
+        currency.currency_code !== otherSelected?.currency_code &&
+        (
+          currency.flag_code.toLowerCase().includes(searchQuery) ||
+          currency.currency_name.toLowerCase().includes(searchQuery) ||
+          currency.currency_code.toLowerCase().includes(searchQuery) ||
+          currency.country_name.toLowerCase().includes(searchQuery)
+        )
       );
     });
-  }, [searchValue]);
+  }, [otherSelected?.currency_code, searchValue]);
   
   return (
     <CurrencySelectorContainer

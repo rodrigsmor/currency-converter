@@ -88,6 +88,7 @@ export const HomePageContent = () => {
                   <ArrowDownSLineIcon size={18}/>
                 </button>
                 <CurrencySelector
+                  otherSelected={targetCurrency}
                   id='BaseCurrencySelector_Header'
                   selectedCurrency={baseCurrency}
                   onSelectOption={currency => handleTargetCurrency(currency, true)}
@@ -114,6 +115,7 @@ export const HomePageContent = () => {
                 }}
               />
               <CurrencySelector
+                otherSelected={baseCurrency}
                 id='TargetCurrencySelector_Header'
                 selectedCurrency={targetCurrency}
                 onSelectOption={handleTargetCurrency}
