@@ -1,8 +1,15 @@
 'use client'
 
-import { Language, langList } from '@/utils/constants/lang-list';
-import { LangEnum } from '@/utils/enums/lang.enum';
 import { PropsWithChildren, createContext, useEffect, useState } from 'react';
+
+// enums
+import { LangEnum } from '@/utils/enums/lang.enum';
+
+// constants
+import { Language, langList } from '@/utils/constants/lang-list';
+
+// hooks
+import { useParams, usePathname, useRouter } from 'next/navigation';
 
 interface LanguageContextProvider {
   lang: LangEnum;
@@ -12,33 +19,41 @@ interface LanguageContextProvider {
 
 export const LanguageContext = createContext<LanguageContextProvider>({
   lang: LangEnum.en,
-  setLang: () => {},
+  setLang: (lang: LangEnum) => {},
   currentLanguage: langList.find((lang) => lang.lang === LangEnum.en),
 });
 
+function isLangValid(lang: string): boolean {
+  return lang in LangEnum;
+}
+
 export function LanguageContextProvider({ children }: PropsWithChildren) {
+  const params = useParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
   const [ lang, setLang ] = useState<LangEnum>(() => {
-    // let langStorage = null;
-
-    // if (typeof window !== 'undefined') {
-    //   langStorage = localStorage.getItem('lang@currency-converter');
-    // }
-
-    // return langStorage
-    //   ? JSON.parse(langStorage) as LangEnum
-    //   : LangEnum.en
-    return LangEnum.en
+    return params.lang ? params.lang as LangEnum : LangEnum.en
   });
 
+  function navigateToNewLang(lang: string) {
+    const newPath = (pathname === '/')
+      ? `/${lang}`
+      : pathname.replace(/\/[^/]+/, `/${lang}`);
+    router.push(newPath, { scroll: false })
+  }
+
   useEffect(() => {
-    localStorage.setItem('lang@currency-converter', JSON.stringify(lang));
+    if (!isLangValid(lang)) {
+      navigateToNewLang('en')
+    }
   }, [lang])
 
   return (
     <LanguageContext.Provider
       value={{
         lang,
-        setLang,
+        setLang: (lang) => navigateToNewLang(lang),
         currentLanguage: langList.find((langItem) => langItem.lang === lang as LangEnum),
       }}
     >

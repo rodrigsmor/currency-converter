@@ -1,6 +1,6 @@
 'use client'
 
-import { MouseEvent, useState } from 'react';
+import { MouseEvent, useContext, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 // components
@@ -18,6 +18,12 @@ import Menu4FillIcon from 'remixicon-react/Menu4FillIcon';
 // styles
 import { HeaderContainer, HeaderNav, HeaderNavOption, InteractionsWrapper } from './styled';
 
+// contexts
+import { LanguageContext } from '@/contexts/LanguageContextProvider';
+
+// utils
+import { normalizePathname } from '@/utils/functions/nomalizePathname';
+
 interface HeaderProps {
   hasScrolled: boolean;
 }
@@ -25,6 +31,7 @@ interface HeaderProps {
 export const Header = ({ hasScrolled }: HeaderProps) => {
   const pathname = usePathname();
 
+  const { lang } = useContext(LanguageContext);
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
 
   function handleShowSideBar(event: MouseEvent<HTMLButtonElement>) {
@@ -42,12 +49,13 @@ export const Header = ({ hasScrolled }: HeaderProps) => {
           <ul>
             {
               navRoutes.map(({ path, label }, index) => {
-                const isSelected = pathname === path;
+                const pathnameNormalized = normalizePathname(pathname, lang)
+                const isSelected = (pathnameNormalized === path);
 
                 return (
                   <li key={index}>
                     <HeaderNavOption
-                      href={path}
+                      href={`/${lang}${path}`}
                       data-variant={hasScrolled ? 'typography' : 'background'}
                       {...(isSelected && { "aria-current": "page" })}
                     >
