@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 
 export const CurrencySelectorContainer = styled.div`
-  top: 88px;
+  top: 80px;
   opacity: 1;
   z-index: 10;
   height: 306px;
