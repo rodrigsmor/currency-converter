@@ -63,7 +63,7 @@ export const CurrencyTodayContainer = styled.section`
   flex-direction: column;
   
   > .BaseCurrency_Container {
-    gap: 4px;
+    gap: 10px;
     width: 100%;
     display: flex;
     position: relative;
@@ -77,10 +77,33 @@ export const CurrencyTodayContainer = styled.section`
     }
 
     > .BaseCurrencySelect_Container {
+      gap: 12px;
       display: flex;
       align-items: center;
       min-width: min-content;
       justify-content: center;
+
+      > .BaseCurrency_Button {
+        gap: 4px;
+        height: 22px;
+        display: flex;
+        cursor: pointer;
+        padding: 0px 8px;
+        border-radius: 6px;
+        align-items: center;
+        min-width: min-content;
+        justify-content: center;
+        transition: all .3s ease-out;
+        background-color: transparent;
+        font-size: ${(props) => props?.theme?.typography?.sizes?.h6};
+        font-weight: ${(props) => props?.theme?.typography?.weight?.regular};
+        color: ${(props) => props?.theme?.colors?.background + props?.theme?.opacities?.[80]};
+        border: 1px solid ${(props) => props?.theme?.colors?.background + props?.theme?.opacities?.[20]};
+
+        &:hover {
+          background-color: ${(props) => props?.theme?.colors?.background + props?.theme?.opacities?.[20]};
+        }
+      }
 
       > #BaseCurrencySelector_Header {
         top: 32px;
