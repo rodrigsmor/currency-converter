@@ -1,6 +1,6 @@
 'use client'
 
-import { useContext, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 
 // constants
 import { langList } from '@/utils/constants/lang-list'
@@ -13,6 +13,7 @@ import { LanguageContext } from '@/contexts/LanguageContextProvider';
 
 // style
 import { LangOption, LangOptionsList, LangSelectToggle, LangSelectWrapper } from './styled'
+import useBlur from '@/utils/hooks/useBlur';
 
 interface LangSelectProps {
   style?: 'transparent' | 'background';
@@ -20,13 +21,17 @@ interface LangSelectProps {
 }
 
 export function LangSelect({ style = 'transparent', showCountryLabel = false }: LangSelectProps) {
+  const langSelectRef = useRef<HTMLDivElement>(null);
   const { lang, setLang, currentLanguage } = useContext(LanguageContext)
   const [ isSelectExpanded, setIsSelectExpanded ] = useState<boolean>(false);
+
+  useBlur(langSelectRef, () => setIsSelectExpanded(false))
 
   return (
     <LangSelectWrapper
       role='combobox'
       id='Lang-Select'
+      ref={langSelectRef}
       aria-haspopup='listbox'
       aria-label='Choose a language'
       aria-expanded={isSelectExpanded}
