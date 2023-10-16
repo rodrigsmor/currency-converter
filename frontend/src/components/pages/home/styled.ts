@@ -160,13 +160,15 @@ export const CurrencyPreviewBox = styled.div`
     }
   }
 
-  > .icon-button {
-    width: 42px;
-    height: 56px;
-  }
+  > .TargetCurrencySelect_Container {
+    > .icon-button {
+      width: 42px;
+      height: 56px;
+    }
 
-  > #TargetCurrencySelector_Header {
-    right: 0px;
+    > #TargetCurrencySelector_Header {
+      right: 0px;
+    }
   }
 `;
 
