@@ -4,6 +4,7 @@ import { MouseEvent, useEffect, useRef, useState } from 'react'
 
 // icons
 import More2LineIcon from 'remixicon-react/More2LineIcon';
+import ArrowDownSLineIcon from 'remixicon-react/ArrowDownSLineIcon';
 
 // components
 import { Header } from '@/components/layout/header';
@@ -70,17 +71,21 @@ export const HomePageContent = () => {
           </hgroup>
           <CurrencyTodayContainer>
             <div className='BaseCurrency_Container'>
-              <p>
+              <p aria-live='polite'>
                 1 {baseCurrency.currency_name} equals
               </p>
               <div className='BaseCurrencySelect_Container'>
                 <button
-                  onClick={() => setShowBaseSelector(!showBaseSelector)}
                   aria-haspopup='listbox'
+                  className='BaseCurrency_Button'
                   aria-expanded={showBaseSelector}
                   aria-controls='BaseCurrencySelector_Header'
+                  onClick={() => setShowBaseSelector(!showBaseSelector)}
                 >
-                  select base currency
+                  <span>
+                    select
+                  </span>
+                  <ArrowDownSLineIcon size={18}/>
                 </button>
                 <CurrencySelector
                   id='BaseCurrencySelector_Header'
