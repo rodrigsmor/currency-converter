@@ -1,6 +1,6 @@
 'use client'
 
-import { PropsWithChildren, createContext, useState } from 'react';
+import { PropsWithChildren, createContext, useEffect, useState } from 'react';
 
 // enums
 import { LangEnum } from '@/utils/enums/lang.enum';
@@ -23,6 +23,10 @@ export const LanguageContext = createContext<LanguageContextProvider>({
   currentLanguage: langList.find((lang) => lang.lang === LangEnum.en),
 });
 
+function isLangValid(lang: string): boolean {
+  return lang in LangEnum;
+}
+
 export function LanguageContextProvider({ children }: PropsWithChildren) {
   const params = useParams();
   const router = useRouter();
@@ -32,14 +36,24 @@ export function LanguageContextProvider({ children }: PropsWithChildren) {
     return params.lang ? params.lang as LangEnum : LangEnum.en
   });
 
+  function navigateToNewLang(lang: string) {
+    const newPath = (pathname === '/')
+      ? `/${lang}`
+      : pathname.replace(/\/[^/]+/, `/${lang}`);
+    router.push(newPath, { scroll: false })
+  }
+
+  useEffect(() => {
+    if (!isLangValid(lang)) {
+      navigateToNewLang('en')
+    }
+  }, [lang])
+
   return (
     <LanguageContext.Provider
       value={{
         lang,
-        setLang: (lang) => {
-          const newPath = pathname.replace(/\/[^/]+/, `/${lang}`);
-          router.push(newPath, { scroll: false })
-        },
+        setLang: (lang) => navigateToNewLang(lang),
         currentLanguage: langList.find((langItem) => langItem.lang === lang as LangEnum),
       }}
     >
