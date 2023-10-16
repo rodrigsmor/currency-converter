@@ -56,7 +56,81 @@ export const TopGreetingsHeader = styled.header`
   }
 `;
 
-export const CurrencyPreviewBox = styled.section`
+export const CurrencyTodayContainer = styled.section`
+  width: 100%;
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  
+  > .BaseCurrency_Container {
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: row;
+
+    > p {
+      font-size: ${(props) => props?.theme?.typography?.sizes?.h5};
+      font-weight: ${(props) => props?.theme?.typography?.weight?.regular};
+      color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[80]}`};
+    }
+
+    > .BaseCurrencySelect_Container {
+      gap: 12px;
+      display: flex;
+      align-items: center;
+      min-width: min-content;
+      justify-content: center;
+
+      > .BaseCurrency_Button {
+        gap: 4px;
+        height: 22px;
+        display: flex;
+        cursor: pointer;
+        padding: 0px 8px;
+        border-radius: 6px;
+        align-items: center;
+        min-width: min-content;
+        justify-content: center;
+        transition: all .3s ease-out;
+        background-color: transparent;
+        font-size: ${(props) => props?.theme?.typography?.sizes?.h6};
+        font-weight: ${(props) => props?.theme?.typography?.weight?.regular};
+        color: ${(props) => props?.theme?.colors?.background + props?.theme?.opacities?.[80]};
+        border: 1px solid ${(props) => props?.theme?.colors?.background + props?.theme?.opacities?.[20]};
+
+        &:hover {
+          background-color: ${(props) => props?.theme?.colors?.background + props?.theme?.opacities?.[20]};
+        }
+      }
+
+      > #BaseCurrencySelector_Header {
+        top: 32px;
+      }
+    }
+  }
+
+  @media (max-width: 1023px) {
+    > .BaseCurrency_Container {
+      > .BaseCurrencySelect_Container {
+        > #BaseCurrencySelector_Header {
+          left: 0;
+        }
+      }
+    }
+  }
+
+  @media ${(props) => props?.theme?.breakpoints?.large} {
+    > .BaseCurrency_Container {
+      > .BaseCurrencySelect_Container {
+        position: relative;
+      }
+    }
+  }
+`;
+
+export const CurrencyPreviewBox = styled.div`
   gap: 6px;
   z-index: 1;
   display: flex;
@@ -70,12 +144,11 @@ export const CurrencyPreviewBox = styled.section`
     z-index: 1;
     flex-grow: 1;
     display: flex;
-    flex-direction: column;
     font-size: ${(props) => props?.theme?.typography?.sizes?.h5};
     font-weight: ${(props) => props?.theme?.typography?.weight?.regular};
     color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[80]}`};
 
-    > .ValueConverted_Container {
+    &.ValueConverted_Container {
       gap: 4px;
       display: flex;
       align-items: flex-end;
@@ -87,9 +160,15 @@ export const CurrencyPreviewBox = styled.section`
     }
   }
 
-  > .icon-button {
-    width: 42px;
-    height: 56px;
+  > .TargetCurrencySelect_Container {
+    > .icon-button {
+      width: 42px;
+      height: 56px;
+    }
+
+    > #TargetCurrencySelector_Header {
+      right: 0px;
+    }
   }
 `;
 
