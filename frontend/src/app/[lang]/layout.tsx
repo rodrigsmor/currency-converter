@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 }
 
 import '/node_modules/flag-icons/css/flag-icons.min.css';
+import { I18nProviderClient } from '@/i18n/locales/client'
 
 export async function generateStaticParams() {
   return [{ lang: 'en-US' }, { lang: 'de' }]
@@ -27,11 +28,13 @@ export default function LangLayout({
     <html lang={params.lang}>
       <body>
         <StyledComponentsRegistry>
-          <CurrentThemeProvider>
-            <LanguageContextProvider>
-              {children}
-            </LanguageContextProvider>
-          </CurrentThemeProvider>
+          <I18nProviderClient locale={params.lang}>
+            <CurrentThemeProvider>
+              <LanguageContextProvider>
+                {children}
+              </LanguageContextProvider>
+            </CurrentThemeProvider>
+          </I18nProviderClient>
         </StyledComponentsRegistry>
       </body>
     </html>

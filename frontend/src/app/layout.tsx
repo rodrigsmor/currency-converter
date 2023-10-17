@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 }
 
 import '/node_modules/flag-icons/css/flag-icons.min.css';
+import { I18nProviderClient } from '@/i18n/locales/client'
 
 export default function RootLayout({
   children,
@@ -19,11 +20,13 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <StyledComponentsRegistry>
-          <CurrentThemeProvider>
-            <LanguageContextProvider>
-              {children}
-            </LanguageContextProvider>
-          </CurrentThemeProvider>
+          <I18nProviderClient locale={'en'}>
+            <CurrentThemeProvider>
+              <LanguageContextProvider>
+                {children}
+              </LanguageContextProvider>
+            </CurrentThemeProvider>
+          </I18nProviderClient>
         </StyledComponentsRegistry>
       </body>
     </html>
