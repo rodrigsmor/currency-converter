@@ -12,7 +12,7 @@ import '/node_modules/flag-icons/css/flag-icons.min.css';
 import { I18nProviderClient } from '@/i18n/locales/client'
 
 export async function generateStaticParams() {
-  return [{ lang: 'en-US' }, { lang: 'de' }]
+  return [{ lang: 'en' }, { lang: 'en' }]
 }
 
 interface RootProps {
@@ -27,15 +27,15 @@ export default function LangLayout({
   return (
     <html lang={params.lang}>
       <body>
-        <StyledComponentsRegistry>
-          <I18nProviderClient locale={params.lang}>
+        <I18nProviderClient locale={params.lang}>
+          <StyledComponentsRegistry>
             <CurrentThemeProvider>
               <LanguageContextProvider>
                 {children}
               </LanguageContextProvider>
             </CurrentThemeProvider>
-          </I18nProviderClient>
-        </StyledComponentsRegistry>
+          </StyledComponentsRegistry>
+        </I18nProviderClient>
       </body>
     </html>
   )

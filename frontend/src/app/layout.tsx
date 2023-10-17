@@ -19,15 +19,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StyledComponentsRegistry>
-          <I18nProviderClient locale={'en'}>
+        <I18nProviderClient locale={'en'}>
+          <StyledComponentsRegistry>
             <CurrentThemeProvider>
               <LanguageContextProvider>
                 {children}
               </LanguageContextProvider>
             </CurrentThemeProvider>
-          </I18nProviderClient>
-        </StyledComponentsRegistry>
+          </StyledComponentsRegistry>
+        </I18nProviderClient>
       </body>
     </html>
   )
