@@ -8,7 +8,7 @@ This is a simple currency converter application that supports over 160 currencie
   <a href="https://www.behance.net/gallery/182514075/Currency-Converter-Practical-Project">
     <img src="https://img.shields.io/badge/Behance-1769ff?style=for-the-badge&logo=behance&logoColor=white" alt="behance" />
   </a>
-  <a href="">
+  <a href="https://www.figma.com/file/2qdeWssnXH9s4TqY1M7kM4/Currency-Converter?type=design&node-id=0%3A1&mode=design&t=t7QExgWVf1qgCNK6-1">
     <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" />
   </a>
 </div>
