@@ -33,7 +33,7 @@ export function LanguageContextProvider({ children }: PropsWithChildren) {
   const pathname = usePathname();
 
   const [ lang, setLang ] = useState<LangEnum>(() => {
-    return params.lang ? params.lang as LangEnum : LangEnum.en
+    return params.locale ? params.locale as LangEnum : LangEnum.en
   });
 
   function navigateToNewLang(lang: string) {
