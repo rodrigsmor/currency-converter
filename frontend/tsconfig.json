@@ -23,6 +23,7 @@
       "@/i18n/*": ["i18n/*"],
       "@/utils/*": ["utils/*"],
       "@/styles/*": ["styles/*"],
+      "@/assets/*": ["assets/*"],
       "@/configs/*": ["configs/*"],
       "@/contexts/*": ["contexts/*"],
       "@/components/*": ["components/*"],
