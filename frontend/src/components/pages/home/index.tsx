@@ -80,7 +80,7 @@ export const HomePageContent = () => {
           <CurrencyTodayContainer>
             <div className='BaseCurrency_Container'>
               <p aria-live='polite'>
-                1 {baseCurrency.currency_name} equals
+                {t('home.currencyConverted.equivalence', { currency_name: baseCurrency.currency_name })}
               </p>
               <div ref={baseSelectorRef} className='BaseCurrencySelect_Container'>
                 <button
