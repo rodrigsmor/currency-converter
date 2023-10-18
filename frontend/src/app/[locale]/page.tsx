@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 }
 
 interface HomeStaticParams {
-  params: { lang: string };
+  params: { locale: string };
 }
 
 export default function Home({ params }: HomeStaticParams) {
