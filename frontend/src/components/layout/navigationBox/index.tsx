@@ -1,33 +1,45 @@
+'use client'
+
+// i18n
+import { useI18n } from '@/i18n/locales/client'
+
+// constants
 import { NavRoutes } from '@/utils/constants/nav-routes'
+
+// Icon
 import SearchLineIcon from 'remixicon-react/SearchLineIcon'
-import { NavigationBoxContainer, NavigationBoxList, NavigationBoxOption } from './styled'
 import ExchangeLineIcon from 'remixicon-react/ExchangeLineIcon'
-import MoneyDollarCircleLineIcon from 'remixicon-react/MoneyDollarCircleLineIcon'
 import ExchangeDollarLineIcon from 'remixicon-react/ExchangeDollarLineIcon'
+import MoneyDollarCircleLineIcon from 'remixicon-react/MoneyDollarCircleLineIcon'
+
+// style
+import { NavigationBoxContainer, NavigationBoxList, NavigationBoxOption } from './styled'
 
 export const NavigationBox = () => {
   const navRoutes: NavRoutes[] = [
     {
       path: '/currencies',
-      label: 'Currencies',
+      label: 'navigationBox.currencies',
       Icon: <MoneyDollarCircleLineIcon aria-label='Currencies Icon' size={24} />
     },
     {
       path: '/convert-currencies',
-      label: 'Converter',
-      Icon: <ExchangeLineIcon aria-label='Currency Converter Icon' size={24} />
+      label: 'navigationBox.cunverter',
+      Icon: <ExchangeLineIcon aria-label='Currency Cunverter Icon' size={24} />
     },
     {
       path: '/exchanges-rates',
-      label: 'Exchange',
+      label: 'navigationBox.exchange',
       Icon: <ExchangeDollarLineIcon aria-label='Exchange rates icon' size={24} />
     },
     {
       path: '/search',
-      label: 'Search',
+      label: 'navigationBox.search',
       Icon: <SearchLineIcon aria-label='Search Icon' size={24} />
     }
   ]
+
+  const t = useI18n()
 
   return (
     <NavigationBoxContainer>
@@ -42,7 +54,7 @@ export const NavigationBox = () => {
                   <figure>
                     { route.Icon }
                   </figure>
-                  <p>{ route.label }</p>
+                  <p>{ t(route.label) }</p>
                 </NavigationBoxOption>
               </li>
             )

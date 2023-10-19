@@ -1,6 +1,6 @@
 'use client'
 
-import { MouseEvent, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 // icons
 import More2LineIcon from 'remixicon-react/More2LineIcon';
@@ -24,6 +24,9 @@ import { Currency } from '@/utils/@types/currency';
 import useBlur from '@/utils/hooks/useBlur';
 import { currencies_mock } from '@/utils/mocks/currencies';
 import { USDCurrency } from '@/utils/constants/usd-currency';
+
+// i18n
+import { useI18n } from '@/i18n/locales/client';
 
 export const HomePageContent = () => {
   const pageRef = useRef<HTMLDivElement>(null)
@@ -57,6 +60,8 @@ export const HomePageContent = () => {
   useBlur(baseSelectorRef, () => setShowBaseSelector(false));
   useBlur(targetSelectorRef, () => setShowTargetSelector(false));
 
+  const t = useI18n()
+
   return (
     <PageContainer
       ref={pageRef}
@@ -68,13 +73,13 @@ export const HomePageContent = () => {
       <HomePageMainContainer>
         <TopGreetingsHeader>
           <hgroup>
-            <h1>Welcome back!</h1>
-            <h2>Check the {targetCurrency.currency_name} today</h2>
+            <h1>{t('home.greetings')}</h1>
+            <h2>{t('home.baseCurrencyCheck', { currency_name: targetCurrency.currency_name })}</h2>
           </hgroup>
           <CurrencyTodayContainer>
             <div className='BaseCurrency_Container'>
               <p aria-live='polite'>
-                1 {baseCurrency.currency_name} equals
+                {t('home.currencyConverted.equivalence', { currency_name: baseCurrency.currency_name })}
               </p>
               <div ref={baseSelectorRef} className='BaseCurrencySelect_Container'>
                 <button
@@ -85,7 +90,7 @@ export const HomePageContent = () => {
                   onClick={() => setShowBaseSelector(!showBaseSelector)}
                 >
                   <span>
-                    select
+                    { t('select.text') }
                   </span>
                   <ArrowDownSLineIcon size={18}/>
                 </button>
@@ -113,7 +118,7 @@ export const HomePageContent = () => {
                   Icon={<More2LineIcon />}
                   color='background-20'
                   onClick={(event) => setShowTargetSelector(!showTargetSelector)}
-                  label={`${showTargetSelector ? 'Close' : 'Show'} currency selector`}
+                  label={t(showTargetSelector ? 'currencySelector.close' : 'currencySelector.show')}
                   attributes={{
                     'aria-haspopup': 'listbox',
                     'aria-expanded': showTargetSelector,

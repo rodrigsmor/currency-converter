@@ -6,29 +6,29 @@ import MoneyDollarCircleLineIcon from 'remixicon-react/MoneyDollarCircleLineIcon
 
 export interface NavRoutes {
   path: string;
-  label: string;
+  label: 'navigationBox.search' | 'navigationBox.exchange' | 'header.home' | 'header.currencies' | 'header.converter' | 'header.exchange' | 'navigationBox.currencies' | 'navigationBox.cunverter';
   Icon?: ReactNode;
 }
 
 export const navRoutes: NavRoutes[] = [
   {
     path: '/',
-    label: 'Home',
+    label: 'header.home',
     Icon: <Home2LineIcon size={30} />
   },
   {
     path: '/currencies',
-    label: 'List of currencies',
+    label: 'header.currencies',
     Icon: <MoneyDollarCircleLineIcon size={30} />
   },
   {
     path: '/convert-currencies',
-    label: 'Convert currencies',
+    label: 'header.converter',
     Icon: <ExchangeLineIcon size={30} />
   },
   {
     path: '/exchanges-rates',
-    label: 'Exchange rates',
+    label: 'header.exchange',
     Icon: <ExchangeDollarLineIcon size={30} />
   }
 ]

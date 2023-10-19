@@ -15,6 +15,9 @@ import { NavRoutes } from '@/utils/constants/nav-routes';
 // functions
 import { normalizePathname } from '@/utils/functions/nomalizePathname';
 
+// i18n
+import { useI18n } from '@/i18n/locales/client';
+
 interface NavbarOptionProps {
   route: NavRoutes;
 }
@@ -25,6 +28,8 @@ export const NavbarOption = ({ route: { label, path, Icon } }: NavbarOptionProps
 
   const pathnameNormalized = normalizePathname(pathname, lang);
   const isSelected = (pathnameNormalized === path);
+  
+  const t = useI18n()
 
   return (
     <NavbarOptionAnchor
@@ -32,7 +37,7 @@ export const NavbarOption = ({ route: { label, path, Icon } }: NavbarOptionProps
       {...(isSelected && { "aria-current": "page" })}
     >
       { Icon }
-      <span>{ label }</span>
+      <span>{ t(label) }</span>
     </NavbarOptionAnchor>
   );
 }

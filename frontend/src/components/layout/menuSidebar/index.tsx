@@ -19,12 +19,17 @@ import CloseLineIcon from 'remixicon-react/CloseLineIcon';
 // style
 import { FooterCredits, MenuFooter, MenuHeader, MenuSidebarBody, MenuSidebarContainer, NavigationOptionsList } from './styled';
 
+// i18n
+import { useI18n } from '@/i18n/locales/client';
+
 interface MenuSidebarProps {
   showSidebar: boolean;
   toggleSidebar: Dispatch<boolean>;
 }
 
 export const MenuSidebar = ({ showSidebar, toggleSidebar }: MenuSidebarProps) => {
+  const t = useI18n()
+
   return (
     <MenuSidebarContainer
       aria-hidden={!showSidebar}
@@ -32,11 +37,11 @@ export const MenuSidebar = ({ showSidebar, toggleSidebar }: MenuSidebarProps) =>
       <div className='menu-sidebar_topContent'>
         <MenuHeader>
           <Logo logoColor='dark' />
-          <IconButton label='close Sidebar Menu' onClick={() => toggleSidebar(!showSidebar)} Icon={<CloseLineIcon size={32} />} color='background' />
+          <IconButton label={t('header.sidebar-close')} onClick={() => toggleSidebar(!showSidebar)} Icon={<CloseLineIcon size={32} />} color='background' />
         </MenuHeader>
         <MenuSidebarBody>
           <section className='menu-sidebar_BodyForms'>
-            <Searchbar />
+            <Searchbar placeholder={t('searchbar.placeholder')} />
             <LangSelect style='background' showCountryLabel={true} />
           </section>
           <NavigationOptionsList>
@@ -48,7 +53,7 @@ export const MenuSidebar = ({ showSidebar, toggleSidebar }: MenuSidebarProps) =>
         <ThemeSwitcher/>
         <FooterCredits>
           <p>App Version - v0.0.0</p>
-          <span>made by Rodrigo Moreira</span>
+          <span>{t('header.credits')}</span>
         </FooterCredits>
       </MenuFooter>
     </MenuSidebarContainer>

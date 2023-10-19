@@ -146,6 +146,7 @@ http://localhost:3001/documentation
 - 🔗 Styled components documentation: https://styled-components.com/docs
 - 🔗 Swagger configuration in Nestjs: https://docs.nestjs.com/openapi/introduction
 - 🔗 ExchangeRate API documentation: https://www.exchangerate-api.com/docs/overview
+- 🔗 Next International Setup: https://next-international.vercel.app/docs/app-setup
 - 🔗 Cypress Component Testing: https://docs.cypress.io/guides/component-testing/getting-started
 - 🔗 Next.js Testing optimization: https://nextjs.org/docs/pages/building-your-application/optimizing/testing
 

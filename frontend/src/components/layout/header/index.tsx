@@ -24,6 +24,9 @@ import { LanguageContext } from '@/contexts/LanguageContextProvider';
 // utils
 import { normalizePathname } from '@/utils/functions/nomalizePathname';
 
+// i18n
+import { useI18n } from '@/i18n/locales/client';
+
 interface HeaderProps {
   hasScrolled: boolean;
 }
@@ -38,6 +41,8 @@ export const Header = ({ hasScrolled }: HeaderProps) => {
     event.preventDefault();
     setShowSidebar(true);
   }
+
+  const t = useI18n()
 
   return (
     <HeaderContainer
@@ -59,7 +64,7 @@ export const Header = ({ hasScrolled }: HeaderProps) => {
                       data-variant={hasScrolled ? 'typography' : 'background'}
                       {...(isSelected && { "aria-current": "page" })}
                     >
-                      { label }
+                      { t(label) }
                     </HeaderNavOption>
                   </li>
                 )
@@ -71,11 +76,11 @@ export const Header = ({ hasScrolled }: HeaderProps) => {
       <InteractionsWrapper>
         <ThemeSwitcher isButton={true} color={hasScrolled ? 'typography' : 'background'} />
         <LangSelect style={hasScrolled ? 'background' : 'transparent'} />
-        <Searchbar color={hasScrolled ? 'primary' : 'background'} />
+        <Searchbar placeholder={t('searchbar.placeholder')} color={hasScrolled ? 'primary' : 'background'} />
       </InteractionsWrapper>
       <IconButton
         onClick={handleShowSideBar}
-        label='open the sidebar menu'
+        label={t('header.sidebar-open')}
         Icon={<Menu4FillIcon size={32} />}
         color={hasScrolled ? 'background' : 'transparent'}
       />
