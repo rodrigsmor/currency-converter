@@ -13,7 +13,12 @@ import { LanguageContext } from '@/contexts/LanguageContextProvider';
 
 // style
 import { LangOption, LangOptionsList, LangSelectToggle, LangSelectWrapper } from './styled'
+
+// hooks
 import useBlur from '@/utils/hooks/useBlur';
+
+// i18n
+import { useI18n } from '@/i18n/locales/client';
 
 interface LangSelectProps {
   style?: 'transparent' | 'background';
@@ -26,6 +31,8 @@ export function LangSelect({ style = 'transparent', showCountryLabel = false }: 
   const [ isSelectExpanded, setIsSelectExpanded ] = useState<boolean>(false);
 
   useBlur(langSelectRef, () => setIsSelectExpanded(false))
+
+  const t = useI18n()
 
   return (
     <LangSelectWrapper
@@ -52,7 +59,7 @@ export function LangSelect({ style = 'transparent', showCountryLabel = false }: 
           >
             { currentLanguage?.langCode }
           </span>
-          { showCountryLabel && <span id='language-selected_label'>({ currentLanguage?.label })</span> }
+          { showCountryLabel && <span id='language-selected_label'>({ t(currentLanguage?.label || 'langSelect.option.en') })</span> }
         </div>
         <ArrowDownSLineIcon size={20} className='icon-arrow-down_select' />
       </LangSelectToggle>
@@ -82,7 +89,7 @@ export function LangSelect({ style = 'transparent', showCountryLabel = false }: 
                     >
                       { langOption?.langCode }
                     </span>
-                    { showCountryLabel && <span className='option-language_LABEL'>({ langOption?.label })</span> }
+                    { showCountryLabel && <span className='option-language_LABEL'>({ t(langOption?.label || 'langSelect.option.en') })</span> }
                   </div>
                 </button>
               </LangOption>
