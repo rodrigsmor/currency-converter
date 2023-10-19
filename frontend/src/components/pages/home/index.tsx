@@ -60,7 +60,6 @@ export const HomePageContent = () => {
   useBlur(baseSelectorRef, () => setShowBaseSelector(false));
   useBlur(targetSelectorRef, () => setShowTargetSelector(false));
 
-  // const dict = await getDictionary(lang)
   const t = useI18n()
 
   return (
@@ -91,7 +90,7 @@ export const HomePageContent = () => {
                   onClick={() => setShowBaseSelector(!showBaseSelector)}
                 >
                   <span>
-                    select
+                    { t('select.text') }
                   </span>
                   <ArrowDownSLineIcon size={18}/>
                 </button>
@@ -119,7 +118,7 @@ export const HomePageContent = () => {
                   Icon={<More2LineIcon />}
                   color='background-20'
                   onClick={(event) => setShowTargetSelector(!showTargetSelector)}
-                  label={`${showTargetSelector ? 'Close' : 'Show'} currency selector`}
+                  label={t(showTargetSelector ? 'currencySelector.close' : 'currencySelector.show')}
                   attributes={{
                     'aria-haspopup': 'listbox',
                     'aria-expanded': showTargetSelector,
