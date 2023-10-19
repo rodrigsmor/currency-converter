@@ -2,7 +2,7 @@ import { LangEnum } from "../enums/lang.enum"
 
 export type Language = {
   lang: LangEnum;
-  label: string;
+  label: 'langSelect.option.en' | 'langSelect.option.ptBR';
   langCode: string;
   countryCode: string;
 }
@@ -10,13 +10,13 @@ export type Language = {
 export const langList: Language[] = [
   {
     lang: LangEnum.en,
-    label: 'English',
+    label: 'langSelect.option.en',
     langCode: 'EN',
     countryCode: 'us',
   },
   {
     lang: LangEnum['pt-BR'],
-    label: 'Brazilian Portuguese',
+    label: 'langSelect.option.ptBR',
     langCode: 'PT',
     countryCode: 'br'
   }
