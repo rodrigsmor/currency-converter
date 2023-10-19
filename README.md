@@ -71,7 +71,7 @@ This is a simple currency converter application that supports over 160 currencie
 
 #### 🖥 Desktop screenshots
 
-![Home page screenshot in Desktop screen](https://i.ibb.co/Cwf0TwT/Screen-Shot-2023-10-18-at-23-37-27.png)
+<img src="https://i.ibb.co/Cwf0TwT/Screen-Shot-2023-10-18-at-23-37-27.png" alt="Home page screenshot in Desktop screen" />
 
 ----
 
