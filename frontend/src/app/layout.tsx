@@ -13,16 +13,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  params: { locale?: string }
 }) {
   return (
-    <html lang="en">
+    <html lang={params.locale || 'en'}>
       <body>
         <StyledComponentsRegistry>
           <CurrentThemeProvider>
             <LanguageContextProvider>
-              <I18nProviderClient locale={'en'}>
+              <I18nProviderClient locale={params?.locale || 'en'}>
                 {children}
               </I18nProviderClient>
             </LanguageContextProvider>
