@@ -12,7 +12,10 @@ import { Header } from '@/components/layout/header';
 // i18n
 import { useI18n } from '@/i18n/locales/client';
 import { alphabetical_countries_mock } from '@/utils/mocks/alphabetical-countries';
+
+// components
 import { CurrencyCard } from '@/components/common/currencyCard';
+import { SearchResultBox } from '@/components/forms/searchResultBox';
 
 export function SearchPageContent() {
   const pageRef = useRef<HTMLDivElement>(null)
@@ -37,6 +40,7 @@ export function SearchPageContent() {
             <h1>{t('searchPage.top.h1')}</h1>
             <h2>{t('searchPage.top.h2')}</h2>
           </hgroup>
+          <SearchResultBox />
         </TopPageHeader>
         <PageBodyContent className='SearchPageContent'>
           <SearchListSectionTitle>
