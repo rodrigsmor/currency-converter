@@ -15,6 +15,10 @@ export const SearchbarContainer = styled.div`
   &[data-color^="background"] {
     background-color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[20]}`};
   }
+
+  &[data-color^="background-full"] {
+    background-color: ${(props) => props?.theme?.colors?.background};
+  }
 `;
 
 export const SearchInput = styled.input`
