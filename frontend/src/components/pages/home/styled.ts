@@ -10,49 +10,22 @@ export const HomePageMainContainer = styled.main`
   display: flex;
   position: relative;
   flex-direction: column;
-`;
 
-export const TopGreetingsHeader = styled.header`
-  gap: 20px;
-  width: 100%;
-  display: flex;
-  max-width: 100%;
-  flex-direction: column;
-  padding: 16px 16px 0px;
-  
-  > hgroup {
-    width: 100%;
-    display: flex;
-    max-width: 100%;
-    flex-direction: column;
-
-    > h1 {
-      color: ${(props) => props?.theme?.colors?.background};
-      font-size: ${(props) => props?.theme?.typography?.sizes?.h2};
-      font-weight: ${(props) => props?.theme?.typography?.weight?.extrabold};
-    }
-  
-    > h2 {
-      font-size: ${(props) => props?.theme?.typography?.sizes?.h5};
-      font-weight: ${(props) => props?.theme?.typography?.weight?.medium};
-      color: ${(props) => props?.theme?.colors?.background + props?.theme?.opacities?.[80]};
-    }
+  > .HomeBodyContent {
+    margin: 62px 0px 0px;
+    padding: 74px 16px 24px;
   }
 
   @media ${(props) => props?.theme?.breakpoints?.medium} {
-    padding: 16px 48px 0px;
-  }
-
-  @media ${(props) => props?.theme?.breakpoints?.large} {
-    > hgroup {
-      > h1 {
-        font-size: ${(props) => props?.theme?.typography?.sizes?.h1};
-      }
+    > .HomeBodyContent {
+      padding: 74px 48px 48px;
     }
   }
 
   @media ${(props) => props?.theme?.breakpoints?.extraLarge} {
-    padding: 24px 10dvw 0px;
+    > .HomeBodyContent {
+      padding: 74px 10dvw 48px;
+    }
   }
 `;
 
@@ -188,29 +161,6 @@ export const CurrencyValueConverted = styled.span`
     font-size: ${(props) => props?.theme?.typography?.sizes?.h6};
     font-weight: ${(props) => props?.theme?.typography?.weight?.medium};
     color: ${(props) => `${props?.theme?.colors?.background + props?.theme?.opacities?.[80]}`};
-  }
-`;
-
-export const HomeBodyContent = styled.section`
-  width: 100%;
-  height: 100%;
-  flex-grow: 1;
-  display: flex;
-  max-width: 100%;
-  position: relative;
-  align-items: center;
-  margin: 62px 0px 0px;
-  flex-direction: column;
-  padding: 74px 16px 24px;
-  border-radius: 24px 24px 0px 0px;
-  background-color: ${(props) => props?.theme?.colors?.background};
-  
-  @media ${(props) => props?.theme?.breakpoints?.medium} {
-    padding: 74px 48px 48px;
-  }
-
-  @media ${(props) => props?.theme?.breakpoints?.extraLarge} {
-    padding: 74px 10dvw 48px;
   }
 `;
 
