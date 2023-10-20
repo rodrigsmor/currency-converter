@@ -1,4 +1,6 @@
 export default {
+  'app.countries.section': 'Países',
+  'app.currencies.section': 'Moedas',
   'searchbar.placeholder': 'Pesquisar',
   'searchbar.currency': 'Pesquisar pela moeda',
   'header.home': 'Início',
@@ -20,4 +22,6 @@ export default {
   'navigationBox.search': 'Buscar',
   'currencySelector.close': 'Fechar o seletor de moeda',
   'currencySelector.show': 'Abrir o seletor de moeda',
+  'searchPage.top.h1': 'Buscar',
+  'searchPage.top.h2': 'Encontre diferente moedas',
 } as const;
