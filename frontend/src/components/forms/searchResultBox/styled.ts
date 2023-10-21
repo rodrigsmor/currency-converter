@@ -40,6 +40,9 @@ export const SearchResultSection = styled.section`
   }
 
   > ul.SearchResult_List {
-    
+    gap: 4px;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
   }
 `;
