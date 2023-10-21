@@ -3,20 +3,11 @@
 import { useState } from "react"
 import { Searchbar } from "../searchbar"
 import { SearchResultBoxWrapper, SearchResultSection, SearchResultsDropbox } from "./styled"
+import { recent_searches_mock } from "@/utils/mocks/recent-searches"
+import { SearchResultOption } from "@/components/buttons/searchResultOption"
 
 interface SearchResultBoxProps {
   
-}
-
-enum ValueTypeEnum {
-  'country_name', 'currency_name', 'currency_code'
-}
-
-type SearchResult = {
-  value: string;
-  path: 'exchanges-rates' | 'convert-currencies';
-  typeLabel: 'header.exchange' | 'header.converter';
-  currencyCode: string;
 }
 
 export const SearchResultBox = ({  }: SearchResultBoxProps) => {
@@ -36,7 +27,18 @@ export const SearchResultBox = ({  }: SearchResultBoxProps) => {
       </header>
       <SearchResultsDropbox>
         <SearchResultSection>
-          <h3 className="SearchResult_SectionTitle">Recent searches</h3>
+          <h3 className='SearchResult_SectionTitle'>Recent searches</h3>
+          <ul className='SearchResult_List'>
+            {
+              recent_searches_mock.map((search, index) => {
+                return (
+                  <li key={index}>
+                    <SearchResultOption search={search} />
+                  </li>
+                )
+              })
+            }
+          </ul>
         </SearchResultSection>
       </SearchResultsDropbox>
     </SearchResultBoxWrapper>
