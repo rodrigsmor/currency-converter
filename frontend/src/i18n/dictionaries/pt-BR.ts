@@ -24,4 +24,7 @@ export default {
   'currencySelector.show': 'Abrir o seletor de moeda',
   'searchPage.top.h1': 'Buscar',
   'searchPage.top.h2': 'Encontre diferente moedas',
+  'search.result.recentSection': 'Pesquisas recentes',
+  'search.result.remove': 'Remover pesquisa recente',
+  'search.result.feature': 'Recursos',
 } as const;

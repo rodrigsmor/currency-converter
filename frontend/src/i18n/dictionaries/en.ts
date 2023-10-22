@@ -24,4 +24,7 @@ export default {
   'currencySelector.show': 'Show currency selector',
   'searchPage.top.h1': 'Search',
   'searchPage.top.h2': 'Check and search for possible currencies',
+  'search.result.recentSection': 'Recent searches',
+  'search.result.remove': 'Remove recent search',
+  'search.result.feature': 'Features',
 } as const;
