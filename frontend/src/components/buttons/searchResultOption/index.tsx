@@ -13,7 +13,7 @@ export function SearchResultOption({ search }: SearchResultOptionProps) {
   const t = useI18n()
 
   function removeRecentSearches() {
-
+    // remove 
   }
 
   return (
@@ -21,11 +21,16 @@ export function SearchResultOption({ search }: SearchResultOptionProps) {
       <SearchResultButtonWrap>
         <span aria-label={`${search.value} flag`} className={`fi fi-${search?.country_flag} fis country-flag-resultButton`}></span>
         <SearchResultDetails>
-          <p>{search.value}</p>
-          <span>{t(search.type_label)}</span>
+          <p className='ResultOption_DetailsValue'>{search.value}</p>
+          <span className='ResultOption_TypeSelected'>{t(search.type_label)}</span>
         </SearchResultDetails>
       </SearchResultButtonWrap>
-      <button onClick={() => removeRecentSearches()} className='RemoveRecentSearch'>
+      <button
+        aria-label={t('search.result.remove')}
+        title={t('search.result.remove')}
+        onClick={() => removeRecentSearches()}
+        className='RemoveRecentSearch'
+      >
         <CloseLineIcon size={20} />
       </button>
     </SearchResultWrapper>
