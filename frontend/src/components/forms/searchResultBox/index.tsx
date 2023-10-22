@@ -66,7 +66,7 @@ export const SearchResultBox = ({  }: SearchResultBoxProps) => {
         {
           (searchValue?.length > 0) ? (
             <SearchResultSection key='SearchsMatches_Results'>
-              <h3 className='SearchResult_SectionTitle'>{t('search.result.recentSection')}</h3>
+              <h3 className='SearchResult_SectionTitle'>{t('search.result.results')}</h3>
               <ul className='SearchResult_List'>
                 {
                   searchMatches.length > 0 ? (
@@ -94,7 +94,7 @@ export const SearchResultBox = ({  }: SearchResultBoxProps) => {
             </SearchResultSection>
           ) : (
             <SearchResultSection key='RecentSearches_Results'>
-              <h3 className='SearchResult_SectionTitle'>{t('search.result.results')}</h3>
+              <h3 className='SearchResult_SectionTitle'>{t('search.result.recentSection')}</h3>
               <ul className='SearchResult_List'>
                 {
                   recent_searches_mock.map((search, index) => {
