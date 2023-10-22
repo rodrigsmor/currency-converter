@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import Link from 'next/link';
+import styled, { css } from 'styled-components';
 
 export const SearchResultWrapper = styled.div`
   gap: 10px;
@@ -31,7 +32,7 @@ export const SearchResultWrapper = styled.div`
   }
 `
 
-export const SearchResultButtonWrap = styled.button`
+const SearchResultDetailsStyle = css`
   gap: 10px;
   width: 100%;
   display: flex;
@@ -47,6 +48,15 @@ export const SearchResultButtonWrap = styled.button`
     height: 20px;
     border-radius: 6px;
   }
+`;
+
+export const SearchResultButtonWrap = styled.button`
+  ${SearchResultDetailsStyle}
+`;
+
+export const SearchResultLinkWrap = styled(Link)`
+  ${SearchResultDetailsStyle}
+  text-decoration: none;
 `;
 
 export const SearchResultDetails = styled.div`
