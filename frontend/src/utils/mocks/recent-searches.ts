@@ -17,7 +17,7 @@ export const recent_searches_mock: RecentSearches[] = [
   },
   {
     currencyCode: 'BRL',
-    value: 'Angola',
+    value: 'Brazil',
     country_flag: 'br',
     path: 'convert-currencies',
     type_label: 'header.converter',
