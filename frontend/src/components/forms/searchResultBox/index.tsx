@@ -52,7 +52,7 @@ export const SearchResultBox = ({  }: SearchResultBoxProps) => {
               recent_searches_mock.map((search, index) => {
                 return (
                   <li key={index}>
-                    <SearchResultOption search={search} />
+                    <SearchResultOption isRecent={true} search={search} />
                   </li>
                 )
               })
