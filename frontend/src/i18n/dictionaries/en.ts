@@ -27,4 +27,6 @@ export default {
   'search.result.recentSection': 'Recent searches',
   'search.result.remove': 'Remove recent search',
   'search.result.feature': 'Features',
+  'search.result.results': 'Results',
+  'search.result.empty': 'No results for '
 } as const;

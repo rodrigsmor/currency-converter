@@ -27,4 +27,6 @@ export default {
   'search.result.recentSection': 'Pesquisas recentes',
   'search.result.remove': 'Remover pesquisa recente',
   'search.result.feature': 'Recursos',
+  'search.result.results': 'Resultados',
+  'search.result.empty': 'Sem resultados para '
 } as const;
