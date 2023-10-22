@@ -55,13 +55,13 @@ export const SearchResultDetails = styled.div`
   display: flex;
   align-items: center;
 
-  > p {
-    font-size: ${(props) => props?.theme?.typography?.sizes?.h5};
-    font-weight: ${(props) => props?.theme?.typography?.weight?.medium};
+  > p.ResultOption_DetailsValue {
+    font-size: ${(props) => props?.theme?.typography?.sizes?.h6};
+    font-weight: ${(props) => props?.theme?.typography?.weight?.bold};
     color: ${(props) => props?.theme?.colors?.typography + props?.theme?.opacities?.[80]};
   }
 
-  > span {
+  > span.ResultOption_TypeSelected {
     font-size: 12px;
     font-weight: ${(props) => props?.theme?.typography?.weight?.regular};
     color: ${(props) => props?.theme?.colors?.typography + props?.theme?.opacities?.[40]};
