@@ -46,6 +46,9 @@ export const SearchResultSection = styled.section`
     gap: 4px;
     display: flex;
     list-style: none;
+    min-height: 104px;
+    max-height: 104px;
+    overflow-y: auto;
     flex-direction: column;
   }
 
