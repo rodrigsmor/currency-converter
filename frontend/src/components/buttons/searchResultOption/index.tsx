@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link';
 import { useContext } from 'react';
 
 // i18n
@@ -15,23 +16,25 @@ import { RecentSearches } from '@/utils/@types/recent-searches';
 import { LanguageContext } from '@/contexts/LanguageContextProvider';
 
 // components
-import { SearchResultButtonWrap, SearchResultDetails, SearchResultLinkWrap, SearchResultWrapper } from './styled';
+import { SearchResultWrapper } from './styled';
 
 interface SearchResultOptionProps {
   search: RecentSearches;
   isRecent: boolean;
 }
 
-function SearchDetailsContent({ search }: { search: RecentSearches }) {
+function SearchDetailsContent({ search, isRecent = false }: { search: RecentSearches, isRecent?: boolean }) {
   const t = useI18n()
 
   return (
     <>
       <span aria-label={`${search.value} flag`} className={`fi fi-${search?.country_flag} fis country-flag-resultButton`}></span>
-      <SearchResultDetails>
+      <div className='SearchResultOption_Details'>
         <p className='ResultOption_DetailsValue'>{search.value}</p>
-        <span className='ResultOption_TypeSelected'>{t(search.type_label)}</span>
-      </SearchResultDetails>
+        <span className='ResultOption_TypeSelected'>
+          { isRecent ? t(search.type_label) : search.currencyCode }
+        </span>
+      </div>
     </>
   );
 }
@@ -49,16 +52,19 @@ export function SearchResultOption({ search, isRecent }: SearchResultOptionProps
       {
         isRecent
           ? (
-            <SearchResultLinkWrap
+            <Link
               tabIndex={0}
+              className='ResultOption_ContentWrapper'
               href={`/${lang}/${search.path}?target_currency=${search.currencyCode}`}
             >
-              <SearchDetailsContent search={search} />
-            </SearchResultLinkWrap>
+              <SearchDetailsContent search={search} isRecent={true} />
+            </Link>
           ) : (
-            <SearchResultButtonWrap>
+            <button
+              className='ResultOption_ContentWrapper'
+            >
               <SearchDetailsContent search={search} />
-            </SearchResultButtonWrap>
+            </button>
           )
       }
       {
