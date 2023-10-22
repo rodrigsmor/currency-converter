@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 export const SearchResultWrapper = styled.div`
   gap: 10px;
   width: 100%;
+  height: 32px;
   display: flex;
   max-width: 100%;
   cursor: pointer;
@@ -30,50 +31,42 @@ export const SearchResultWrapper = styled.div`
     background-color: transparent;
     color: ${(props) => props?.theme?.colors?.typography + props?.theme?.opacities?.[60]};
   }
+
+  > .ResultOption_ContentWrapper {
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    max-width: 100%;
+    align-items: center;
+    text-decoration: none;
+    border: 0px solid transparent;
+    background-color: transparent;
+    justify-content: space-between;
+
+    > .country-flag-resultButton {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+    }
+
+    > .SearchResultOption_Details {
+      gap: 4px;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+
+      > p.ResultOption_DetailsValue {
+        font-size: ${(props) => props?.theme?.typography?.sizes?.h6};
+        font-weight: ${(props) => props?.theme?.typography?.weight?.bold};
+        color: ${(props) => props?.theme?.colors?.typography + props?.theme?.opacities?.[80]};
+      }
+
+      > span.ResultOption_TypeSelected {
+        font-size: 12px;
+        font-weight: ${(props) => props?.theme?.typography?.weight?.regular};
+        color: ${(props) => props?.theme?.colors?.typography + props?.theme?.opacities?.[40]};
+      }
+    }
+  }
 `
-
-const SearchResultDetailsStyle = css`
-  gap: 10px;
-  width: 100%;
-  display: flex;
-  cursor: pointer;
-  max-width: 100%;
-  align-items: center;
-  border: 0px solid transparent;
-  background-color: transparent;
-  justify-content: space-between;
-
-  > .country-flag-resultButton {
-    width: 20px;
-    height: 20px;
-    border-radius: 6px;
-  }
-`;
-
-export const SearchResultButtonWrap = styled.button`
-  ${SearchResultDetailsStyle}
-`;
-
-export const SearchResultLinkWrap = styled(Link)`
-  ${SearchResultDetailsStyle}
-  text-decoration: none;
-`;
-
-export const SearchResultDetails = styled.div`
-  gap: 4px;
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-
-  > p.ResultOption_DetailsValue {
-    font-size: ${(props) => props?.theme?.typography?.sizes?.h6};
-    font-weight: ${(props) => props?.theme?.typography?.weight?.bold};
-    color: ${(props) => props?.theme?.colors?.typography + props?.theme?.opacities?.[80]};
-  }
-
-  > span.ResultOption_TypeSelected {
-    font-size: 12px;
-    font-weight: ${(props) => props?.theme?.typography?.weight?.regular};
-    color: ${(props) => props?.theme?.colors?.typography + props?.theme?.opacities?.[40]};
-  }
-`;
