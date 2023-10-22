@@ -17,6 +17,9 @@ import { currencies_mock } from '@/utils/mocks/currencies';
 // types
 import { Currency } from '@/utils/@types/currency';
 
+// i18n
+import { useI18n } from '@/i18n/locales/client';
+
 interface CurrencySelectorProps {
   id: string,
   otherSelected?: Currency;
@@ -32,6 +35,8 @@ export const CurrencySelector = ({
   showCurrencySelector,
   otherSelected,
 }: CurrencySelectorProps) => {
+  const t = useI18n()
+
   const [ searchValue, setSearchValue ] = useState<string>('');
 
   function onChangeSearch(event: ChangeEvent<HTMLInputElement>) {
@@ -111,7 +116,7 @@ export const CurrencySelector = ({
             }) : (
               <li className='CurrencySelect_EmptyState'>
                 <SearchLineIcon size={48} className='currency-selector-empty' />
-                <p>No results for <strong>&ldquo;{searchValue}&rdquo;</strong>.</p>
+                <p>{t('search.result.empty')}<strong>&ldquo;{searchValue}&rdquo;</strong>.</p>
               </li>
             )
         }
