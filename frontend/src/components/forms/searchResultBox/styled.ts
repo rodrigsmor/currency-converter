@@ -18,10 +18,13 @@ export const SearchResultBoxWrapper = styled.div`
 `;
 
 export const SearchResultsDropbox = styled.section`
+  gap: 18px;
   top: 48px;
   z-index: 1;
   width: 100%;
+  display: flex;
   position: absolute;
+  flex-direction: column;
   padding: 10px 18px 18px;
   border-radius: 0 0 16px 16px;
   box-shadow: ${(props) => props?.theme?.boxShadow.main};
@@ -44,5 +47,21 @@ export const SearchResultSection = styled.section`
     display: flex;
     list-style: none;
     flex-direction: column;
+  }
+
+  > div.SearchResult_Features {
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  @media ${(props) => props?.theme?.breakpoints?.medium} {
+    > div.SearchResult_Features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 `;
