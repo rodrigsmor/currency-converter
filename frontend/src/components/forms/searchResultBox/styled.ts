@@ -50,6 +50,33 @@ export const SearchResultSection = styled.section`
     max-height: 104px;
     overflow-y: auto;
     flex-direction: column;
+
+    > li.SearchResult_EmptyState {
+      gap: 4px;
+      width: 100%;
+      display: grid;
+      max-width: 100%;
+      overflow: hidden;
+      min-height: 104px;
+      place-items: center;
+      color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[80]}`};
+
+      > p {
+        width: 100%;
+        text-align: center;
+        word-break: break-all;
+        overflow-wrap: break-word;
+        max-height: 100%;
+        font-size: ${(props) => props?.theme?.typography?.sizes?.h6};
+        font-weight: ${(props) => props?.theme?.typography?.weight?.medium};
+        color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[60]}`};
+
+        > strong {
+          font-weight: ${(props) => props?.theme?.typography?.weight?.semibold};
+          color: ${(props) => `${props?.theme?.colors?.typography + props?.theme?.opacities?.[80]}`};
+        }
+      }
+    }
   }
 
   > div.SearchResult_Features {
