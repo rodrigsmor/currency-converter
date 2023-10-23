@@ -1,4 +1,4 @@
-export type RecentSearches = {
+export type RecentSearch = {
   value: string;
   currencyCode: string;
   country_flag: string;
