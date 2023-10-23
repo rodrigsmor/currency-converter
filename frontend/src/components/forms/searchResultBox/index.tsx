@@ -1,16 +1,16 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 // i18n
 import { useI18n } from '@/i18n/locales/client'
 
 // utils
 import { currencies_mock } from '@/utils/mocks/currencies'
-import { recent_searches_mock } from '@/utils/mocks/recent-searches'
 
 // types
 import { Currency } from '@/utils/@types/currency'
+import { RecentSearch } from '@/utils/@types/recent-searches'
 import { FeatureSearchOption } from '@/utils/@types/feature-search-option'
 
 // components
@@ -34,8 +34,10 @@ interface SearchResultBoxProps {
 export const SearchResultBox = ({  }: SearchResultBoxProps) => {
   const t = useI18n()
 
+  const [recentSearches, setRecentSearches] = useState<RecentSearch[]>([]);
+
   const [searchValue, setSearchValue] = useState<string>('');
-  const [featureSelected, setFeatureSelected] = useState<FeatureSearchOption | null>(null);
+  const [featureSelected, setFeatureSelected] = useState<FeatureSearchOption | null>(searchResultsFeatures[0]);
 
   const searchMatches = useMemo<Currency[]>(() => {
     const currenciesItems = [...currencies_mock];
@@ -48,6 +50,15 @@ export const SearchResultBox = ({  }: SearchResultBoxProps) => {
       currency.country_name.toLowerCase().includes(searchQuery)
     ));
   }, [ searchValue ])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const localRecent = localStorage.getItem('recent-searches@currency-converter');
+      if (localRecent) {
+        setRecentSearches(JSON.parse(localRecent) as RecentSearch[]);
+      }
+    }
+  }, []);
 
   return (
     <SearchResultBoxWrapper
@@ -73,19 +84,22 @@ export const SearchResultBox = ({  }: SearchResultBoxProps) => {
                     searchMatches.map((currency, index) => {
                       return (
                         <li key={index}>
-                          <SearchResultOption isRecent={false} search={{
-                            country_flag: currency.flag_code,
-                            currencyCode: currency.currency_code,
-                            path: featureSelected?.path || 'convert-currencies',
-                            type_label: featureSelected?.optionName || 'header.converter',
-                            value: currency.currency_name,
-                          }} />
+                          <SearchResultOption
+                            isRecent={false}
+                            search={{
+                              country_flag: currency.flag_code,
+                              currencyCode: currency.currency_code,
+                              path: featureSelected?.path || 'convert-currencies',
+                              type_label: featureSelected?.optionName || 'header.converter',
+                              value: currency.currency_name,
+                            }}
+                          />
                         </li>
                       )
                     })
                   ) : (
                     <li className='SearchResult_EmptyState'>
-                      <SearchLineIcon size={48} className='currency-selector-empty' />
+                      <SearchLineIcon size={44} className='currency-selector-empty' />
                       <p>{t('search.result.empty')} <strong>&ldquo;{searchValue}&rdquo;</strong>.</p>
                     </li>
                   )
@@ -97,10 +111,10 @@ export const SearchResultBox = ({  }: SearchResultBoxProps) => {
               <h3 className='SearchResult_SectionTitle'>{t('search.result.recentSection')}</h3>
               <ul className='SearchResult_List'>
                 {
-                  recent_searches_mock.map((search, index) => {
+                  recentSearches.map((search, index) => {
                     return (
                       <li key={index}>
-                        <SearchResultOption isRecent={true} search={search} />
+                        <SearchResultOption isRecent={true} search={search} setRecentSearches={setRecentSearches} />
                       </li>
                     )
                   })
