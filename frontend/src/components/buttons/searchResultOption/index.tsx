@@ -1,7 +1,8 @@
 'use client'
 
+import _ from 'lodash';
 import Link from 'next/link';
-import { useContext } from 'react';
+import { Dispatch, MouseEvent, useContext } from 'react';
 
 // i18n
 import { useI18n } from '@/i18n/locales/client';
@@ -10,20 +11,18 @@ import { useI18n } from '@/i18n/locales/client';
 import CloseLineIcon from 'remixicon-react/CloseLineIcon';
 
 // types
-import { RecentSearches } from '@/utils/@types/recent-searches';
+import { RecentSearch } from '@/utils/@types/recent-searches';
 
 // contexts
 import { LanguageContext } from '@/contexts/LanguageContextProvider';
 
-// components
-import { SearchResultWrapper } from './styled';
-
 interface SearchResultOptionProps {
-  search: RecentSearches;
   isRecent: boolean;
+  search: RecentSearch;
+  setRecentSearches?: Dispatch<RecentSearch[]>;
 }
 
-function SearchDetailsContent({ search, isRecent = false }: { search: RecentSearches, isRecent?: boolean }) {
+function SearchDetailsContent({ search, isRecent = false }: { search: RecentSearch, isRecent?: boolean }) {
   const t = useI18n()
 
   return (
@@ -39,16 +38,50 @@ function SearchDetailsContent({ search, isRecent = false }: { search: RecentSear
   );
 }
 
-export function SearchResultOption({ search, isRecent }: SearchResultOptionProps) {
+export function SearchResultOption({ search, isRecent, setRecentSearches = () => {} }: SearchResultOptionProps) {
   const t = useI18n()
   const { lang } = useContext(LanguageContext)
 
-  function removeRecentSearches() {
-    // remove 
+  function removeRecentSearch() {
+    const localValue = localStorage.getItem('recent-searches@currency-converter')
+
+    if (!localValue) return null;
+
+    const recent_searches = JSON.parse(localValue) as RecentSearch[]
+
+    const new_recent_searches = recent_searches.filter((recent_search) => !_.isEqual(recent_search, search))
+
+    localStorage.setItem(
+      'recent-searches@currency-converter',
+      JSON.stringify(new_recent_searches)
+    )
+
+    setRecentSearches(new_recent_searches)
+  }
+
+  function navigateToRoute(event: MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
+
+    let recentSearches = [];
+    const localValue = localStorage.getItem('recent-searches@currency-converter') || []
+
+    if (!Array.isArray(localValue)) {
+      recentSearches = JSON.parse(localValue);
+    }
+
+    const newRecentSearches = [
+      ...recentSearches,
+      search,
+    ]
+
+    localStorage.setItem(
+      'recent-searches@currency-converter',
+      JSON.stringify(newRecentSearches)
+    )
   }
 
   return (
-    <SearchResultWrapper>
+    <div className='SearchResult_OptionItem'>
       {
         isRecent
           ? (
@@ -62,6 +95,7 @@ export function SearchResultOption({ search, isRecent }: SearchResultOptionProps
           ) : (
             <button
               className='ResultOption_ContentWrapper'
+              onClick={navigateToRoute}
             >
               <SearchDetailsContent search={search} />
             </button>
@@ -72,13 +106,13 @@ export function SearchResultOption({ search, isRecent }: SearchResultOptionProps
           <button
             aria-label={t('search.result.remove')}
             title={t('search.result.remove')}
-            onClick={() => removeRecentSearches()}
+            onClick={() => removeRecentSearch()}
             className='RemoveRecentSearch'
           >
             <CloseLineIcon size={20} />
           </button>
         )
       }
-    </SearchResultWrapper>
+    </div>
   )
 }
