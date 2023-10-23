@@ -28,5 +28,6 @@ export default {
   'search.result.remove': 'Remover pesquisa recente',
   'search.result.feature': 'Recursos',
   'search.result.results': 'Resultados',
-  'search.result.empty': 'Sem resultados para '
+  'search.result.empty': 'Sem resultados para ',
+  'search.result.recent-empty': 'Nenhuma pesquisa recente.',
 } as const;

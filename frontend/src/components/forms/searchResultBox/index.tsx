@@ -1,11 +1,12 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 // i18n
 import { useI18n } from '@/i18n/locales/client'
 
 // utils
+import useBlur from '@/utils/hooks/useBlur'
 import { currencies_mock } from '@/utils/mocks/currencies'
 
 // types
@@ -34,9 +35,10 @@ interface SearchResultBoxProps {
 export const SearchResultBox = ({  }: SearchResultBoxProps) => {
   const t = useI18n()
 
-  const [recentSearches, setRecentSearches] = useState<RecentSearch[]>([]);
-
+  const searchBoxRef = useRef<HTMLDivElement>(null);
+  const [isFocus, setIsFocus] = useState<boolean>(false);
   const [searchValue, setSearchValue] = useState<string>('');
+  const [recentSearches, setRecentSearches] = useState<RecentSearch[]>([]);
   const [featureSelected, setFeatureSelected] = useState<FeatureSearchOption | null>(searchResultsFeatures[0]);
 
   const searchMatches = useMemo<Currency[]>(() => {
@@ -60,11 +62,20 @@ export const SearchResultBox = ({  }: SearchResultBoxProps) => {
     }
   }, []);
 
+  useBlur(searchBoxRef, () => setIsFocus(false));
+
   return (
     <SearchResultBoxWrapper
+      ref={searchBoxRef}
       className='search-result-box'
+      data-expanded={isFocus}
     >
-      <header className='SearchResult_HeaderSearchbar'>
+      <header
+        className='SearchResult_HeaderSearchbar'
+        onFocus={() => {
+          setIsFocus(true)
+        }}
+      >
         <Searchbar
           id='SearchResultBox_Searchbar'
           color='background-full'
@@ -73,7 +84,9 @@ export const SearchResultBox = ({  }: SearchResultBoxProps) => {
           onChange={event => setSearchValue(event.target.value)}
         />
       </header>
-      <SearchResultsDropbox>
+      <SearchResultsDropbox
+        aria-hidden={!isFocus}
+      >
         {
           (searchValue?.length > 0) ? (
             <SearchResultSection key='SearchsMatches_Results'>
@@ -111,13 +124,20 @@ export const SearchResultBox = ({  }: SearchResultBoxProps) => {
               <h3 className='SearchResult_SectionTitle'>{t('search.result.recentSection')}</h3>
               <ul className='SearchResult_List'>
                 {
-                  recentSearches.map((search, index) => {
-                    return (
-                      <li key={index}>
-                        <SearchResultOption isRecent={true} search={search} setRecentSearches={setRecentSearches} />
-                      </li>
-                    )
-                  })
+                  recentSearches?.length > 0 ? (
+                    recentSearches.map((search, index) => {
+                      return (
+                        <li key={index}>
+                          <SearchResultOption isRecent={true} search={search} setRecentSearches={setRecentSearches} />
+                        </li>
+                      )
+                    })
+                  ) : (
+                    <li className='SearchResult_EmptyState'>
+                      <SearchLineIcon size={44} className='currency-selector-empty' />
+                      <p>{t('search.result.recent-empty')}</p>
+                    </li>
+                  )
                 }
               </ul>
             </SearchResultSection>

@@ -15,6 +15,7 @@ import { RecentSearch } from '@/utils/@types/recent-searches';
 
 // contexts
 import { LanguageContext } from '@/contexts/LanguageContextProvider';
+import { useRouter } from 'next/navigation';
 
 interface SearchResultOptionProps {
   isRecent: boolean;
@@ -40,6 +41,7 @@ function SearchDetailsContent({ search, isRecent = false }: { search: RecentSear
 
 export function SearchResultOption({ search, isRecent, setRecentSearches = () => {} }: SearchResultOptionProps) {
   const t = useI18n()
+  const route = useRouter()
   const { lang } = useContext(LanguageContext)
 
   function removeRecentSearch() {
@@ -78,6 +80,8 @@ export function SearchResultOption({ search, isRecent, setRecentSearches = () =>
       'recent-searches@currency-converter',
       JSON.stringify(newRecentSearches)
     )
+
+    route.push(`/${lang}/${search.path}?target_currency=${search.currencyCode}`)
   }
 
   return (

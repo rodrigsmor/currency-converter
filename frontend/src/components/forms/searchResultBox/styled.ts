@@ -15,6 +15,12 @@ export const SearchResultBoxWrapper = styled.div`
     border-radius: 16px 16px 0 0;
     background-color: ${(props) => props?.theme?.colors?.background};
   }
+
+  &[data-expanded="false"] {
+    > header.SearchResult_HeaderSearchbar {
+      border-radius: 16px;
+    }
+  }
 `;
 
 export const SearchResultsDropbox = styled.section`
@@ -29,6 +35,10 @@ export const SearchResultsDropbox = styled.section`
   border-radius: 0 0 16px 16px;
   box-shadow: ${(props) => props?.theme?.boxShadow.main};
   background-color: ${(props) => props?.theme?.colors?.background};
+
+  &[aria-hidden="true"] {
+    display: none;
+  }
 `;
 
 export const SearchResultSection = styled.section`
