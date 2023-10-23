@@ -5,7 +5,6 @@ export const FeatureSearchSelectContainer = styled.button`
   height: 48px;
   display: flex;
   padding: 0 12px;
-  cursor: pointer;
   max-height: 48px;
   align-items: center;
   flex-direction: row;
@@ -36,5 +35,9 @@ export const FeatureSearchSelectContainer = styled.button`
       font-weight: ${(props) => props?.theme?.typography?.weight?.bold};
       color: ${(props) => `${props?.theme?.colors?.primary + props?.theme?.opacities?.[80]}`};
     }
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
   }
 `;
