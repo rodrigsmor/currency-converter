@@ -111,13 +111,20 @@ export const SearchResultBox = ({  }: SearchResultBoxProps) => {
               <h3 className='SearchResult_SectionTitle'>{t('search.result.recentSection')}</h3>
               <ul className='SearchResult_List'>
                 {
-                  recentSearches.map((search, index) => {
-                    return (
-                      <li key={index}>
-                        <SearchResultOption isRecent={true} search={search} setRecentSearches={setRecentSearches} />
-                      </li>
-                    )
-                  })
+                  recentSearches?.length > 0 ? (
+                    recentSearches.map((search, index) => {
+                      return (
+                        <li key={index}>
+                          <SearchResultOption isRecent={true} search={search} setRecentSearches={setRecentSearches} />
+                        </li>
+                      )
+                    })
+                  ) : (
+                    <li className='SearchResult_EmptyState'>
+                      <SearchLineIcon size={44} className='currency-selector-empty' />
+                      <p>{t('search.result.recent-empty')}</p>
+                    </li>
+                  )
                 }
               </ul>
             </SearchResultSection>
