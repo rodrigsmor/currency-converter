@@ -9,8 +9,9 @@ interface SearchbarProps {
   value?: string;
   label?: string;
   placeholder?: string;
-  color?: 'primary' | 'background';
+  color?: 'primary' | 'background' | 'background-full';
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  attributes?: React.InputHTMLAttributes<HTMLInputElement>;
 }
 
 export const Searchbar = ({
@@ -20,6 +21,7 @@ export const Searchbar = ({
   color = 'primary',
   onChange = () => {},
   placeholder = 'Search',
+  attributes,
 }: SearchbarProps) => {
   return (
     <SearchbarContainer
@@ -34,6 +36,7 @@ export const Searchbar = ({
         type='search'
         onChange={onChange}
         placeholder={placeholder}
+        { ...attributes }
       />
     </SearchbarContainer>
   )

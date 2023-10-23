@@ -14,8 +14,8 @@ import { NavigationBox } from '@/components/layout/navigationBox';
 import { CurrencySelector } from '@/components/forms/currencySelector'
 
 // styles
-import { PageContainer } from '@/styles/common/styled';
-import { CurrenciesGroupList, CurrencyPreviewBox, CurrencyTodayContainer, CurrencyValueConverted, HomeBodyContent, HomePageMainContainer, TopGreetingsHeader } from './styled'
+import { PageBodyContent, PageContainer, TopPageHeader } from '@/styles/common/styled';
+import { CurrenciesGroupList, CurrencyPreviewBox, CurrencyTodayContainer, CurrencyValueConverted, HomePageMainContainer } from './styled'
 
 // types
 import { Currency } from '@/utils/@types/currency';
@@ -71,7 +71,7 @@ export const HomePageContent = () => {
     >
       <Header hasScrolled={hasScrolled} />
       <HomePageMainContainer>
-        <TopGreetingsHeader>
+        <TopPageHeader>
           <hgroup>
             <h1>{t('home.greetings')}</h1>
             <h2>{t('home.baseCurrencyCheck', { currency_name: targetCurrency.currency_name })}</h2>
@@ -135,8 +135,8 @@ export const HomePageContent = () => {
               </div>
             </CurrencyPreviewBox>
           </CurrencyTodayContainer>
-        </TopGreetingsHeader>
-        <HomeBodyContent>
+        </TopPageHeader>
+        <PageBodyContent className='HomeBodyContent'>
           <NavigationBox />
           <CurrenciesGroupList>
             {
@@ -153,7 +153,7 @@ export const HomePageContent = () => {
               })
             }
           </CurrenciesGroupList>
-        </HomeBodyContent>
+        </PageBodyContent>
       </HomePageMainContainer>
     </PageContainer >
   )

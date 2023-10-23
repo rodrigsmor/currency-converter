@@ -1,10 +1,15 @@
 'use client'
 
+import { useContext } from 'react'
+
 // i18n
 import { useI18n } from '@/i18n/locales/client'
 
 // constants
 import { NavRoutes } from '@/utils/constants/nav-routes'
+
+// context
+import { LanguageContext } from '@/contexts/LanguageContextProvider'
 
 // Icon
 import SearchLineIcon from 'remixicon-react/SearchLineIcon'
@@ -16,6 +21,8 @@ import MoneyDollarCircleLineIcon from 'remixicon-react/MoneyDollarCircleLineIcon
 import { NavigationBoxContainer, NavigationBoxList, NavigationBoxOption } from './styled'
 
 export const NavigationBox = () => {
+  const { lang } = useContext(LanguageContext);
+
   const navRoutes: NavRoutes[] = [
     {
       path: '/currencies',
@@ -49,7 +56,7 @@ export const NavigationBox = () => {
             return (
               <li key={index}>
                 <NavigationBoxOption
-                  href={route.path}
+                  href={`/${lang}${route.path}`}
                 >
                   <figure>
                     { route.Icon }
