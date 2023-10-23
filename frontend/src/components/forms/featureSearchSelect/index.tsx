@@ -24,6 +24,7 @@ export function FeatureSearchSelect({ feature, isChecked, onSelect }: FeatureSea
   return (
     <FeatureSearchSelectContainer
       role='checkbox'
+      disabled={isChecked}
       aria-checked={isChecked}
       onClick={() => onSelect(isChecked ? null : feature)}
     >
