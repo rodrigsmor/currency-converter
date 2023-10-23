@@ -28,5 +28,6 @@ export default {
   'search.result.remove': 'Remove recent search',
   'search.result.feature': 'Features',
   'search.result.results': 'Results',
-  'search.result.empty': 'No results for '
+  'search.result.empty': 'No results for ',
+  'search.result.recent-empty': 'No recent search.',
 } as const;
