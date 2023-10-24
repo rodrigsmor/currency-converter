@@ -29,10 +29,16 @@ import { SearchResultBoxWrapper, SearchResultSection, SearchResultsDropbox } fro
 import SearchLineIcon from 'remixicon-react/SearchLineIcon'
 
 interface SearchResultBoxProps {
-  
+  style?: 'default' | 'separated';
+  searchBarStyle?: 'primary' | 'background' | 'background-full';
+  placeholder?: 'searchbar.currency' | 'searchbar.placeholder';
 }
 
-export const SearchResultBox = ({  }: SearchResultBoxProps) => {
+export const SearchResultBox = ({
+  style = 'default',
+  placeholder = 'searchbar.currency',
+  searchBarStyle = 'background-full',
+}: SearchResultBoxProps) => {
   const t = useI18n()
 
   const searchBoxRef = useRef<HTMLDivElement>(null);
@@ -69,6 +75,7 @@ export const SearchResultBox = ({  }: SearchResultBoxProps) => {
       ref={searchBoxRef}
       className='search-result-box'
       data-expanded={isFocus}
+      data-style={style}
     >
       <header
         className='SearchResult_HeaderSearchbar'
@@ -78,9 +85,9 @@ export const SearchResultBox = ({  }: SearchResultBoxProps) => {
       >
         <Searchbar
           id='SearchResultBox_Searchbar'
-          color='background-full'
+          color={searchBarStyle}
           value={searchValue}
-          placeholder={t('searchbar.currency')}
+          placeholder={t(placeholder)}
           onChange={event => setSearchValue(event.target.value)}
         />
       </header>

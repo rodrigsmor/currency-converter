@@ -54,10 +54,6 @@ export const InteractionsWrapper = styled.section`
   min-width: 368px;
   max-width: 24%;
 
-  > .searchbar-ui {
-    min-width: 120%;
-  }
-
   @media ${(props) => props?.theme?.breakpoints?.large } {
     display: flex;
   }
