@@ -21,6 +21,7 @@ import { FooterCredits, MenuFooter, MenuHeader, MenuSidebarBody, MenuSidebarCont
 
 // i18n
 import { useI18n } from '@/i18n/locales/client';
+import { SearchResultBox } from '@/components/forms/searchResultBox';
 
 interface MenuSidebarProps {
   showSidebar: boolean;
@@ -41,7 +42,11 @@ export const MenuSidebar = ({ showSidebar, toggleSidebar }: MenuSidebarProps) =>
         </MenuHeader>
         <MenuSidebarBody>
           <section className='menu-sidebar_BodyForms'>
-            <Searchbar placeholder={t('searchbar.placeholder')} />
+            <SearchResultBox
+              style='separated'
+              searchBarStyle='primary'
+              placeholder='searchbar.placeholder'
+            />
             <LangSelect style='background' showCountryLabel={true} />
           </section>
           <NavigationOptionsList>

@@ -22,6 +22,8 @@ export const SearchResultBoxWrapper = styled.div`
   }
 
   &[data-style="separated"] {
+    z-index: 10;
+
     > header {
       background-color: transparent;
     }
@@ -31,7 +33,6 @@ export const SearchResultBoxWrapper = styled.div`
 export const SearchResultsDropbox = styled.section`
   gap: 18px;
   top: 48px;
-  z-index: 1;
   width: 100%;
   display: flex;
   position: absolute;
@@ -47,6 +48,8 @@ export const SearchResultsDropbox = styled.section`
 
   [data-style="separated"] & {
     top: 56px;
+    z-index: 10;
+    padding: 18px;
     border-radius: 16px;
   }
 
