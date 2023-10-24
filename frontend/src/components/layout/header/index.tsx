@@ -1,16 +1,16 @@
 'use client'
 
-import { MouseEvent, useContext, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { MouseEvent, useContext, useState } from 'react';
 
 // components
 import { MenuSidebar } from '../menuSidebar';
 import { Logo } from '@/components/common/logo';
 import { navRoutes } from '@/utils/constants/nav-routes';
-import { Searchbar } from '@/components/forms/searchbar';
 import { LangSelect } from '@/components/forms/langSelect';
 import { IconButton } from '@/components/buttons/IconButton';
 import { ThemeSwitcher } from '@/components/forms/themeSwitcher';
+import { SearchResultBox } from '@/components/forms/searchResultBox';
 
 // icons
 import Menu4FillIcon from 'remixicon-react/Menu4FillIcon';
@@ -76,7 +76,11 @@ export const Header = ({ hasScrolled }: HeaderProps) => {
       <InteractionsWrapper>
         <ThemeSwitcher isButton={true} color={hasScrolled ? 'typography' : 'background'} />
         <LangSelect style={hasScrolled ? 'background' : 'transparent'} />
-        <Searchbar placeholder={t('searchbar.placeholder')} color={hasScrolled ? 'primary' : 'background'} />
+        <SearchResultBox
+          style='separated'
+          searchBarStyle={hasScrolled ? 'primary' : 'background'}
+          placeholder='searchbar.placeholder'
+        />
       </InteractionsWrapper>
       <IconButton
         onClick={handleShowSideBar}
