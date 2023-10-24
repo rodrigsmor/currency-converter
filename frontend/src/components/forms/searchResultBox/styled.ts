@@ -5,7 +5,6 @@ import styled from 'styled-components'
 export const SearchResultBoxWrapper = styled.div`
   z-index: 1;
   width: 100%;
-  min-width: 100%;
   position: relative;
   
   > header.SearchResult_HeaderSearchbar {
@@ -19,6 +18,12 @@ export const SearchResultBoxWrapper = styled.div`
   &[data-expanded="false"] {
     > header.SearchResult_HeaderSearchbar {
       border-radius: 16px;
+    }
+  }
+
+  &[data-style="separated"] {
+    > header {
+      background-color: transparent;
     }
   }
 `;
@@ -38,6 +43,18 @@ export const SearchResultsDropbox = styled.section`
 
   &[aria-hidden="true"] {
     display: none;
+  }
+
+  [data-style="separated"] & {
+    top: 56px;
+    border-radius: 16px;
+  }
+
+  @media ${(props) => props?.theme?.breakpoints?.large} {
+    [data-style="separated"] & {
+      right: 0;
+      min-width: 46vw;
+    }
   }
 `;
 
@@ -172,8 +189,12 @@ export const SearchResultSection = styled.section`
 
   @media ${(props) => props?.theme?.breakpoints?.medium} {
     > div.SearchResult_Features {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      flex-direction: row;
+
+      > button {
+        flex: 1;
+        min-width: 238px;
+      }
     }
   }
 `;
