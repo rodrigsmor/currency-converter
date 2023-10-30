@@ -24,6 +24,9 @@ This is a simple currency converter application that supports over 160 currencie
   - [🏡  Home Page](#--home-page)
     - [📱 Mobile screenshots](#-mobile-screenshots)
     - [🖥 Desktop screenshots](#-desktop-screenshots)
+  - [🔍 Search Page](#-search-page)
+    - [📱 Mobile screenshots](#-mobile-screenshots-1)
+    - [🖥 Desktop screenshots](#-desktop-screenshots-1)
 - [🏃🏽‍♂️ How to run](#️-how-to-run)
   - [⚙️ Preparing the environment](#️-preparing-the-environment)
   - [🚀 Running the application](#-running-the-application)
@@ -72,6 +75,23 @@ This is a simple currency converter application that supports over 160 currencie
 #### 🖥 Desktop screenshots
 
 <img src="https://i.ibb.co/Cwf0TwT/Screen-Shot-2023-10-18-at-23-37-27.png" alt="Home page screenshot in Desktop screen" />
+
+----
+
+### 🔍 Search Page
+
+
+#### 📱 Mobile screenshots
+
+<div>
+  <img width="49%" src="https://i.ibb.co/Y8c0942/Screen-Shot-2023-10-29-at-22-34-04.png" alt="Mobile screenshot">
+  <img width="49%" src="https://i.ibb.co/XXFvG0v/Screen-Shot-2023-10-29-at-22-33-53.png" alt="Mobile screenshot">
+</div>
+
+
+#### 🖥 Desktop screenshots
+
+<img src="https://i.ibb.co/94DG1cT/Screen-Shot-2023-10-29-at-22-33-23.png" alt="Search page screenshot in Desktop screen" />
 
 ----
 
