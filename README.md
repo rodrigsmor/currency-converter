@@ -189,6 +189,8 @@ http://localhost:3001/documentation
 - 🔗 Next International Setup: https://next-international.vercel.app/docs/app-setup
 - 🔗 Cypress Component Testing: https://docs.cypress.io/guides/component-testing/getting-started
 - 🔗 Next.js Testing optimization: https://nextjs.org/docs/pages/building-your-application/optimizing/testing
+- 🔗 Nest.js internationalization (i18n): https://github.com/ToonvanStrijp/nestjs-i18n
+
 
 ## 👨🏽‍🦱 Author
 
