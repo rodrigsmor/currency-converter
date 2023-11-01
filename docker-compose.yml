@@ -18,3 +18,16 @@ services:
 
   frontend:
     build: ./frontend
+
+  cypress:
+    image: cypress/included:13.3.0
+    volumes:
+      - ./frontend/cypress
+
+  frontend-tests:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.tests
+    depends_on:
+      - frontend
+      - cypress
