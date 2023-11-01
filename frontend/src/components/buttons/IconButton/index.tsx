@@ -26,7 +26,7 @@ export const IconButton = ({
       onClick={onClick}
       aria-label={label}
       className='icon-button'
-      data-color-variant={color}
+      data-variantColor={color}
       {...attributes}
     >
       { Icon }
