@@ -5,13 +5,15 @@ describe('<IconButton />', () => {
     cy.mount(
       <IconButton
         color='transparent'
-        Icon={<span>Icon</span>}
+        Icon={<span className='my-custom-icon'>Icon</span>}
       />
     );
 
-    cy.get('button').should('have.class', 'transparent').should('have.class', 'icon-button');
-    cy.get('button').should('have.descendants', 'span')
-    cy.get('span').should('have.text', 'Icon')
+    cy.get('button.icon-button')
+      .should('have.attr', 'data-variantColor', 'transparent')
+      .should('have.css', 'background-color', 'rgba(0, 0, 0, 0)')
+    cy.get('button.icon-button').should('have.descendants', 'span')
+    cy.get('span').should('have.text', 'Icon').should('have.class', 'my-custom-icon')
   });
 
   it('should call onClick when button is clicked', () => {
@@ -25,7 +27,7 @@ describe('<IconButton />', () => {
       />
     );
 
-    cy.get('button').click();
+    cy.get('button.icon-button').click();
     cy.wrap(onClick).should('have.been.called');
   });
 });
